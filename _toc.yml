@@ -1,0 +1,24 @@
+format: jb-book
+root: chapters/intro
+title: Introduction
+parts:
+- caption: 2023/04/12
+  numberd: false
+  chapters:
+  - file: chapters/01/01_intro.ipynb
+    title: Introduction
+  - file: chapters/01/02_openai.ipynb
+    title: OpenAI API key
+  - file: chapters/01/03_chatgpt.ipynb
+    title: ChatGPT interaction
+  - file: chapters/01/04_assignment.ipynb
+    title: Assignment
+  - file: chapters/01/intro_add
+    title: Request for cooperation
+    sections:
+    - file: chapters/01/intro_add_4
+      title: Experiment explanation
+    - file: chapters/01/intro_add_5
+      title: Informed concent
+    - file: chapters/01/intro_add_6
+      title: Withdrawal of concent
