@@ -27,6 +27,7 @@ html:
 #######################################################################################
 # Launch button settings
 launch_buttons:
+  notebook_interface        : "jupyterlab"
   jupyterhub_url            : https://ecsosaka-jh2310.japaneast.cloudapp.azure.com
 # binderhub_url             : https://mybinder.org  # The URL of the BinderHub (e.g., https://mybinder.org)
 
