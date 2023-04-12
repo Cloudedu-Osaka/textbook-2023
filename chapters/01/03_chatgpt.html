@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>ChatGPT &#8212; プログラミングで遡る科学史</title>
+    <title>JupyterHubでChatGPTを体験する &#8212; プログラミングで遡る科学史</title>
   
   
   
@@ -72,7 +72,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Assingment" href="04_assignment.html" />
-    <link rel="prev" title="ChatGPT" href="02_openai.html" />
+    <link rel="prev" title="ChatGPTをアクセスするためのアカウントを作成する" href="02_openai.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -152,7 +152,7 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/12</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_openai.html">OpenAI API key</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_openai.html">Obtaining OpenAI API key</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">ChatGPT interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_assignment.html">Assignment</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="intro_add.html">Request for cooperation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -341,7 +341,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>ChatGPT</h1>
+    <h1>JupyterHubでChatGPTを体験する</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -355,11 +355,14 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="chatgpt">
-<h1>ChatGPT<a class="headerlink" href="#chatgpt" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="jupyterhubchatgpt">
+<h1>JupyterHubでChatGPTを体験する<a class="headerlink" href="#jupyterhubchatgpt" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sk-...</span></code> の文字列は登録した際にクリップボードにコピーした自分のキーに置換して下さい</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">env</span> OPENAI_API_KEY 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
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">env</span> OPENAI_API_KEY sk-...
 </pre></div>
 </div>
 </div>
@@ -381,8 +384,16 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
-犬が好き
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ak_continue</span>
+なぜそうなる？
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+犬が好き？
 </pre></div>
 </div>
 </div>
@@ -426,7 +437,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">ChatGPT</p>
+        <p class="prev-next-title">ChatGPTをアクセスするためのアカウントを作成する</p>
       </div>
     </a>
     <a class="right-next"
