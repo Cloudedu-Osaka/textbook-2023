@@ -2,6 +2,17 @@ format: jb-book
 root: chapters/intro
 title: Abstract
 parts:
+- caption: 2023/04/19
+  numberd: false
+  chapters:
+  - file: chapters/02/01_orientation.ipynb
+    title: Orientation
+  - file: chapters/02/02_assignment.ipynb
+    title: Assignment (Last week)
+  - file: chapters/02/03_examination.ipynb
+    title: Examination
+  - file: chapters/02/04_assignment.ipynb
+    title: Assignment
 - caption: 2023/04/12
   numberd: false
   chapters:
