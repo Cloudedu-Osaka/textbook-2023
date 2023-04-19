@@ -727,24 +727,6 @@ D党: 0.31
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="s2">&quot;8&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
-<span class="c1">### END HIDDEN TESTS</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>eccbc87e4b5ce2fe28308fd9f2a7baf3
-c9f0f895fb98ab9159f51fd0297e236d
-92eb5ffee6ae2fec3ad71c777531578f
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">validate</span><span class="p">[</span><span class="s2">&quot;ア&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;eccbc87e4b5ce2fe28308fd9f2a7baf3&quot;</span>
 <span class="k">assert</span> <span class="n">validate</span><span class="p">[</span><span class="s2">&quot;イ&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;c9f0f895fb98ab9159f51fd0297e236d&quot;</span>
 <span class="k">assert</span> <span class="n">validate</span><span class="p">[</span><span class="s2">&quot;ウ&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;92eb5ffee6ae2fec3ad71c777531578f&quot;</span>
