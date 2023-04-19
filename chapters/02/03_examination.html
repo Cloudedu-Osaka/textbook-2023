@@ -1,0 +1,885 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>大学入試とAI &#8212; プログラミングで遡る科学史</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-148221575-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-148221575-1');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/02/03_examination';</script>
+    <link rel="canonical" href="https://inferentialthinking.org/chapters/02/03_examination.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="次回から" href="04_assignment.html" />
+    <link rel="prev" title="Assingment" href="02_assignment.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">プログラミングで遡る科学史</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/19</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_orientation.html">Orientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_assignment.html">Assignment (Last week)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Examination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/12</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/01_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/02_openai.html">Obtaining OpenAI API key</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/03_chatgpt.html">ChatGPT interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/04_assignment.html">Assignment</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/intro_add.html">Request for cooperation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_4.html">Experiment explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_5.html">Informed concent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_6.html">Withdrawal of concent</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://ecsosaka-jh2310.japaneast.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/Cloudedu-Osaka/textbook-2023&urlpath=lab/tree/textbook-2023/chapters/02/03_examination.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/Cloudedu-Osaka/textbook-2023" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/02/03_examination.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>大学入試とAI</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dncl">DNCL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r7-2">R7: 情報 サンプル問題 第２問</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">問1</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chatgpt">次のChatGPTとの応答例を参考に上の問題に解答せよ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">回答</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ai">
+<h1>大学入試とAI<a class="headerlink" href="#ai" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>「<a class="reference external" href="https://ja.wikipedia.org/wiki/%E6%9D%B1%E3%83%AD%E3%83%9C%E3%81%8F%E3%82%93">東ロボくん - Wikipedia</a>」については別の機会に・・・</p></li>
+</ul>
+<section id="dncl">
+<h2>DNCL<a class="headerlink" href="#dncl" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.dnc.ac.jp/">独立行政法人 大学入試センター</a></p>
+<ul>
+<li><p><a class="reference external" href="https://www.dnc.ac.jp/albums/abm.php?d=67&amp;f=abm00000819.pdf&amp;n=R4_%E5%85%B1%E9%80%9A%E3%83%86%E3%82%B9%E3%83%88%E6%89%8B%E9%A0%86%E8%A8%98%E8%BF%B0%E6%A8%99%E6%BA%96%E8%A8%80%E8%AA%9E%EF%BC%88DNCL%EF%BC%89%E3%81%AE%E8%AA%AC%E6%98%8E.pdf">共通テスト手順記述標準言語 (DNCL) の説明</a></p></li>
+<li><p><a class="reference external" href="https://www.dnc.ac.jp/kyotsu/shiken_jouhou/r7ikou/">令和７年度以降の試験に向けた検討について | 独立行政法人 大学入試センター</a></p>
+<ul>
+<li><p><a class="reference external" href="https://www.dnc.ac.jp/albums/abm.php?d=33&amp;f=abm00000307.pdf&amp;n=%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E5%95%8F%E9%A1%8C%E3%80%8E%E6%83%85%E5%A0%B1%E3%80%8F_%E5%95%8F%E9%A1%8C.pdf">平成 30 年告示高等学校学習指導要領に対応した令和７年度大学入学共通テストからの出題教科・科目 情報 サンプル問題</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
+DNCLについて
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>DNCLとは、Do Not Call Listの略で、電話勧誘に対する希望しない電話を受け取らないようにするためのリストです。このリストに登録された人々は、法的に電話勧誘業者からの電話を受け取ることができません。DNCLは、個人情報保護の観点から、多くの国で導入されています。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+日本の大学入試で使われる標準言語の方
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>日本の大学入試で使われる標準言語は、一般的には日本語です。ただし、コンピューターサイエンスや工学系の学部では、プログラミング言語としてC言語やJavaが使われることがあります。また、英語の試験もあるため、英語力が求められる場合もあります。しかし、大学入試においては、基本的には日本語での筆記試験が中心となります。</p>
+</div>
+</div>
+</section>
+<section id="r7-2">
+<h2>R7: 情報 サンプル問題 第２問<a class="headerlink" href="#r7-2" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3>問1<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p><img alt="fig-2-01.png" src="../../_images/fig-2-01.png" /></p>
+<p><img alt="fig-2-02.png" src="../../_images/fig-2-02.png" /></p>
+</section>
+</section>
+<section id="chatgpt">
+<h2>次のChatGPTとの応答例を参考に上の問題に解答せよ<a class="headerlink" href="#chatgpt" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
+日本の比例代表選挙の基準得票数について
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>申し訳ありませんが、私は日本の比例代表選挙の基準得票数についての専門知識を持っていません。他に何かお力になれることがあれば、お知らせください。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+pythonでプログラムします。今回は組み込み関数だけ使います。
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>組み込み関数を使用してPythonプログラムを作成することは非常に一般的です。組み込み関数には、数学関数（例：abs、round）、文字列関数（例：len、str）、リスト関数（例：max、min）などがあります。これらの関数は、Pythonの標準ライブラリに含まれており、インストールする必要はありません。組み込み関数を使用することで、プログラムをより簡潔に、効率的に書くことができます。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+配列Tomeiに &quot;A党&quot;, &quot;B党&quot;, &quot;C党&quot;, &quot;D党&quot; を格納します。Tomeiは不変です。
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>以下は、Pythonで配列Tomeiに “A党”, “B党”, “C党”, “D党” を格納する方法です。Tomeiはタプル（tuple）として定義され、不変（immutable）です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Tomei</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;A党&quot;</span><span class="p">,</span> <span class="s2">&quot;B党&quot;</span><span class="p">,</span> <span class="s2">&quot;C党&quot;</span><span class="p">,</span> <span class="s2">&quot;D党&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>このように、タプルを使用することで、不変な配列を作成することができます。タプルは、リストと同様に複数の要素を格納することができますが、一度定義された後に変更することはできません。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+ちなみにpythonにおける不変な配列について
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Pythonにおいて、不変な配列は「タプル（tuple）」と呼ばれます。タプルは、リストと同様に複数の要素を格納することができますが、一度定義された後に変更することはできません。タプルは、丸括弧（()）で囲まれた要素のカンマ区切りのリストとして定義されます。</p>
+<p>以下は、タプルの例です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>タプルは、リストと同様にインデックスを使用して要素にアクセスすることができます。また、タプルはリストと同様にスライスを使用して部分的な要素を取得することができます。</p>
+<p>タプルは、リストと比較してメモリ使用量が少なく、処理速度が速いという利点があります。ただし、一度定義された後に変更することができないため、要素の追加や削除が必要な場合は、リストを使用する必要があります。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+in english
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>In Python, immutable arrays are called “tuples”. Tuples can store multiple elements like lists, but once defined, they cannot be changed. Tuples are defined as a comma-separated list of elements enclosed in parentheses “()”.</p>
+<p>Here is an example of a tuple:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Like lists, tuples can be accessed using indexes and can use slices to retrieve partial elements.</p>
+<p>Tuples have the advantage of using less memory and being faster than lists. However, since they cannot be changed once defined, if you need to add or remove elements, you will need to use a list.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+Tomeiの最初の要素、最後の要素の取り出し方を説明してください。また、任意の場所iの要素の取り出し方も教えてください。
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Tomeiの最初の要素を取得するには、インデックス0を使用します。最後の要素を取得するには、インデックス-1を使用します。任意の場所iの要素を取得するには、インデックスi-1を使用します。</p>
+<p>以下は、PythonでTomeiの最初の要素、最後の要素、および任意の場所iの要素を取得する方法の例です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Tomei</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;A党&quot;</span><span class="p">,</span> <span class="s2">&quot;B党&quot;</span><span class="p">,</span> <span class="s2">&quot;C党&quot;</span><span class="p">,</span> <span class="s2">&quot;D党&quot;</span><span class="p">)</span>
+
+<span class="c1"># 最初の要素を取得する</span>
+<span class="n">first_party</span> <span class="o">=</span> <span class="n">Tomei</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">first_party</span><span class="p">)</span>  <span class="c1"># 出力結果: A党</span>
+
+<span class="c1"># 最後の要素を取得する</span>
+<span class="n">last_party</span> <span class="o">=</span> <span class="n">Tomei</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">last_party</span><span class="p">)</span>  <span class="c1"># 出力結果: D党</span>
+
+<span class="c1"># 任意の場所iの要素を取得する</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">ith_party</span> <span class="o">=</span> <span class="n">Tomei</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ith_party</span><span class="p">)</span>  <span class="c1"># 出力結果: C党</span>
+</pre></div>
+</div>
+<p>このように、タプルの要素にはインデックスを使用してアクセスすることができます。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+次に、配列Tokuhyoに 1200, 660, 1440, 180 を格納します。Tokuhyoも不変です。
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>以下は、Pythonで配列Tokuhyoに 1200, 660, 1440, 180 を格納する方法です。Tokuhyoはタプル（tuple）として定義され、不変（immutable）です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Tokuhyo</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1200</span><span class="p">,</span> <span class="mi">660</span><span class="p">,</span> <span class="mi">1440</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>このように、タプルを使用することで、不変な配列を作成することができます。タプルは、リストと同様に複数の要素を格納することができますが、一度定義された後に変更することはできません。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+変数sousuuを0で初期化し、Tokuhyoの総計を求めてsousuuに格納するプログラムを書いてください。
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>以下は、Pythonで変数<code class="docutils literal notranslate"><span class="pre">sousuu</span></code>を0で初期化し、<code class="docutils literal notranslate"><span class="pre">Tokuhyo</span></code>の総計を求めて<code class="docutils literal notranslate"><span class="pre">sousuu</span></code>に格納するプログラムの例です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Tokuhyo</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1200</span><span class="p">,</span> <span class="mi">660</span><span class="p">,</span> <span class="mi">1440</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
+<span class="n">sousuu</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">Tokuhyo</span><span class="p">:</span>
+    <span class="n">sousuu</span> <span class="o">+=</span> <span class="n">i</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sousuu</span><span class="p">)</span>  <span class="c1"># 出力結果: 3480</span>
+</pre></div>
+</div>
+<p>このプログラムでは、<code class="docutils literal notranslate"><span class="pre">Tokuhyo</span></code>の各要素をループで処理し、<code class="docutils literal notranslate"><span class="pre">sousuu</span></code>に加算していきます。最終的に、<code class="docutils literal notranslate"><span class="pre">sousuu</span></code>には<code class="docutils literal notranslate"><span class="pre">Tokuhyo</span></code>の総計が格納されます。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+変数sousuuを0で初期化し、Tokuhyoの総計を求めてsousuuに格納するプログラムを書いてください。
+その際、for文を使ってループ変数を添字としてTokuhyoの各要素をアクセスしてください。
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>以下は、Pythonで変数<code class="docutils literal notranslate"><span class="pre">sousuu</span></code>を0で初期化し、<code class="docutils literal notranslate"><span class="pre">Tokuhyo</span></code>の総計を求めて<code class="docutils literal notranslate"><span class="pre">sousuu</span></code>に格納するプログラムの例です。このプログラムでは、for文を使用してループ変数を添字として<code class="docutils literal notranslate"><span class="pre">Tokuhyo</span></code>の各要素をアクセスしています。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Tokuhyo</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1200</span><span class="p">,</span> <span class="mi">660</span><span class="p">,</span> <span class="mi">1440</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
+<span class="n">sousuu</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Tokuhyo</span><span class="p">)):</span>
+    <span class="n">sousuu</span> <span class="o">+=</span> <span class="n">Tokuhyo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sousuu</span><span class="p">)</span>  <span class="c1"># 出力結果: 3480</span>
+</pre></div>
+</div>
+<p>このプログラムでは、<code class="docutils literal notranslate"><span class="pre">range(len(Tokuhyo))</span></code>を使用して、<code class="docutils literal notranslate"><span class="pre">Tokuhyo</span></code>のインデックスをループ変数として取得しています。ループ内で、<code class="docutils literal notranslate"><span class="pre">Tokuhyo[i]</span></code>を使用して、各要素にアクセスし、<code class="docutils literal notranslate"><span class="pre">sousuu</span></code>に加算していきます。最終的に、<code class="docutils literal notranslate"><span class="pre">sousuu</span></code>には<code class="docutils literal notranslate"><span class="pre">Tokuhyo</span></code>の総計が格納されます。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+参考までに、組み込み関数を使うと簡略化できますか？
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>はい、組み込み関数を使用することで、より簡潔にプログラムを書くことができます。例えば、<code class="docutils literal notranslate"><span class="pre">sum()</span></code>関数を使用することで、配列の総計を簡単に計算することができます。</p>
+<p>以下は、Pythonで<code class="docutils literal notranslate"><span class="pre">sum()</span></code>関数を使用して、<code class="docutils literal notranslate"><span class="pre">Tokuhyo</span></code>の総計を求めるプログラムの例です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Tokuhyo</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1200</span><span class="p">,</span> <span class="mi">660</span><span class="p">,</span> <span class="mi">1440</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
+<span class="n">sousuu</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">Tokuhyo</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sousuu</span><span class="p">)</span>  <span class="c1"># 出力結果: 3480</span>
+</pre></div>
+</div>
+<p>このように、<code class="docutils literal notranslate"><span class="pre">sum()</span></code>関数を使用することで、ループを使用する必要がなく、より簡潔なプログラムを書くことができます。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+次に、変数gisekiを導入し6で初期化してください。gisekiは定数です。変数kizyunsuuにsousuuをgisekiで割った値を格納してください。
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>以下は、Pythonで変数<code class="docutils literal notranslate"><span class="pre">giseki</span></code>を導入し6で初期化し、<code class="docutils literal notranslate"><span class="pre">kizyunsuu</span></code>に<code class="docutils literal notranslate"><span class="pre">sousuu</span></code>を<code class="docutils literal notranslate"><span class="pre">giseki</span></code>で割った値を格納するプログラムの例です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Tokuhyo</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1200</span><span class="p">,</span> <span class="mi">660</span><span class="p">,</span> <span class="mi">1440</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
+<span class="n">sousuu</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">Tokuhyo</span><span class="p">)</span>
+<span class="n">giseki</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">kizyunsuu</span> <span class="o">=</span> <span class="n">sousuu</span> <span class="o">/</span> <span class="n">giseki</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">kizyunsuu</span><span class="p">)</span>  <span class="c1"># 出力結果: 580.0</span>
+</pre></div>
+</div>
+<p>このプログラムでは、<code class="docutils literal notranslate"><span class="pre">giseki</span></code>を6で初期化し、<code class="docutils literal notranslate"><span class="pre">sousuu</span></code>を<code class="docutils literal notranslate"><span class="pre">giseki</span></code>で割った値を<code class="docutils literal notranslate"><span class="pre">kizyunsuu</span></code>に格納しています。最終的に、<code class="docutils literal notranslate"><span class="pre">kizyunsuu</span></code>には<code class="docutils literal notranslate"><span class="pre">sousuu</span></code>を<code class="docutils literal notranslate"><span class="pre">giseki</span></code>で割った値が格納されます。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+最後に、Tokuhyoの各要素をkizyunsuuで割って、Tomeiの値をラベルにして表示してください。
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>以下は、Pythonで<code class="docutils literal notranslate"><span class="pre">Tokuhyo</span></code>の各要素を<code class="docutils literal notranslate"><span class="pre">kizyunsuu</span></code>で割り、<code class="docutils literal notranslate"><span class="pre">Tomei</span></code>の値をラベルにして表示するプログラムの例です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Tokuhyo</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1200</span><span class="p">,</span> <span class="mi">660</span><span class="p">,</span> <span class="mi">1440</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
+<span class="n">sousuu</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">Tokuhyo</span><span class="p">)</span>
+<span class="n">giseki</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">kizyunsuu</span> <span class="o">=</span> <span class="n">sousuu</span> <span class="o">/</span> <span class="n">giseki</span>
+<span class="n">Tomei</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;A党&quot;</span><span class="p">,</span> <span class="s2">&quot;B党&quot;</span><span class="p">,</span> <span class="s2">&quot;C党&quot;</span><span class="p">,</span> <span class="s2">&quot;D党&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Tokuhyo</span><span class="p">)):</span>
+    <span class="n">ratio</span> <span class="o">=</span> <span class="n">Tokuhyo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">kizyunsuu</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="n">Tomei</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">ratio</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 出力結果:</span>
+<span class="c1"># A党: 2.07</span>
+<span class="c1"># B党: 1.14</span>
+<span class="c1"># C党: 2.48</span>
+<span class="c1"># D党: 0.31</span>
+</pre></div>
+</div>
+<p>このプログラムでは、<code class="docutils literal notranslate"><span class="pre">Tokuhyo</span></code>の各要素を<code class="docutils literal notranslate"><span class="pre">kizyunsuu</span></code>で割り、<code class="docutils literal notranslate"><span class="pre">Tomei</span></code>の値をラベルにして表示しています。ループ内で、<code class="docutils literal notranslate"><span class="pre">Tokuhyo[i]</span> <span class="pre">/</span> <span class="pre">kizyunsuu</span></code>を使用して、各要素を<code class="docutils literal notranslate"><span class="pre">kizyunsuu</span></code>で割った値を計算し、<code class="docutils literal notranslate"><span class="pre">Tomei[i]</span></code>を使用して、各要素に対応するラベルを取得しています。最終的に、<code class="docutils literal notranslate"><span class="pre">print()</span></code>関数を使用して、ラベルと割合を表示しています。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Tokuhyo</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1200</span><span class="p">,</span> <span class="mi">660</span><span class="p">,</span> <span class="mi">1440</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
+<span class="n">sousuu</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">Tokuhyo</span><span class="p">)</span>
+<span class="n">giseki</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">kizyunsuu</span> <span class="o">=</span> <span class="n">sousuu</span> <span class="o">/</span> <span class="n">giseki</span>
+<span class="n">Tomei</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;A党&quot;</span><span class="p">,</span> <span class="s2">&quot;B党&quot;</span><span class="p">,</span> <span class="s2">&quot;C党&quot;</span><span class="p">,</span> <span class="s2">&quot;D党&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Tokuhyo</span><span class="p">)):</span>
+    <span class="n">ratio</span> <span class="o">=</span> <span class="n">Tokuhyo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">kizyunsuu</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="n">Tomei</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">ratio</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A党: 2.07
+B党: 1.14
+C党: 2.48
+D党: 0.31
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="id2">
+<h2>回答<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>次のセルの “ア”, “イ”, “ウ” の値が <code class="docutils literal notranslate"><span class="pre">&quot;_&quot;</span></code> になっています。
+ダブルクオーテーション <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> で囲まれたアンダースコア <code class="docutils literal notranslate"><span class="pre">_</span></code> を回答 (半角英数字一文字) に書き換えて、
+ツールバーの “Validate” を押してください。
+ブルートフォースアタックができないように、応答が出るまで時間が掛かります。
+すべて正答であれば “Success! Your notebook passes all the tests.” と表示されます。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">your_answer</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;ア&quot;</span><span class="p">:</span> <span class="s2">&quot;_&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;イ&quot;</span><span class="p">:</span> <span class="s2">&quot;_&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;ウ&quot;</span><span class="p">:</span> <span class="s2">&quot;_&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
+ブルートフォースアタックとは
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>ブルートフォースアタックとは、パスワードや暗号化されたデータを解読するために、すべての可能性のある組み合わせを試行する攻撃手法です。攻撃者は、自動化されたツールを使用して、パスワードや暗号化されたデータを繰り返し試行し、正しいものを見つけることを目的としています。この攻撃手法は、強力なパスワードや暗号化が使用されていない場合に特に有効です。</p>
+</div>
+</div>
+<hr class="docutils" />
+<p>以下、採点用のセルにつき編集できない</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="n">validate</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">validate</span><span class="p">[</span><span class="s2">&quot;ア&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="n">your_answer</span><span class="p">[</span><span class="s2">&quot;ア&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+<span class="n">validate</span><span class="p">[</span><span class="s2">&quot;イ&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="n">your_answer</span><span class="p">[</span><span class="s2">&quot;イ&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+<span class="n">validate</span><span class="p">[</span><span class="s2">&quot;ウ&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="n">your_answer</span><span class="p">[</span><span class="s2">&quot;ウ&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN HIDDEN TESTS</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="s2">&quot;8&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
+<span class="c1">### END HIDDEN TESTS</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>eccbc87e4b5ce2fe28308fd9f2a7baf3
+c9f0f895fb98ab9159f51fd0297e236d
+92eb5ffee6ae2fec3ad71c777531578f
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">validate</span><span class="p">[</span><span class="s2">&quot;ア&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;eccbc87e4b5ce2fe28308fd9f2a7baf3&quot;</span>
+<span class="k">assert</span> <span class="n">validate</span><span class="p">[</span><span class="s2">&quot;イ&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;c9f0f895fb98ab9159f51fd0297e236d&quot;</span>
+<span class="k">assert</span> <span class="n">validate</span><span class="p">[</span><span class="s2">&quot;ウ&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;92eb5ffee6ae2fec3ad71c777531578f&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02_assignment.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Assingment</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="04_assignment.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">次回から</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dncl">DNCL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r7-2">R7: 情報 サンプル問題 第２問</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">問1</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chatgpt">次のChatGPTとの応答例を参考に上の問題に解答せよ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">回答</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Manabu Higashida
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

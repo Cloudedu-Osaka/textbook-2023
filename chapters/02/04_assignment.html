@@ -1,0 +1,744 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>次回から &#8212; プログラミングで遡る科学史</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-148221575-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-148221575-1');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/02/04_assignment';</script>
+    <link rel="canonical" href="https://inferentialthinking.org/chapters/02/04_assignment.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="学問への扉: プログラミングで遡る科学史" href="../01/01_intro.html" />
+    <link rel="prev" title="大学入試とAI" href="03_examination.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">プログラミングで遡る科学史</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/19</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_orientation.html">Orientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_assignment.html">Assignment (Last week)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_examination.html">Examination</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/12</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/01_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/02_openai.html">Obtaining OpenAI API key</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/03_chatgpt.html">ChatGPT interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/04_assignment.html">Assignment</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/intro_add.html">Request for cooperation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_4.html">Experiment explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_5.html">Informed concent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_6.html">Withdrawal of concent</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://ecsosaka-jh2310.japaneast.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/Cloudedu-Osaka/textbook-2023&urlpath=lab/tree/textbook-2023/chapters/02/04_assignment.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/Cloudedu-Osaka/textbook-2023" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/02/04_assignment.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>次回から</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mesopotamia">Mesopotamia</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>次回から<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>古代メソポタミアの数学</p>
+<ul>
+<li><p>粘土版: Plimpton 322とYBC 7289</p></li>
+<li><p>60進法+位取り記法と割り算</p></li>
+</ul>
+</li>
+</ul>
+<section id="mesopotamia">
+<h2>Mesopotamia<a class="headerlink" href="#mesopotamia" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Babylonian_mathematics">Babylonian mathematics - Wikipedia</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
+how about the science in ancient mesopotamia
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Ancient Mesopotamia was a hub of scientific advancements in various fields such as astronomy, mathematics, and medicine. They developed a sophisticated system of mathematics, including the use of a base 60 numbering system and the concept of algebra. They also made significant contributions to astronomy, including the development of the zodiac and the first recorded observations of the planets. In medicine, they developed advanced surgical techniques and created the first written medical code of ethics. Overall, the scientific achievements of ancient Mesopotamia laid the foundation for many modern scientific practices and technologies.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+日本語で
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>古代メソポタミアは、天文学、数学、医学などの様々な分野で科学的な進歩の中心地でした。彼らは、60進法の数値システムや代数の概念を含む洗練された数学システムを開発しました。また、黄道帯の開発や惑星の最初の記録観測など、天文学に重要な貢献をしました。医学では、高度な手術技術を開発し、最初の医療倫理規範を作成しました。全体的に、古代メソポタミアの科学的な成果は、多くの現代の科学的な実践や技術の基盤を築きました。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+and especially mathematics, in english
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Mathematics in ancient Mesopotamia was highly advanced and included a numerical system based on 60, which is still used today for measuring time and angles. They developed algebraic concepts and techniques for solving equations, as well as making contributions to geometry, such as the discovery of the Pythagorean theorem. They also developed techniques for calculation and measurement in commerce and agriculture. The development of mathematics in ancient Mesopotamia played a significant role in laying the foundation for modern mathematics.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+in japanese
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>古代メソポタミアの数学は、60進法の数値システムを含む、非常に高度な数学システムを開発しました。彼らは、代数の概念を発展させ、方程式を解くための技術を開発しました。また、ピタゴラスの定理を発見するなど、幾何学にも貢献しました。商業や農業において、計算や測定を行うための技術も開発しました。古代メソポタミアの数学の発展は、現代の数学の基礎を築く上で重要な役割を果たしました。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+about their artifacts like clay tablets, in english
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Clay tablets were a common medium for writing in ancient Mesopotamia, and many important artifacts have been discovered on these tablets. These tablets were made by pressing wet clay into a flat surface and then inscribing the text using a stylus. They were then dried in the sun or baked in a kiln to harden the clay and preserve the writing.</p>
+<p>Many of these clay tablets contain important historical, religious, and scientific information, including legal codes, religious texts, and mathematical calculations. For example, the famous Code of Hammurabi, one of the earliest known legal codes, was inscribed on a clay tablet. In addition, many astronomical observations and mathematical calculations were recorded on clay tablets, providing valuable insights into the scientific knowledge of ancient Mesopotamia.</p>
+<p>The discovery of these clay tablets has been instrumental in our understanding of ancient Mesopotamian culture and history, and they continue to be an important source of information for researchers today.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+in japanese
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>粘土板は、古代メソポタミアで一般的に使用された書き物の媒体であり、多くの重要な遺物がこれらの板に記録されています。これらの板は、湿った粘土を平らな表面に押し、スタイラスで文字を刻んで作られました。その後、太陽で乾燥させるか、窯で焼いて粘土を硬化させ、文字を保存しました。</p>
+<p>これらの粘土板には、法典、宗教的なテキスト、数学的な計算など、重要な歴史的、宗教的、科学的な情報が記録されています。たとえば、最も古い法典の一つであるハンムラビ法典は、粘土板に刻まれていました。また、多くの天文観測や数学的な計算が粘土板に記録され、古代メソポタミアの科学的な知識について貴重な洞察を提供しています。</p>
+<p>これらの粘土板の発見は、古代メソポタミアの文化や歴史を理解する上で重要な役割を果たしており、今日でも研究者にとって重要な情報源となっています。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+and their writing system cuneiform, in english
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Cuneiform was the writing system used in ancient Mesopotamia, and it is one of the earliest known writing systems in the world. The term “cuneiform” comes from the Latin word “cuneus,” meaning “wedge,” because the writing was made by pressing a stylus into soft clay tablets, creating wedge-shaped marks.</p>
+<p>The cuneiform script was used to write a variety of languages, including Sumerian, Akkadian, and Babylonian. It was a complex system that included hundreds of signs, each representing a word or a syllable. The script was used for a wide range of purposes, including recording historical events, religious texts, and commercial transactions.</p>
+<p>The development of cuneiform was a significant achievement in the history of writing, as it allowed for the recording and preservation of information in a way that was not possible before. The discovery of cuneiform tablets has provided valuable insights into the culture, history, and language of ancient Mesopotamia, and it continues to be an important area of study for researchers today.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+in japanese
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>楔形文字は、古代メソポタミアで使用された文字体系であり、世界で最も古い知られている文字体系の一つです。”楔形”という用語は、ラテン語の”cuneus”（くさび）から来ており、スタイラスを柔らかい粘土板に押し込んで、くさび形の印を作ることで文字を表現しました。</p>
+<p>楔形文字は、スメリア語、アッカド語、バビロニア語など、様々な言語を書くために使用されました。数百の記号があり、それぞれが単語や音節を表していました。この文字体系は、歴史的な出来事、宗教的なテキスト、商取引など、様々な目的で使用されました。</p>
+<p>楔形文字の発展は、書き言葉の歴史において重要な成果であり、以前には不可能だった情報の記録と保存を可能にしました。楔形文字の粘土板の発見は、古代メソポタミアの文化、歴史、言語に関する貴重な洞察を提供し、今日でも研究者にとって重要な研究分野の一つです。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+how about their numerical system, in english
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>The numerical system used in ancient Mesopotamia was based on the sexagesimal system, which means it was based on the number 60. This system was used for counting and measuring, and it was highly advanced for its time. The Mesopotamians used a combination of base 10 and base 60, which allowed them to represent large numbers with relative ease.</p>
+<p>The Mesopotamians used a symbol for zero, which was a significant development in the history of mathematics. They also developed a positional notation system, which allowed them to represent numbers using a combination of symbols and their positions. This system was a precursor to the modern decimal system.</p>
+<p>The Mesopotamians also developed advanced mathematical techniques, including algebraic concepts and techniques for solving equations. They also made significant contributions to geometry, including the discovery of the Pythagorean theorem.</p>
+<p>Overall, the numerical system used in ancient Mesopotamia was highly advanced and laid the foundation for many modern mathematical concepts and techniques.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+in japanese
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>古代メソポタミアで使用された数値システムは、60進法に基づいており、数えることや測定に使用されました。当時としては非常に高度なものであり、10進法と60進法を組み合わせることで、相対的に簡単に大きな数を表現することができました。</p>
+<p>古代メソポタミア人は、ゼロの記号を使用しており、これは数学の歴史において重要な発展でした。また、位置表記法を開発し、記号と位置の組み合わせで数値を表現することができました。このシステムは、現代の10進法の前身となりました。</p>
+<p>古代メソポタミア人は、代数の概念や方程式を解くための技術など、高度な数学的な技術を開発しました。また、ピタゴラスの定理を発見するなど、幾何学にも貢献しました。</p>
+<p>全体的に、古代メソポタミアで使用された数値システムは、非常に高度であり、多くの現代の数学的な概念や技術の基盤を築きました。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+why ancient greek and roman people did not use positional notation enven more older mesopotamian and offcourse recent people use it
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>The reason why ancient Greek and Roman people did not use positional notation is not entirely clear, but it is believed to be due to a combination of factors. One possible reason is that the Greeks and Romans did not have a symbol for zero, which made it difficult to develop a positional notation system. Another reason is that the Greeks and Romans did not have a need for complex mathematical calculations in the same way that the Mesopotamians did, as their societies were not as heavily reliant on trade and commerce.</p>
+<p>It is also worth noting that the development of positional notation was a gradual process that took place over many centuries, and it was not until the 7th century AD that the Indian mathematician Brahmagupta developed a fully functional positional notation system that included a symbol for zero. This system was later adopted by Arab mathematicians and eventually spread to Europe, where it became the basis for the modern decimal system.</p>
+<p>In summary, the reasons why ancient Greek and Roman people did not use positional notation are not entirely clear, but it is believed to be due to a combination of factors, including the lack of a symbol for zero and the different societal needs of their respective cultures.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+in japanese
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>古代ギリシャ人やローマ人が位置表記法を使用しなかった理由は完全には明確ではありませんが、複数の要因が考えられます。一つの可能性は、ギリシャ人やローマ人がゼロの記号を持っていなかったため、位置表記法を開発することが困難だったことです。また、ギリシャ人やローマ人の社会が、メソポタミア人と同じように貿易や商業に重点を置いていなかったため、複雑な数学的計算が必要ではなかったという理由もあります。</p>
+<p>また、位置表記法の発展は、数世紀にわたって徐々に進んだものであり、完全な位置表記法が開発されたのは、7世紀にインドの数学者ブラフマグプタがゼロの記号を含む完全な位置表記法を開発した後のことでした。このシステムは、アラブの数学者によって採用され、最終的にヨーロッパに広まり、現代の10進法の基礎となりました。</p>
+<p>要約すると、古代ギリシャ人やローマ人が位置表記法を使用しなかった理由は完全には明確ではありませんが、ゼロの記号の欠如や、それぞれの文化における異なる社会的ニーズなど、複数の要因が考えられます。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+would you please write down python function converting decimal numbers to greek and roman 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Certainly! Here are two Python functions that convert decimal numbers to Greek and Roman numerals:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to convert decimal numbers to Greek numerals</span>
+<span class="k">def</span> <span class="nf">decimal_to_greek</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="n">greek_numerals</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;α&#39;</span><span class="p">,</span>
+        <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;β&#39;</span><span class="p">,</span>
+        <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;γ&#39;</span><span class="p">,</span>
+        <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;δ&#39;</span><span class="p">,</span>
+        <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39;ε&#39;</span><span class="p">,</span>
+        <span class="mi">6</span><span class="p">:</span> <span class="s1">&#39;ϛ&#39;</span><span class="p">,</span>
+        <span class="mi">7</span><span class="p">:</span> <span class="s1">&#39;ζ&#39;</span><span class="p">,</span>
+        <span class="mi">8</span><span class="p">:</span> <span class="s1">&#39;η&#39;</span><span class="p">,</span>
+        <span class="mi">9</span><span class="p">:</span> <span class="s1">&#39;θ&#39;</span><span class="p">,</span>
+        <span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;ι&#39;</span><span class="p">,</span>
+        <span class="mi">20</span><span class="p">:</span> <span class="s1">&#39;κ&#39;</span><span class="p">,</span>
+        <span class="mi">30</span><span class="p">:</span> <span class="s1">&#39;λ&#39;</span><span class="p">,</span>
+        <span class="mi">40</span><span class="p">:</span> <span class="s1">&#39;μ&#39;</span><span class="p">,</span>
+        <span class="mi">50</span><span class="p">:</span> <span class="s1">&#39;ν&#39;</span><span class="p">,</span>
+        <span class="mi">60</span><span class="p">:</span> <span class="s1">&#39;ξ&#39;</span><span class="p">,</span>
+        <span class="mi">70</span><span class="p">:</span> <span class="s1">&#39;ο&#39;</span><span class="p">,</span>
+        <span class="mi">80</span><span class="p">:</span> <span class="s1">&#39;π&#39;</span><span class="p">,</span>
+        <span class="mi">90</span><span class="p">:</span> <span class="s1">&#39;ϙ&#39;</span><span class="p">,</span>
+        <span class="mi">100</span><span class="p">:</span> <span class="s1">&#39;ρ&#39;</span><span class="p">,</span>
+        <span class="mi">200</span><span class="p">:</span> <span class="s1">&#39;σ&#39;</span><span class="p">,</span>
+        <span class="mi">300</span><span class="p">:</span> <span class="s1">&#39;τ&#39;</span><span class="p">,</span>
+        <span class="mi">400</span><span class="p">:</span> <span class="s1">&#39;υ&#39;</span><span class="p">,</span>
+        <span class="mi">500</span><span class="p">:</span> <span class="s1">&#39;φ&#39;</span><span class="p">,</span>
+        <span class="mi">600</span><span class="p">:</span> <span class="s1">&#39;χ&#39;</span><span class="p">,</span>
+        <span class="mi">700</span><span class="p">:</span> <span class="s1">&#39;ψ&#39;</span><span class="p">,</span>
+        <span class="mi">800</span><span class="p">:</span> <span class="s1">&#39;ω&#39;</span><span class="p">,</span>
+        <span class="mi">900</span><span class="p">:</span> <span class="s1">&#39;ϡ&#39;</span>
+    <span class="p">}</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">greek_numerals</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="k">while</span> <span class="n">num</span> <span class="o">&gt;=</span> <span class="n">value</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="n">greek_numerals</span><span class="p">[</span><span class="n">value</span><span class="p">]</span>
+            <span class="n">num</span> <span class="o">-=</span> <span class="n">value</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># Function to convert decimal numbers to Roman numerals</span>
+<span class="k">def</span> <span class="nf">decimal_to_roman</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="n">roman_numerals</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span>
+        <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;IV&#39;</span><span class="p">,</span>
+        <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span>
+        <span class="mi">9</span><span class="p">:</span> <span class="s1">&#39;IX&#39;</span><span class="p">,</span>
+        <span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span>
+        <span class="mi">40</span><span class="p">:</span> <span class="s1">&#39;XL&#39;</span><span class="p">,</span>
+        <span class="mi">50</span><span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span>
+        <span class="mi">90</span><span class="p">:</span> <span class="s1">&#39;XC&#39;</span><span class="p">,</span>
+        <span class="mi">100</span><span class="p">:</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span>
+        <span class="mi">400</span><span class="p">:</span> <span class="s1">&#39;CD&#39;</span><span class="p">,</span>
+        <span class="mi">500</span><span class="p">:</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span>
+        <span class="mi">900</span><span class="p">:</span> <span class="s1">&#39;CM&#39;</span><span class="p">,</span>
+        <span class="mi">1000</span><span class="p">:</span> <span class="s1">&#39;M&#39;</span>
+    <span class="p">}</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">roman_numerals</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="k">while</span> <span class="n">num</span> <span class="o">&gt;=</span> <span class="n">value</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="n">roman_numerals</span><span class="p">[</span><span class="n">value</span><span class="p">]</span>
+            <span class="n">num</span> <span class="o">-=</span> <span class="n">value</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+<p>You can call these functions with a decimal number as an argument, like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">decimal_to_greek</span><span class="p">(</span><span class="mi">1234</span><span class="p">))</span> <span class="c1"># Output: &#39;ρκλδ&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">decimal_to_roman</span><span class="p">(</span><span class="mi">1234</span><span class="p">))</span> <span class="c1"># Output: &#39;MCCXXXIV&#39;</span>
+</pre></div>
+</div>
+<p>Note that these functions only work for decimal numbers up to 1000.</p>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="03_examination.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">大学入試とAI</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../01/01_intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">学問への扉: プログラミングで遡る科学史</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mesopotamia">Mesopotamia</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Manabu Higashida
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
