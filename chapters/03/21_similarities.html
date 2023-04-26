@@ -1,0 +1,1498 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>「命数法」とプログラムの類似性 &#8212; プログラミングで遡る科学史</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-148221575-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-148221575-1');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/03/21_similarities';</script>
+    <link rel="canonical" href="https://inferentialthinking.org/chapters/03/21_similarities.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="データ構造に依存するプログラミング" href="22_dict.html" />
+    <link rel="prev" title="次回から" href="20_assignment.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">プログラミングで遡る科学史</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/26</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="10_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_assignment.html">Past assignment</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Code similarities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_dict.html">Data format (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_dict.html">Pythonの配列と辞書と表</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="40_positional.html">Positional notation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="50_assignment.html">課題 1</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/19</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02/01_orientation.html">Orientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/02_assignment.html">Assignment (Last week)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/03_examination.html">Examination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/04_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/12</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/01_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/02_openai.html">Obtaining OpenAI API key</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/03_chatgpt.html">ChatGPT interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/04_assignment.html">Assignment</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/intro_add.html">Request for cooperation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_4.html">Experiment explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_5.html">Informed concent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_6.html">Withdrawal of concent</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://ecsosaka-jh2310.japaneast.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/Cloudedu-Osaka/textbook-2023&urlpath=lab/tree/textbook-2023/chapters/03/21_similarities.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/Cloudedu-Osaka/textbook-2023" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/03/21_similarities.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>「命数法」とプログラムの類似性</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>「命数法」とプログラムの類似性<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Positional_notation">Positional notation - Wikipedia</a> (Place-value notation)</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Sign-value_notation">Sign-value notation - Wikipedia</a></p>
+<ul>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Egyptian_numerals">Egyptian numerals - Wikipedia</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Greek_numerals">Greek numerals - Wikipedia</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Romanian_numbers">Romanian numbers - Wikipedia</a></p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
+次の二つのプログラムの類似性について
+```python
+def decimal_to_greek(num):
+    greek_numerals = {
+        1: &#39;α&#39;,
+        2: &#39;β&#39;,
+        3: &#39;γ&#39;,
+        4: &#39;δ&#39;,
+        5: &#39;ε&#39;,
+        6: &#39;ϛ&#39;,
+        7: &#39;ζ&#39;,
+        8: &#39;η&#39;,
+        9: &#39;θ&#39;,
+        10: &#39;ι&#39;,
+        20: &#39;κ&#39;,
+        30: &#39;λ&#39;,
+        40: &#39;μ&#39;,
+        50: &#39;ν&#39;,
+        60: &#39;ξ&#39;,
+        70: &#39;ο&#39;,
+        80: &#39;π&#39;,
+        90: &#39;ϙ&#39;,
+        100: &#39;ρ&#39;,
+        200: &#39;σ&#39;,
+        300: &#39;τ&#39;,
+        400: &#39;υ&#39;,
+        500: &#39;φ&#39;,
+        600: &#39;χ&#39;,
+        700: &#39;ψ&#39;,
+        800: &#39;ω&#39;,
+        900: &#39;ϡ&#39;
+    }
+    result = &#39;&#39;
+    for value in sorted(greek_numerals.keys(), reverse=True):
+        while num &gt;= value:
+            result += greek_numerals[value]
+            num -= value
+    return result
+```
+
+```python
+def decimal_to_roman(num):
+    roman_numerals = {
+        1: &#39;I&#39;,
+        4: &#39;IV&#39;,
+        5: &#39;V&#39;,
+        9: &#39;IX&#39;,
+        10: &#39;X&#39;,
+        40: &#39;XL&#39;,
+        50: &#39;L&#39;,
+        90: &#39;XC&#39;,
+        100: &#39;C&#39;,
+        400: &#39;CD&#39;,
+        500: &#39;D&#39;,
+        900: &#39;CM&#39;,
+        1000: &#39;M&#39;
+    }
+    result = &#39;&#39;
+    for value in sorted(roman_numerals.keys(), reverse=True):
+        while num &gt;= value:
+            result = result + roman_numerals[value]
+            num = num - value
+    return result
+```
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>これらのプログラムは、与えられた整数を異なる古代の数字システムに変換するために、同じアルゴリズムを使用しています。両方のプログラムは、与えられた数字を、大きい値から小さい値に向かって順番に処理し、その数字に対応する文字列を結果に追加していきます。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+与えられた数字を、大きい値から小さい値に向かって順番に処理する方法について
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>与えられた数字を、大きい値から小さい値に向かって順番に処理する方法は、以下の手順で行います。</p>
+<ol class="arabic simple">
+<li><p>変換に使用する数字と、それに対応する文字列を辞書に定義します。</p></li>
+<li><p>辞書のキーを大きい順にソートします。</p></li>
+<li><p>ソートされたキーのリストをループで処理します。</p></li>
+<li><p>ループ内で、与えられた数字が現在のキーに対応する値以上である限り、その値に対応する文字列を結果に追加し、与えられた数字からその値を引きます。</p></li>
+<li><p>与えられた数字が0になるまで、3-4の処理を繰り返します。</p></li>
+</ol>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+具体的にpythonのプログラムが何番の処理に対応するか、コメントを入れることはできますか
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>はい、以下は与えられた数字を大きい順に処理する方法をPythonで実装した例です。コメントで各処理に対応する番号を示しています。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_number</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="c1"># 1. 変換に使用する数字と、それに対応する文字列を辞書に定義する</span>
+    <span class="n">numerals</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="mi">1000</span><span class="p">:</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span>
+        <span class="mi">900</span><span class="p">:</span> <span class="s1">&#39;CM&#39;</span><span class="p">,</span>
+        <span class="mi">500</span><span class="p">:</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span>
+        <span class="mi">400</span><span class="p">:</span> <span class="s1">&#39;CD&#39;</span><span class="p">,</span>
+        <span class="mi">100</span><span class="p">:</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span>
+        <span class="mi">90</span><span class="p">:</span> <span class="s1">&#39;XC&#39;</span><span class="p">,</span>
+        <span class="mi">50</span><span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span>
+        <span class="mi">40</span><span class="p">:</span> <span class="s1">&#39;XL&#39;</span><span class="p">,</span>
+        <span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span>
+        <span class="mi">9</span><span class="p">:</span> <span class="s1">&#39;IX&#39;</span><span class="p">,</span>
+        <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span>
+        <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;IV&#39;</span><span class="p">,</span>
+        <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;I&#39;</span>
+    <span class="p">}</span>
+    
+    <span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="c1"># 2. 辞書のキーを大きい順にソートする</span>
+    <span class="n">sorted_numerals</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">numerals</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># 3. ソートされたキーのリストをループで処理する</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">sorted_numerals</span><span class="p">:</span>
+        <span class="c1"># 4. ループ内で、与えられた数字が現在のキーに対応する値以上である限り、その値に対応する文字列を結果に追加し、与えられた数字からその値を引く</span>
+        <span class="k">while</span> <span class="n">num</span> <span class="o">&gt;=</span> <span class="n">value</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="n">numerals</span><span class="p">[</span><span class="n">value</span><span class="p">]</span>
+            <span class="n">num</span> <span class="o">-=</span> <span class="n">value</span>
+    
+    <span class="c1"># 5. 与えられた数字が0になるまで、3-4の処理を繰り返す</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numerals</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">1000</span><span class="p">:</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span>
+    <span class="mi">900</span><span class="p">:</span> <span class="s1">&#39;CM&#39;</span><span class="p">,</span>
+    <span class="mi">500</span><span class="p">:</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span>
+    <span class="mi">400</span><span class="p">:</span> <span class="s1">&#39;CD&#39;</span><span class="p">,</span>
+    <span class="mi">100</span><span class="p">:</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span>
+    <span class="mi">90</span><span class="p">:</span> <span class="s1">&#39;XC&#39;</span><span class="p">,</span>
+    <span class="mi">50</span><span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span>
+    <span class="mi">40</span><span class="p">:</span> <span class="s1">&#39;XL&#39;</span><span class="p">,</span>
+    <span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span>
+    <span class="mi">9</span><span class="p">:</span> <span class="s1">&#39;IX&#39;</span><span class="p">,</span>
+    <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span>
+    <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;IV&#39;</span><span class="p">,</span>
+    <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;I&#39;</span>
+<span class="p">}</span>
+<span class="n">numerals</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1000: &#39;M&#39;,
+ 900: &#39;CM&#39;,
+ 500: &#39;D&#39;,
+ 400: &#39;CD&#39;,
+ 100: &#39;C&#39;,
+ 90: &#39;XC&#39;,
+ 50: &#39;L&#39;,
+ 40: &#39;XL&#39;,
+ 10: &#39;X&#39;,
+ 9: &#39;IX&#39;,
+ 5: &#39;V&#39;,
+ 4: &#39;IV&#39;,
+ 1: &#39;I&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_numerals</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">numerals</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sorted_numerals</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numerals</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">sorted_numerals</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">numerals</span><span class="p">[</span><span class="n">value</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000 M
+900 CM
+500 D
+400 CD
+100 C
+90 XC
+50 L
+40 XL
+10 X
+9 IX
+5 V
+4 IV
+1 I
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+コメントが入って判りやすくなりました。
+二つのプログラムの類似性を抽出して表現する方法はありますか？
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>二つのプログラムの類似性を抽出すると、以下のようになります。</p>
+<ol class="arabic simple">
+<li><p>与えられた数字を、大きい値から小さい値に向かって順番に処理する。</p></li>
+<li><p>変換に使用する数字と、それに対応する文字列を辞書に定義する。</p></li>
+<li><p>辞書のキーを大きい順にソートする。</p></li>
+<li><p>ソートされたキーのリストをループで処理する。</p></li>
+<li><p>ループ内で、与えられた数字が現在のキーに対応する値以上である限り、その値に対応する文字列を結果に追加し、与えられた数字からその値を引く。</p></li>
+<li><p>与えられた数字が0になるまで、3-5の処理を繰り返す。</p></li>
+</ol>
+<p>このように、二つのプログラムは同じアルゴリズムを使用しており、異なる数字システムに変換するために異なる辞書を使用しているだけです。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+古代ギリシアと古代ローマの数字システムは、
+位取り記法ではないが、本質的に同じシステムであるということですね
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>古代ギリシャと古代ローマの数値システムは、本質的に同じシステムではありませんが、いくつかの類似点があります。両方のシステムは、位取り記法ではなく、各桁の値を単独で表現します。ただし、両方のシステムは、同じ数字を表すために同じ文字を使用することがあります。たとえば、ギリシャの「α」は、ローマの「I」と同じ値を表します。ただし、両方のシステムには、独自の数字と表記法があります。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+プログラムの類似性を数値化することはできますか？
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>プログラムの類似性を数値化することはできます。プログラムの類似性を数値化するためには、一般的にはテキストマイニングや自然言語処理の技術を使用します。具体的には、プログラムのソースコードをトークン化し、トークンの出現頻度やパターンを分析することで、プログラムの類似性を数値化することができます。また、プログラムの構造やアルゴリズムを解析し、それらの類似性を数値化することもできます。ただし、プログラムの類似性を数値化するためには、高度な技術や専門知識が必要となる場合があります。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+プログラムの類似性を数値化する高度な技術とは？
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>プログラムの類似性を数値化するための高度な技術には、以下のようなものがあります。</p>
+<ol class="arabic simple">
+<li><p>シンタックスツリーの比較：プログラムの構文解析木（シンタックスツリー）を作成し、それらのツリーを比較することで、プログラムの類似性を数値化する方法です。この手法は、プログラムの構造やアルゴリズムの類似性を捉えることができます。</p></li>
+<li><p>データフローグラフの比較：プログラムのデータフローグラフを作成し、それらのグラフを比較することで、プログラムの類似性を数値化する方法です。この手法は、プログラムのデータフローの類似性を捉えることができます。</p></li>
+<li><p>ニューラルネットワークの利用：プログラムのソースコードを入力として、ニューラルネットワークを学習させることで、プログラムの類似性を数値化する方法です。この手法は、プログラムの構造やアルゴリズムの類似性を捉えることができます。</p></li>
+</ol>
+<p>これらの手法は、プログラムの類似性を数値化するために高度な技術や専門知識が必要となる場合があります。また、これらの手法は、プログラムの規模や複雑さによっては、計算コストが高くなる場合があります。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+構文解析木を作成してみて
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>構文解析木を作成するために、以下のPythonコードを使用して、二つのプログラムの構文解析木を作成しました。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ast</span>
+
+<span class="k">def</span> <span class="nf">create_syntax_tree</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tree</span>
+
+<span class="c1"># decimal_to_greek関数の構文解析木を作成する</span>
+<span class="n">greek_code</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">def decimal_to_greek(num):</span>
+<span class="s2">    greek_numerals = {</span>
+<span class="s2">        1: &#39;α&#39;,</span>
+<span class="s2">        2: &#39;β&#39;,</span>
+<span class="s2">        3: &#39;γ&#39;,</span>
+<span class="s2">        4: &#39;δ&#39;,</span>
+<span class="s2">        5: &#39;ε&#39;,</span>
+<span class="s2">        6: &#39;ϛ&#39;,</span>
+<span class="s2">        7: &#39;ζ&#39;,</span>
+<span class="s2">        8: &#39;η&#39;,</span>
+<span class="s2">        9: &#39;θ&#39;,</span>
+<span class="s2">        10: &#39;ι&#39;,</span>
+<span class="s2">        20: &#39;κ&#39;,</span>
+<span class="s2">        30: &#39;λ&#39;,</span>
+<span class="s2">        40: &#39;μ&#39;,</span>
+<span class="s2">        50: &#39;ν&#39;,</span>
+<span class="s2">        60: &#39;ξ&#39;,</span>
+<span class="s2">        70: &#39;ο&#39;,</span>
+<span class="s2">        80: &#39;π&#39;,</span>
+<span class="s2">        90: &#39;ϙ&#39;,</span>
+<span class="s2">        100: &#39;ρ&#39;,</span>
+<span class="s2">        200: &#39;σ&#39;,</span>
+<span class="s2">        300: &#39;τ&#39;,</span>
+<span class="s2">        400: &#39;υ&#39;,</span>
+<span class="s2">        500: &#39;φ&#39;,</span>
+<span class="s2">        600: &#39;χ&#39;,</span>
+<span class="s2">        700: &#39;ψ&#39;,</span>
+<span class="s2">        800: &#39;ω&#39;,</span>
+<span class="s2">        900: &#39;ϡ&#39;</span>
+<span class="s2">    }</span>
+<span class="s2">    result = &#39;&#39;</span>
+<span class="s2">    for value in sorted(greek_numerals.keys(), reverse=True):</span>
+<span class="s2">        while num &gt;= value:</span>
+<span class="s2">            result += greek_numerals[value]</span>
+<span class="s2">            num -= value</span>
+<span class="s2">    return result</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">greek_tree</span> <span class="o">=</span> <span class="n">create_syntax_tree</span><span class="p">(</span><span class="n">greek_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">greek_tree</span><span class="p">))</span>
+
+<span class="c1"># decimal_to_roman関数の構文解析木を作成する</span>
+<span class="n">roman_code</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">def decimal_to_roman(num):</span>
+<span class="s2">    roman_numerals = {</span>
+<span class="s2">        1: &#39;I&#39;,</span>
+<span class="s2">        4: &#39;IV&#39;,</span>
+<span class="s2">        5: &#39;V&#39;,</span>
+<span class="s2">        9: &#39;IX&#39;,</span>
+<span class="s2">        10: &#39;X&#39;,</span>
+<span class="s2">        40: &#39;XL&#39;,</span>
+<span class="s2">        50: &#39;L&#39;,</span>
+<span class="s2">        90: &#39;XC&#39;,</span>
+<span class="s2">        100: &#39;C&#39;,</span>
+<span class="s2">        400: &#39;CD&#39;,</span>
+<span class="s2">        500: &#39;D&#39;,</span>
+<span class="s2">        900: &#39;CM&#39;,</span>
+<span class="s2">        1000: &#39;M&#39;</span>
+<span class="s2">    }</span>
+<span class="s2">    result = &#39;&#39;</span>
+<span class="s2">    for value in sorted(roman_numerals.keys(), reverse=True):</span>
+<span class="s2">        while num &gt;= value:</span>
+<span class="s2">            result = result + roman_numerals[value]</span>
+<span class="s2">            num = num - value</span>
+<span class="s2">    return result</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">roman_tree</span> <span class="o">=</span> <span class="n">create_syntax_tree</span><span class="p">(</span><span class="n">roman_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">roman_tree</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>上記のコードを実行すると、それぞれのプログラムの構文解析木が出力されます。構文解析木は、プログラムの構造を木構造で表現したものであり、プログラムの解析や変換に使用されます。構文解析木を作成することで、プログラムの構造やアルゴリズムの類似性を捉えることができます。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ast</span>
+
+<span class="k">def</span> <span class="nf">create_syntax_tree</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tree</span>
+
+<span class="c1"># decimal_to_greek関数の構文解析木を作成する</span>
+<span class="n">greek_code</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">def decimal_to_greek(num):</span>
+<span class="s2">    greek_numerals = {</span>
+<span class="s2">        1: &#39;α&#39;,</span>
+<span class="s2">        2: &#39;β&#39;,</span>
+<span class="s2">        3: &#39;γ&#39;,</span>
+<span class="s2">        4: &#39;δ&#39;,</span>
+<span class="s2">        5: &#39;ε&#39;,</span>
+<span class="s2">        6: &#39;ϛ&#39;,</span>
+<span class="s2">        7: &#39;ζ&#39;,</span>
+<span class="s2">        8: &#39;η&#39;,</span>
+<span class="s2">        9: &#39;θ&#39;,</span>
+<span class="s2">        10: &#39;ι&#39;,</span>
+<span class="s2">        20: &#39;κ&#39;,</span>
+<span class="s2">        30: &#39;λ&#39;,</span>
+<span class="s2">        40: &#39;μ&#39;,</span>
+<span class="s2">        50: &#39;ν&#39;,</span>
+<span class="s2">        60: &#39;ξ&#39;,</span>
+<span class="s2">        70: &#39;ο&#39;,</span>
+<span class="s2">        80: &#39;π&#39;,</span>
+<span class="s2">        90: &#39;ϙ&#39;,</span>
+<span class="s2">        100: &#39;ρ&#39;,</span>
+<span class="s2">        200: &#39;σ&#39;,</span>
+<span class="s2">        300: &#39;τ&#39;,</span>
+<span class="s2">        400: &#39;υ&#39;,</span>
+<span class="s2">        500: &#39;φ&#39;,</span>
+<span class="s2">        600: &#39;χ&#39;,</span>
+<span class="s2">        700: &#39;ψ&#39;,</span>
+<span class="s2">        800: &#39;ω&#39;,</span>
+<span class="s2">        900: &#39;ϡ&#39;</span>
+<span class="s2">    }</span>
+<span class="s2">    result = &#39;&#39;</span>
+<span class="s2">    for value in sorted(greek_numerals.keys(), reverse=True):</span>
+<span class="s2">        while num &gt;= value:</span>
+<span class="s2">            result += greek_numerals[value]</span>
+<span class="s2">            num -= value</span>
+<span class="s2">    return result</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">greek_tree</span> <span class="o">=</span> <span class="n">create_syntax_tree</span><span class="p">(</span><span class="n">greek_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">greek_tree</span><span class="p">))</span>
+
+<span class="c1"># decimal_to_roman関数の構文解析木を作成する</span>
+<span class="n">roman_code</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">def decimal_to_roman(num):</span>
+<span class="s2">    roman_numerals = {</span>
+<span class="s2">        1: &#39;I&#39;,</span>
+<span class="s2">        4: &#39;IV&#39;,</span>
+<span class="s2">        5: &#39;V&#39;,</span>
+<span class="s2">        9: &#39;IX&#39;,</span>
+<span class="s2">        10: &#39;X&#39;,</span>
+<span class="s2">        40: &#39;XL&#39;,</span>
+<span class="s2">        50: &#39;L&#39;,</span>
+<span class="s2">        90: &#39;XC&#39;,</span>
+<span class="s2">        100: &#39;C&#39;,</span>
+<span class="s2">        400: &#39;CD&#39;,</span>
+<span class="s2">        500: &#39;D&#39;,</span>
+<span class="s2">        900: &#39;CM&#39;,</span>
+<span class="s2">        1000: &#39;M&#39;</span>
+<span class="s2">    }</span>
+<span class="s2">    result = &#39;&#39;</span>
+<span class="s2">    for value in sorted(roman_numerals.keys(), reverse=True):</span>
+<span class="s2">        while num &gt;= value:</span>
+<span class="s2">            result = result + roman_numerals[value]</span>
+<span class="s2">            num = num - value</span>
+<span class="s2">    return result</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">roman_tree</span> <span class="o">=</span> <span class="n">create_syntax_tree</span><span class="p">(</span><span class="n">roman_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">roman_tree</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Module(body=[FunctionDef(name=&#39;decimal_to_greek&#39;, args=arguments(posonlyargs=[], args=[arg(arg=&#39;num&#39;)], kwonlyargs=[], kw_defaults=[], defaults=[]), body=[Assign(targets=[Name(id=&#39;greek_numerals&#39;, ctx=Store())], value=Dict(keys=[Constant(value=1), Constant(value=2), Constant(value=3), Constant(value=4), Constant(value=5), Constant(value=6), Constant(value=7), Constant(value=8), Constant(value=9), Constant(value=10), Constant(value=20), Constant(value=30), Constant(value=40), Constant(value=50), Constant(value=60), Constant(value=70), Constant(value=80), Constant(value=90), Constant(value=100), Constant(value=200), Constant(value=300), Constant(value=400), Constant(value=500), Constant(value=600), Constant(value=700), Constant(value=800), Constant(value=900)], values=[Constant(value=&#39;α&#39;), Constant(value=&#39;β&#39;), Constant(value=&#39;γ&#39;), Constant(value=&#39;δ&#39;), Constant(value=&#39;ε&#39;), Constant(value=&#39;ϛ&#39;), Constant(value=&#39;ζ&#39;), Constant(value=&#39;η&#39;), Constant(value=&#39;θ&#39;), Constant(value=&#39;ι&#39;), Constant(value=&#39;κ&#39;), Constant(value=&#39;λ&#39;), Constant(value=&#39;μ&#39;), Constant(value=&#39;ν&#39;), Constant(value=&#39;ξ&#39;), Constant(value=&#39;ο&#39;), Constant(value=&#39;π&#39;), Constant(value=&#39;ϙ&#39;), Constant(value=&#39;ρ&#39;), Constant(value=&#39;σ&#39;), Constant(value=&#39;τ&#39;), Constant(value=&#39;υ&#39;), Constant(value=&#39;φ&#39;), Constant(value=&#39;χ&#39;), Constant(value=&#39;ψ&#39;), Constant(value=&#39;ω&#39;), Constant(value=&#39;ϡ&#39;)])), Assign(targets=[Name(id=&#39;result&#39;, ctx=Store())], value=Constant(value=&#39;&#39;)), For(target=Name(id=&#39;value&#39;, ctx=Store()), iter=Call(func=Name(id=&#39;sorted&#39;, ctx=Load()), args=[Call(func=Attribute(value=Name(id=&#39;greek_numerals&#39;, ctx=Load()), attr=&#39;keys&#39;, ctx=Load()), args=[], keywords=[])], keywords=[keyword(arg=&#39;reverse&#39;, value=Constant(value=True))]), body=[While(test=Compare(left=Name(id=&#39;num&#39;, ctx=Load()), ops=[GtE()], comparators=[Name(id=&#39;value&#39;, ctx=Load())]), body=[AugAssign(target=Name(id=&#39;result&#39;, ctx=Store()), op=Add(), value=Subscript(value=Name(id=&#39;greek_numerals&#39;, ctx=Load()), slice=Name(id=&#39;value&#39;, ctx=Load()), ctx=Load())), AugAssign(target=Name(id=&#39;num&#39;, ctx=Store()), op=Sub(), value=Name(id=&#39;value&#39;, ctx=Load()))], orelse=[])], orelse=[]), Return(value=Name(id=&#39;result&#39;, ctx=Load()))], decorator_list=[])], type_ignores=[])
+Module(body=[FunctionDef(name=&#39;decimal_to_roman&#39;, args=arguments(posonlyargs=[], args=[arg(arg=&#39;num&#39;)], kwonlyargs=[], kw_defaults=[], defaults=[]), body=[Assign(targets=[Name(id=&#39;roman_numerals&#39;, ctx=Store())], value=Dict(keys=[Constant(value=1), Constant(value=4), Constant(value=5), Constant(value=9), Constant(value=10), Constant(value=40), Constant(value=50), Constant(value=90), Constant(value=100), Constant(value=400), Constant(value=500), Constant(value=900), Constant(value=1000)], values=[Constant(value=&#39;I&#39;), Constant(value=&#39;IV&#39;), Constant(value=&#39;V&#39;), Constant(value=&#39;IX&#39;), Constant(value=&#39;X&#39;), Constant(value=&#39;XL&#39;), Constant(value=&#39;L&#39;), Constant(value=&#39;XC&#39;), Constant(value=&#39;C&#39;), Constant(value=&#39;CD&#39;), Constant(value=&#39;D&#39;), Constant(value=&#39;CM&#39;), Constant(value=&#39;M&#39;)])), Assign(targets=[Name(id=&#39;result&#39;, ctx=Store())], value=Constant(value=&#39;&#39;)), For(target=Name(id=&#39;value&#39;, ctx=Store()), iter=Call(func=Name(id=&#39;sorted&#39;, ctx=Load()), args=[Call(func=Attribute(value=Name(id=&#39;roman_numerals&#39;, ctx=Load()), attr=&#39;keys&#39;, ctx=Load()), args=[], keywords=[])], keywords=[keyword(arg=&#39;reverse&#39;, value=Constant(value=True))]), body=[While(test=Compare(left=Name(id=&#39;num&#39;, ctx=Load()), ops=[GtE()], comparators=[Name(id=&#39;value&#39;, ctx=Load())]), body=[Assign(targets=[Name(id=&#39;result&#39;, ctx=Store())], value=BinOp(left=Name(id=&#39;result&#39;, ctx=Load()), op=Add(), right=Subscript(value=Name(id=&#39;roman_numerals&#39;, ctx=Load()), slice=Name(id=&#39;value&#39;, ctx=Load()), ctx=Load()))), Assign(targets=[Name(id=&#39;num&#39;, ctx=Store())], value=BinOp(left=Name(id=&#39;num&#39;, ctx=Load()), op=Sub(), right=Name(id=&#39;value&#39;, ctx=Load())))], orelse=[])], orelse=[]), Return(value=Name(id=&#39;result&#39;, ctx=Load()))], decorator_list=[])], type_ignores=[])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+目視で比較出来るようにプリティプリントしたい
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>構文解析木を目視で比較するためには、<code class="docutils literal notranslate"><span class="pre">ast</span></code>モジュールの<code class="docutils literal notranslate"><span class="pre">dump</span></code>関数ではなく、<code class="docutils literal notranslate"><span class="pre">astor</span></code>モジュールの<code class="docutils literal notranslate"><span class="pre">to_source</span></code>関数を使用することで、構文解析木をプリティプリントすることができます。以下は、二つのプログラムの構文解析木をプリティプリントするPythonコードです。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ast</span>
+<span class="kn">import</span> <span class="nn">astor</span>
+
+<span class="k">def</span> <span class="nf">create_syntax_tree</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tree</span>
+
+<span class="c1"># decimal_to_greek関数の構文解析木を作成する</span>
+<span class="n">greek_code</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">def decimal_to_greek(num):</span>
+<span class="s2">    greek_numerals = {</span>
+<span class="s2">        1: &#39;α&#39;,</span>
+<span class="s2">        2: &#39;β&#39;,</span>
+<span class="s2">        3: &#39;γ&#39;,</span>
+<span class="s2">        4: &#39;δ&#39;,</span>
+<span class="s2">        5: &#39;ε&#39;,</span>
+<span class="s2">        6: &#39;ϛ&#39;,</span>
+<span class="s2">        7: &#39;ζ&#39;,</span>
+<span class="s2">        8: &#39;η&#39;,</span>
+<span class="s2">        9: &#39;θ&#39;,</span>
+<span class="s2">        10: &#39;ι&#39;,</span>
+<span class="s2">        20: &#39;κ&#39;,</span>
+<span class="s2">        30: &#39;λ&#39;,</span>
+<span class="s2">        40: &#39;μ&#39;,</span>
+<span class="s2">        50: &#39;ν&#39;,</span>
+<span class="s2">        60: &#39;ξ&#39;,</span>
+<span class="s2">        70: &#39;ο&#39;,</span>
+<span class="s2">        80: &#39;π&#39;,</span>
+<span class="s2">        90: &#39;ϙ&#39;,</span>
+<span class="s2">        100: &#39;ρ&#39;,</span>
+<span class="s2">        200: &#39;σ&#39;,</span>
+<span class="s2">        300: &#39;τ&#39;,</span>
+<span class="s2">        400: &#39;υ&#39;,</span>
+<span class="s2">        500: &#39;φ&#39;,</span>
+<span class="s2">        600: &#39;χ&#39;,</span>
+<span class="s2">        700: &#39;ψ&#39;,</span>
+<span class="s2">        800: &#39;ω&#39;,</span>
+<span class="s2">        900: &#39;ϡ&#39;</span>
+<span class="s2">    }</span>
+<span class="s2">    result = &#39;&#39;</span>
+<span class="s2">    for value in sorted(greek_numerals.keys(), reverse=True):</span>
+<span class="s2">        while num &gt;= value:</span>
+<span class="s2">            result += greek_numerals[value]</span>
+<span class="s2">            num -= value</span>
+<span class="s2">    return result</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">greek_tree</span> <span class="o">=</span> <span class="n">create_syntax_tree</span><span class="p">(</span><span class="n">greek_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">astor</span><span class="o">.</span><span class="n">to_source</span><span class="p">(</span><span class="n">greek_tree</span><span class="p">))</span>
+
+<span class="c1"># decimal_to_roman関数の構文解析木を作成する</span>
+<span class="n">roman_code</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">def decimal_to_roman(num):</span>
+<span class="s2">    roman_numerals = {</span>
+<span class="s2">        1: &#39;I&#39;,</span>
+<span class="s2">        4: &#39;IV&#39;,</span>
+<span class="s2">        5: &#39;V&#39;,</span>
+<span class="s2">        9: &#39;IX&#39;,</span>
+<span class="s2">        10: &#39;X&#39;,</span>
+<span class="s2">        40: &#39;XL&#39;,</span>
+<span class="s2">        50: &#39;L&#39;,</span>
+<span class="s2">        90: &#39;XC&#39;,</span>
+<span class="s2">        100: &#39;C&#39;,</span>
+<span class="s2">        400: &#39;CD&#39;,</span>
+<span class="s2">        500: &#39;D&#39;,</span>
+<span class="s2">        900: &#39;CM&#39;,</span>
+<span class="s2">        1000: &#39;M&#39;</span>
+<span class="s2">    }</span>
+<span class="s2">    result = &#39;&#39;</span>
+<span class="s2">    for value in sorted(roman_numerals.keys(), reverse=True):</span>
+<span class="s2">        while num &gt;= value:</span>
+<span class="s2">            result = result + roman_numerals[value]</span>
+<span class="s2">            num = num - value</span>
+<span class="s2">    return result</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">roman_tree</span> <span class="o">=</span> <span class="n">create_syntax_tree</span><span class="p">(</span><span class="n">roman_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">astor</span><span class="o">.</span><span class="n">to_source</span><span class="p">(</span><span class="n">roman_tree</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>上記のコードを実行すると、それぞれのプログラムの構文解析木がプリティプリントされます。<code class="docutils literal notranslate"><span class="pre">astor</span></code>モジュールの<code class="docutils literal notranslate"><span class="pre">to_source</span></code>関数を使用することで、構文解析木をPythonコードの形式で出力することができます。これにより、目視で二つのプログラムの構文解析木を比較することができます。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ast</span>
+<span class="kn">import</span> <span class="nn">astor</span>
+
+<span class="k">def</span> <span class="nf">create_syntax_tree</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tree</span>
+
+<span class="c1"># decimal_to_greek関数の構文解析木を作成する</span>
+<span class="n">greek_code</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">def decimal_to_greek(num):</span>
+<span class="s2">    greek_numerals = {</span>
+<span class="s2">        1: &#39;α&#39;,</span>
+<span class="s2">        2: &#39;β&#39;,</span>
+<span class="s2">        3: &#39;γ&#39;,</span>
+<span class="s2">        4: &#39;δ&#39;,</span>
+<span class="s2">        5: &#39;ε&#39;,</span>
+<span class="s2">        6: &#39;ϛ&#39;,</span>
+<span class="s2">        7: &#39;ζ&#39;,</span>
+<span class="s2">        8: &#39;η&#39;,</span>
+<span class="s2">        9: &#39;θ&#39;,</span>
+<span class="s2">        10: &#39;ι&#39;,</span>
+<span class="s2">        20: &#39;κ&#39;,</span>
+<span class="s2">        30: &#39;λ&#39;,</span>
+<span class="s2">        40: &#39;μ&#39;,</span>
+<span class="s2">        50: &#39;ν&#39;,</span>
+<span class="s2">        60: &#39;ξ&#39;,</span>
+<span class="s2">        70: &#39;ο&#39;,</span>
+<span class="s2">        80: &#39;π&#39;,</span>
+<span class="s2">        90: &#39;ϙ&#39;,</span>
+<span class="s2">        100: &#39;ρ&#39;,</span>
+<span class="s2">        200: &#39;σ&#39;,</span>
+<span class="s2">        300: &#39;τ&#39;,</span>
+<span class="s2">        400: &#39;υ&#39;,</span>
+<span class="s2">        500: &#39;φ&#39;,</span>
+<span class="s2">        600: &#39;χ&#39;,</span>
+<span class="s2">        700: &#39;ψ&#39;,</span>
+<span class="s2">        800: &#39;ω&#39;,</span>
+<span class="s2">        900: &#39;ϡ&#39;</span>
+<span class="s2">    }</span>
+<span class="s2">    result = &#39;&#39;</span>
+<span class="s2">    for value in sorted(greek_numerals.keys(), reverse=True):</span>
+<span class="s2">        while num &gt;= value:</span>
+<span class="s2">            result += greek_numerals[value]</span>
+<span class="s2">            num -= value</span>
+<span class="s2">    return result</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">greek_tree</span> <span class="o">=</span> <span class="n">create_syntax_tree</span><span class="p">(</span><span class="n">greek_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">astor</span><span class="o">.</span><span class="n">to_source</span><span class="p">(</span><span class="n">greek_tree</span><span class="p">))</span>
+
+<span class="c1"># decimal_to_roman関数の構文解析木を作成する</span>
+<span class="n">roman_code</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">def decimal_to_roman(num):</span>
+<span class="s2">    roman_numerals = {</span>
+<span class="s2">        1: &#39;I&#39;,</span>
+<span class="s2">        4: &#39;IV&#39;,</span>
+<span class="s2">        5: &#39;V&#39;,</span>
+<span class="s2">        9: &#39;IX&#39;,</span>
+<span class="s2">        10: &#39;X&#39;,</span>
+<span class="s2">        40: &#39;XL&#39;,</span>
+<span class="s2">        50: &#39;L&#39;,</span>
+<span class="s2">        90: &#39;XC&#39;,</span>
+<span class="s2">        100: &#39;C&#39;,</span>
+<span class="s2">        400: &#39;CD&#39;,</span>
+<span class="s2">        500: &#39;D&#39;,</span>
+<span class="s2">        900: &#39;CM&#39;,</span>
+<span class="s2">        1000: &#39;M&#39;</span>
+<span class="s2">    }</span>
+<span class="s2">    result = &#39;&#39;</span>
+<span class="s2">    for value in sorted(roman_numerals.keys(), reverse=True):</span>
+<span class="s2">        while num &gt;= value:</span>
+<span class="s2">            result = result + roman_numerals[value]</span>
+<span class="s2">            num = num - value</span>
+<span class="s2">    return result</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">roman_tree</span> <span class="o">=</span> <span class="n">create_syntax_tree</span><span class="p">(</span><span class="n">roman_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">astor</span><span class="o">.</span><span class="n">to_source</span><span class="p">(</span><span class="n">roman_tree</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>def decimal_to_greek(num):
+    greek_numerals = {(1): &#39;α&#39;, (2): &#39;β&#39;, (3): &#39;γ&#39;, (4): &#39;δ&#39;, (5): &#39;ε&#39;, (6):
+        &#39;ϛ&#39;, (7): &#39;ζ&#39;, (8): &#39;η&#39;, (9): &#39;θ&#39;, (10): &#39;ι&#39;, (20): &#39;κ&#39;, (30): &#39;λ&#39;,
+        (40): &#39;μ&#39;, (50): &#39;ν&#39;, (60): &#39;ξ&#39;, (70): &#39;ο&#39;, (80): &#39;π&#39;, (90): &#39;ϙ&#39;, (
+        100): &#39;ρ&#39;, (200): &#39;σ&#39;, (300): &#39;τ&#39;, (400): &#39;υ&#39;, (500): &#39;φ&#39;, (600):
+        &#39;χ&#39;, (700): &#39;ψ&#39;, (800): &#39;ω&#39;, (900): &#39;ϡ&#39;}
+    result = &#39;&#39;
+    for value in sorted(greek_numerals.keys(), reverse=True):
+        while num &gt;= value:
+            result += greek_numerals[value]
+            num -= value
+    return result
+
+def decimal_to_roman(num):
+    roman_numerals = {(1): &#39;I&#39;, (4): &#39;IV&#39;, (5): &#39;V&#39;, (9): &#39;IX&#39;, (10): &#39;X&#39;,
+        (40): &#39;XL&#39;, (50): &#39;L&#39;, (90): &#39;XC&#39;, (100): &#39;C&#39;, (400): &#39;CD&#39;, (500):
+        &#39;D&#39;, (900): &#39;CM&#39;, (1000): &#39;M&#39;}
+    result = &#39;&#39;
+    for value in sorted(roman_numerals.keys(), reverse=True):
+        while num &gt;= value:
+            result = result + roman_numerals[value]
+            num = num - value
+    return result
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">astdump</span>
+<span class="n">astdump</span><span class="o">.</span><span class="n">indented</span><span class="p">(</span><span class="n">roman_tree</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Module
+  FunctionDef
+    arguments
+      arg
+    Assign
+      Name
+        Store
+      Dict
+        Constant
+        Constant
+        Constant
+        Constant
+        Constant
+        Constant
+        Constant
+        Constant
+        Constant
+        Constant
+        Constant
+        Constant
+        Constant
+        Constant
+        Constant
+        Constant
+        Constant
+        Constant
+        Constant
+        Constant
+        Constant
+        Constant
+        Constant
+        Constant
+        Constant
+        Constant
+    Assign
+      Name
+        Store
+      Constant
+    For
+      Name
+        Store
+      Call
+        Name
+          Load
+        Call
+          Attribute
+            Name
+              Load
+            Load
+        keyword
+          Constant
+      While
+        Compare
+          Name
+            Load
+          GtE
+          Name
+            Load
+        Assign
+          Name
+            Store
+          BinOp
+            Name
+              Load
+            Add
+            Subscript
+              Name
+                Load
+              Name
+                Load
+              Load
+        Assign
+          Name
+            Store
+          BinOp
+            Name
+              Load
+            Sub
+            Name
+              Load
+    Return
+      Name
+        Load
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+ASTの類似している部分を抽出してください
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>両方のプログラムのASTを比較すると、以下のような類似点があります。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">For</span></code>ループの構造が似ている</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">While</span></code>ループの構造が似ている</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dict</span></code>の構造が似ている</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sorted</span></code>関数の呼び出し方が似ている</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reverse</span></code>引数の使用が似ている</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>変数の使用が似ている</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">num</span></code>変数の使用が似ている</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">result</span></code>変数の使用が似ている</p></li>
+</ul>
+<p>これらの類似点から、両方のプログラムが同じ基本的なアルゴリズムを使用していることがわかります。ただし、両方のプログラムは、異なる数値システムを変換するために異なる辞書を使用しているため、ASTの一部は異なります。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+データフローグラフを作成することはできますか
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>はい、プログラムのデータフローグラフを作成することができます。データフローグラフは、プログラムのデータの流れを表現するグラフであり、プログラムの解析や最適化に使用されます。以下は、Pythonの<code class="docutils literal notranslate"><span class="pre">networkx</span></code>ライブラリを使用して、二つのプログラムのデータフローグラフを作成する例です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ast</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">create_dataflow_graph</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+    <span class="n">graph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">ast</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">tree</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">ast</span><span class="o">.</span><span class="n">Assign</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">targets</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">ast</span><span class="o">.</span><span class="n">Name</span><span class="p">):</span>
+                    <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">child_node</span> <span class="ow">in</span> <span class="n">ast</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child_node</span><span class="p">,</span> <span class="n">ast</span><span class="o">.</span><span class="n">Name</span><span class="p">):</span>
+                            <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">child_node</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+                            <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">child_node</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">graph</span>
+
+<span class="c1"># decimal_to_greek関数のデータフローグラフを作成する</span>
+<span class="n">greek_code</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">def decimal_to_greek(num):</span>
+<span class="s2">    greek_numerals = {</span>
+<span class="s2">        1: &#39;α&#39;,</span>
+<span class="s2">        2: &#39;β&#39;,</span>
+<span class="s2">        3: &#39;γ&#39;,</span>
+<span class="s2">        4: &#39;δ&#39;,</span>
+<span class="s2">        5: &#39;ε&#39;,</span>
+<span class="s2">        6: &#39;ϛ&#39;,</span>
+<span class="s2">        7: &#39;ζ&#39;,</span>
+<span class="s2">        8: &#39;η&#39;,</span>
+<span class="s2">        9: &#39;θ&#39;,</span>
+<span class="s2">        10: &#39;ι&#39;,</span>
+<span class="s2">        20: &#39;κ&#39;,</span>
+<span class="s2">        30: &#39;λ&#39;,</span>
+<span class="s2">        40: &#39;μ&#39;,</span>
+<span class="s2">        50: &#39;ν&#39;,</span>
+<span class="s2">        60: &#39;ξ&#39;,</span>
+<span class="s2">        70: &#39;ο&#39;,</span>
+<span class="s2">        80: &#39;π&#39;,</span>
+<span class="s2">        90: &#39;ϙ&#39;,</span>
+<span class="s2">        100: &#39;ρ&#39;,</span>
+<span class="s2">        200: &#39;σ&#39;,</span>
+<span class="s2">        300: &#39;τ&#39;,</span>
+<span class="s2">        400: &#39;υ&#39;,</span>
+<span class="s2">        500: &#39;φ&#39;,</span>
+<span class="s2">        600: &#39;χ&#39;,</span>
+<span class="s2">        700: &#39;ψ&#39;,</span>
+<span class="s2">        800: &#39;ω&#39;,</span>
+<span class="s2">        900: &#39;ϡ&#39;</span>
+<span class="s2">    }</span>
+<span class="s2">    result = &#39;&#39;</span>
+<span class="s2">    for value in sorted(greek_numerals.keys(), reverse=True):</span>
+<span class="s2">        while num &gt;= value:</span>
+<span class="s2">            result += greek_numerals[value]</span>
+<span class="s2">            num -= value</span>
+<span class="s2">    return result</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">greek_graph</span> <span class="o">=</span> <span class="n">create_dataflow_graph</span><span class="p">(</span><span class="n">greek_code</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">greek_graph</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># decimal_to_roman関数のデータフローグラフを作成する</span>
+<span class="n">roman_code</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">def decimal_to_roman(num):</span>
+<span class="s2">    roman_numerals = {</span>
+<span class="s2">        1: &#39;I&#39;,</span>
+<span class="s2">        4: &#39;IV&#39;,</span>
+<span class="s2">        5: &#39;V&#39;,</span>
+<span class="s2">        9: &#39;IX&#39;,</span>
+<span class="s2">        10: &#39;X&#39;,</span>
+<span class="s2">        40: &#39;XL&#39;,</span>
+<span class="s2">        50: &#39;L&#39;,</span>
+<span class="s2">        90: &#39;XC&#39;,</span>
+<span class="s2">        100: &#39;C&#39;,</span>
+<span class="s2">        400: &#39;CD&#39;,</span>
+<span class="s2">        500: &#39;D&#39;,</span>
+<span class="s2">        900: &#39;CM&#39;,</span>
+<span class="s2">        1000: &#39;M&#39;</span>
+<span class="s2">    }</span>
+<span class="s2">    result = &#39;&#39;</span>
+<span class="s2">    for value in sorted(roman_numerals.keys(), reverse=True):</span>
+<span class="s2">        while num &gt;= value:</span>
+<span class="s2">            result = result + roman_numerals[value]</span>
+<span class="s2">            num = num - value</span>
+<span class="s2">    return result</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">roman_graph</span> <span class="o">=</span> <span class="n">create_dataflow_graph</span><span class="p">(</span><span class="n">roman_code</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">roman_graph</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>上記のコードを実行すると、それぞれのプログラムのデータフローグラフが描画されます。<code class="docutils literal notranslate"><span class="pre">create_dataflow_graph</span></code>関数は、プログラムの構文解析木を作成し、代入文を検出して、左辺の変数と右辺の変数の間に有向辺を追加することで、データフローグラフを作成します。<code class="docutils literal notranslate"><span class="pre">networkx</span></code>ライブラリを使用して、作成したデータフローグラフを描画することができます。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ast</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">create_dataflow_graph</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+    <span class="n">graph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">ast</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">tree</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">ast</span><span class="o">.</span><span class="n">Assign</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">targets</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">ast</span><span class="o">.</span><span class="n">Name</span><span class="p">):</span>
+                    <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">child_node</span> <span class="ow">in</span> <span class="n">ast</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child_node</span><span class="p">,</span> <span class="n">ast</span><span class="o">.</span><span class="n">Name</span><span class="p">):</span>
+                            <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">child_node</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+                            <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">child_node</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">graph</span>
+
+<span class="c1"># decimal_to_greek関数のデータフローグラフを作成する</span>
+<span class="n">greek_code</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">def decimal_to_greek(num):</span>
+<span class="s2">    greek_numerals = {</span>
+<span class="s2">        1: &#39;α&#39;,</span>
+<span class="s2">        2: &#39;β&#39;,</span>
+<span class="s2">        3: &#39;γ&#39;,</span>
+<span class="s2">        4: &#39;δ&#39;,</span>
+<span class="s2">        5: &#39;ε&#39;,</span>
+<span class="s2">        6: &#39;ϛ&#39;,</span>
+<span class="s2">        7: &#39;ζ&#39;,</span>
+<span class="s2">        8: &#39;η&#39;,</span>
+<span class="s2">        9: &#39;θ&#39;,</span>
+<span class="s2">        10: &#39;ι&#39;,</span>
+<span class="s2">        20: &#39;κ&#39;,</span>
+<span class="s2">        30: &#39;λ&#39;,</span>
+<span class="s2">        40: &#39;μ&#39;,</span>
+<span class="s2">        50: &#39;ν&#39;,</span>
+<span class="s2">        60: &#39;ξ&#39;,</span>
+<span class="s2">        70: &#39;ο&#39;,</span>
+<span class="s2">        80: &#39;π&#39;,</span>
+<span class="s2">        90: &#39;ϙ&#39;,</span>
+<span class="s2">        100: &#39;ρ&#39;,</span>
+<span class="s2">        200: &#39;σ&#39;,</span>
+<span class="s2">        300: &#39;τ&#39;,</span>
+<span class="s2">        400: &#39;υ&#39;,</span>
+<span class="s2">        500: &#39;φ&#39;,</span>
+<span class="s2">        600: &#39;χ&#39;,</span>
+<span class="s2">        700: &#39;ψ&#39;,</span>
+<span class="s2">        800: &#39;ω&#39;,</span>
+<span class="s2">        900: &#39;ϡ&#39;</span>
+<span class="s2">    }</span>
+<span class="s2">    result = &#39;&#39;</span>
+<span class="s2">    for value in sorted(greek_numerals.keys(), reverse=True):</span>
+<span class="s2">        while num &gt;= value:</span>
+<span class="s2">            result += greek_numerals[value]</span>
+<span class="s2">            num -= value</span>
+<span class="s2">    return result</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">greek_graph</span> <span class="o">=</span> <span class="n">create_dataflow_graph</span><span class="p">(</span><span class="n">greek_code</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">greek_graph</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/cc13184b430161cc4e4187083407d323e4678755354cf89e836b43e31854cc8f.png" src="../../_images/cc13184b430161cc4e4187083407d323e4678755354cf89e836b43e31854cc8f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># decimal_to_roman関数のデータフローグラフを作成する</span>
+<span class="n">roman_code</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">def decimal_to_roman(num):</span>
+<span class="s2">    roman_numerals = {</span>
+<span class="s2">        1: &#39;I&#39;,</span>
+<span class="s2">        4: &#39;IV&#39;,</span>
+<span class="s2">        5: &#39;V&#39;,</span>
+<span class="s2">        9: &#39;IX&#39;,</span>
+<span class="s2">        10: &#39;X&#39;,</span>
+<span class="s2">        40: &#39;XL&#39;,</span>
+<span class="s2">        50: &#39;L&#39;,</span>
+<span class="s2">        90: &#39;XC&#39;,</span>
+<span class="s2">        100: &#39;C&#39;,</span>
+<span class="s2">        400: &#39;CD&#39;,</span>
+<span class="s2">        500: &#39;D&#39;,</span>
+<span class="s2">        900: &#39;CM&#39;,</span>
+<span class="s2">        1000: &#39;M&#39;</span>
+<span class="s2">    }</span>
+<span class="s2">    result = &#39;&#39;</span>
+<span class="s2">    for value in sorted(roman_numerals.keys(), reverse=True):</span>
+<span class="s2">        while num &gt;= value:</span>
+<span class="s2">            result = result + roman_numerals[value]</span>
+<span class="s2">            num = num - value</span>
+<span class="s2">    return result</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">roman_graph</span> <span class="o">=</span> <span class="n">create_dataflow_graph</span><span class="p">(</span><span class="n">roman_code</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">roman_graph</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d689c228a9f8bd944eb4b03437465a0e6a542021c3110897757934cc19d5c8d7.png" src="../../_images/d689c228a9f8bd944eb4b03437465a0e6a542021c3110897757934cc19d5c8d7.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="20_assignment.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">次回から</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="22_dict.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">データ構造に依存するプログラミング</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Manabu Higashida
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,752 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>位取り記法の断絶と再興 &#8212; プログラミングで遡る科学史</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-148221575-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-148221575-1');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/03/40_positional';</script>
+    <link rel="canonical" href="https://inferentialthinking.org/chapters/03/40_positional.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="課題 1" href="50_assignment.html" />
+    <link rel="prev" title="Pythonの配列と辞書と表" href="23_dict.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">プログラミングで遡る科学史</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/26</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="10_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_assignment.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_similarities.html">Code similarities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_dict.html">Data format (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_dict.html">Pythonの配列と辞書と表</a></li>
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Positional notation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="50_assignment.html">課題 1</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/19</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02/01_orientation.html">Orientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/02_assignment.html">Assignment (Last week)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/03_examination.html">Examination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/04_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/12</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/01_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/02_openai.html">Obtaining OpenAI API key</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/03_chatgpt.html">ChatGPT interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/04_assignment.html">Assignment</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/intro_add.html">Request for cooperation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_4.html">Experiment explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_5.html">Informed concent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_6.html">Withdrawal of concent</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://ecsosaka-jh2310.japaneast.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/Cloudedu-Osaka/textbook-2023&urlpath=lab/tree/textbook-2023/chapters/03/40_positional.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/Cloudedu-Osaka/textbook-2023" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/03/40_positional.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>位取り記法の断絶と再興</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>位取り記法の断絶と再興<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Positional_notation">Positional notation - Wikipedia</a> (Place-value notation)</p>
+<ul>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Babylonian_cuneiform_numerals">Babylonian cuneiform numerals - Wikipedia</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Sign-value_notation">Sign-value notation - Wikipedia</a></p>
+<ul>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Egyptian_numerals">Egyptian numerals - Wikipedia</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Greek_numerals">Greek numerals - Wikipedia</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Romanian_numbers">Romanian numbers - Wikipedia</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Abacus">Abacus - Wikipedia</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
+why mesopotamian positional notation with sexadecimal digits was not inherited?
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Mesopotamian positional notation with sexadecimal digits was not inherited because it was not as efficient as other systems that were developed later. For example, the Hindu-Arabic numeral system with base 10 and positional notation was easier to use and allowed for more complex calculations. Additionally, the sexadecimal system was not as widely used or adopted as other systems, which limited its influence and legacy.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+in japanese
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>セクサデシマル桁を持つメソポタミアの位取り記数法が受け継がれなかったのは、後に開発された他のシステムよりも効率的ではなかったためです。たとえば、10進数の位置記数法を持つヒンドゥー・アラビア数字システムは、より簡単に使用でき、より複雑な計算が可能でした。さらに、セクサデシマルシステムは他のシステムほど広く使用されたわけではなく、その影響力や遺産は限られていました。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+why ancient romanean people did not use positional notation but their own numerial system?
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Ancient Roman people did not use positional notation but their own numeral system because their system was developed independently and before the concept of positional notation was widely understood. The Roman numeral system was based on a combination of letters and symbols, and it was primarily used for counting and record-keeping rather than complex calculations. Additionally, the Roman numeral system was well-suited for the types of calculations that were common at the time, such as measuring land and counting money. As a result, there was no need for the Romans to adopt a new system, especially one that was not yet widely known or understood.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+in japanese
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>古代ローマ人が、自分たちの数字システムを採用し、位取り記数法を使わなかったのは、彼らのシステムが独自に発展し、位取り記数法の概念が広く理解される前に存在していたためです。ローマ数字システムは、文字と記号の組み合わせに基づいており、複雑な計算よりも数え上げや記録に主に使用されていました。また、ローマ数字システムは、当時一般的だった土地の測量やお金の計算などの種類の計算に適していました。そのため、ローマ人が新しいシステムを採用する必要はなく、特に広く知られていなかったり理解されていなかったりするシステムを採用する必要はありませんでした。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+untill the renaissance, european people did not use positional notation. the reason why?
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Until the Renaissance, European people did not use positional notation because the concept of positional notation was not yet widely understood or adopted in Europe. The Hindu-Arabic numeral system with positional notation was developed in India and the Middle East, and it was not introduced to Europe until the 12th century. Additionally, the Roman numeral system was well-established in Europe and was used for counting and record-keeping, so there was no need to adopt a new system. Furthermore, the use of the abacus and other calculation tools was common in Europe, which made complex calculations possible without the need for positional notation. It was not until the Renaissance that the Hindu-Arabic numeral system with positional notation became widely adopted in Europe and replaced the Roman numeral system.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+in japanese
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>ルネサンス期まで、ヨーロッパ人は位取り記数法を使用していませんでした。その理由は、位取り記数法の概念がヨーロッパで広く理解されたり採用されたりする前に、インドや中東で開発されたヒンドゥー・アラビア数字システムが存在していたためです。また、ローマ数字システムはヨーロッパでよく確立され、数え上げや記録に使用されていたため、新しいシステムを採用する必要はありませんでした。さらに、ヨーロッパではそろばんや他の計算ツールの使用が一般的であり、位取り記数法を必要とせずに複雑な計算が可能でした。ルネサンス期になって、ヒンドゥー・アラビア数字システムが広くヨーロッパで採用され、ローマ数字システムに代わって使用されるようになりました。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+it took a very long time to the innovation, right?
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Yes, it took a very long time for the innovation of positional notation to spread to Europe. The Hindu-Arabic numeral system with positional notation was developed in India and the Middle East around the 6th to 9th centuries, but it was not introduced to Europe until the 12th century. Even then, it took several more centuries for the system to become widely adopted and replace the Roman numeral system. The slow spread of the innovation was due to a variety of factors, including cultural differences, the established use of the Roman numeral system, and the lack of communication and trade between different regions of the world.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+in japanese
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>はい、位取り記数法の革新がヨーロッパに広まるまでには非常に長い時間がかかりました。ヒンドゥー・アラビア数字システムは、6世紀から9世紀にかけてインドや中東で開発されましたが、ヨーロッパには12世紀になってから導入されました。それでも、このシステムが広く採用され、ローマ数字システムに代わるまでには、さらに数世紀を要しました。この革新が広まるのが遅かった理由には、文化的な違い、ローマ数字システムの確立された使用、世界の異なる地域間のコミュニケーションや貿易の不足など、さまざまな要因があります。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+the reason why the religious barrier was broken?
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>The religious barrier was broken for several reasons. First, the development of modern science, including the adoption of advanced numerical systems, challenged existing religious beliefs and dogma. The scientific method, which emphasized empirical observation and experimentation, often conflicted with religious teachings that were based on tradition, authority, and divine revelation. Additionally, the Renaissance and the Enlightenment periods, which saw a resurgence of interest in classical antiquity and humanism, promoted rational thinking, individualism, and skepticism, which put further strain on traditional religious authority. Second, the Protestant Reformation, which began in the 16th century, led to the fragmentation of Christianity into various denominations, each with its own interpretation of religious texts and dogma. This led to a diversification of religious beliefs and practices, which increased tolerance and acceptance of different beliefs. Finally, the development of secular governments and the separation of church and state shifted political power away from religious institutions, reducing their ability to enforce religious orthodoxy and dogma. All these factors contributed to the breaking of the religious barrier and the eventual acceptance of scientific and rational thinking.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+in japanese
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>宗教の壁が崩壊した理由はいくつかあります。まず、現代科学の発展、特に高度な数字システムの採用により、既存の宗教的信念や教義に疑問を投げかけるようになりました。科学的方法は実証的な観察と実験を重視するため、しばしば伝統や権威、神の啓示に基づく宗教的教えと衝突しました。さらに、ルネサンス期や啓蒙時代においては、古代の古典文化や人道主義に再び関心が集まり、合理的思考、個人主義、懐疑主義が促進され、伝統的な宗教権威に負担をかけました。第二に、16世紀に始まった宗教改革は、キリスト教をさまざまな教派に分裂させ、それぞれが独自の宗教的文書や教義の解釈を持つようになりました。これにより、宗教的信念や慣習が多様化し、異なる信念の受容や寛容が増しました。最後に、世俗的な政府の発展や政教分離は、政治的権力を宗教的機関から遠ざけ、宗教的正統主義や教義を強制する力を弱めました。これらすべての要因が宗教の壁の崩壊と、科学的・合理的思考の受容につながっていきました。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+in python write a function to translate base-10 numbers to romanian notation
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Here’s an example function in Python that translates base-10 numbers to Romanian notation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">romanian_notation</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="n">roman_numerals</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="mi">1000</span><span class="p">:</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span>
+        <span class="mi">900</span><span class="p">:</span> <span class="s1">&#39;CM&#39;</span><span class="p">,</span>
+        <span class="mi">500</span><span class="p">:</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span>
+        <span class="mi">400</span><span class="p">:</span> <span class="s1">&#39;CD&#39;</span><span class="p">,</span>
+        <span class="mi">100</span><span class="p">:</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span>
+        <span class="mi">90</span><span class="p">:</span> <span class="s1">&#39;XC&#39;</span><span class="p">,</span>
+        <span class="mi">50</span><span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span>
+        <span class="mi">40</span><span class="p">:</span> <span class="s1">&#39;XL&#39;</span><span class="p">,</span>
+        <span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span>
+        <span class="mi">9</span><span class="p">:</span> <span class="s1">&#39;IX&#39;</span><span class="p">,</span>
+        <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span>
+        <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;IV&#39;</span><span class="p">,</span>
+        <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;I&#39;</span>
+    <span class="p">}</span>
+    <span class="n">roman_numeral</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">value</span><span class="p">,</span> <span class="n">numeral</span> <span class="ow">in</span> <span class="n">roman_numerals</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">while</span> <span class="n">number</span> <span class="o">&gt;=</span> <span class="n">value</span><span class="p">:</span>
+            <span class="n">roman_numeral</span> <span class="o">+=</span> <span class="n">numeral</span>
+            <span class="n">number</span> <span class="o">-=</span> <span class="n">value</span>
+    <span class="k">return</span> <span class="n">roman_numeral</span>
+</pre></div>
+</div>
+<p>This function uses a dictionary to map the base-10 numbers to their corresponding Roman numerals. It then iterates through the dictionary and subtracts the largest possible value from the input number until the number is reduced to zero. The resulting string of Roman numerals is returned as the output.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+are there built-in or numpy, scipy, sympy function?
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Yes, there are built-in functions and functions in the NumPy, SciPy, and SymPy libraries that can be used to convert base-10 numbers to Roman numerals. Here are some examples:</p>
+<ol class="arabic simple">
+<li><p>Built-in function: <code class="docutils literal notranslate"><span class="pre">int_to_roman()</span></code></p></li>
+</ol>
+<p>The <code class="docutils literal notranslate"><span class="pre">int_to_roman()</span></code> function is a built-in function in Python that can be used to convert an integer to its corresponding Roman numeral. Here’s an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">num</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">roman_numeral</span> <span class="o">=</span> <span class="n">int_to_roman</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">roman_numeral</span><span class="p">)</span>
+<span class="go">&#39;CXXIII&#39;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>NumPy function: <code class="docutils literal notranslate"><span class="pre">np.base_repr()</span></code></p></li>
+</ol>
+<p>The <code class="docutils literal notranslate"><span class="pre">np.base_repr()</span></code> function in NumPy can be used to convert a base-10 number to a string representation in any base. Here’s an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">num</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">roman_numeral</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">base_repr</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="s1">&#39;IVXLCDM&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">roman_numeral</span><span class="p">)</span>
+<span class="go">&#39;CXXIII&#39;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>SymPy function: <code class="docutils literal notranslate"><span class="pre">sympy.roman()</span></code></p></li>
+</ol>
+<p>The <code class="docutils literal notranslate"><span class="pre">sympy.roman()</span></code> function in SymPy can be used to convert an integer to its corresponding Roman numeral. Here’s an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">roman</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">num</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">roman_numeral</span> <span class="o">=</span> <span class="n">roman</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">roman_numeral</span><span class="p">)</span>
+<span class="go">&#39;CXXIII&#39;</span>
+</pre></div>
+</div>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">sympy.roman()</span></code> function returns a <code class="docutils literal notranslate"><span class="pre">sympy.core.numbers.Rational</span></code> object, which can be converted to a string using the <code class="docutils literal notranslate"><span class="pre">str()</span></code> function.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">int_to_roman</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">int_to_roman</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;int_to_roman&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">base_repr</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="s1">&#39;IVXLCDM&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">np</span><span class="o">.</span><span class="n">base_repr</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="s1">&#39;IVXLCDM&#39;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: base_repr() got an unexpected keyword argument &#39;alphabet&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">roman</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">roman</span>
+
+<span class="ne">ImportError</span>: cannot import name &#39;roman&#39; from &#39;sympy&#39; (/opt/conda/lib/python3.10/site-packages/sympy/__init__.py)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="23_dict.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Pythonの配列と辞書と表</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="50_assignment.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">課題 1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Manabu Higashida
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

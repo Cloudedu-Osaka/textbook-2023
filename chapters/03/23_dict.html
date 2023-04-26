@@ -1,0 +1,1023 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Pythonの配列と辞書と表 &#8212; プログラミングで遡る科学史</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-148221575-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-148221575-1');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/03/23_dict';</script>
+    <link rel="canonical" href="https://inferentialthinking.org/chapters/03/23_dict.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="位取り記法の断絶と再興" href="40_positional.html" />
+    <link rel="prev" title="データ構造に依存するプログラミング" href="22_dict.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">プログラミングで遡る科学史</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/26</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="10_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_assignment.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_similarities.html">Code similarities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_dict.html">Data format (1)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pythonの配列と辞書と表</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="40_positional.html">Positional notation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="50_assignment.html">課題 1</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/19</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02/01_orientation.html">Orientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/02_assignment.html">Assignment (Last week)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/03_examination.html">Examination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/04_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/12</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/01_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/02_openai.html">Obtaining OpenAI API key</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/03_chatgpt.html">ChatGPT interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/04_assignment.html">Assignment</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/intro_add.html">Request for cooperation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_4.html">Experiment explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_5.html">Informed concent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_6.html">Withdrawal of concent</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://ecsosaka-jh2310.japaneast.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/Cloudedu-Osaka/textbook-2023&urlpath=lab/tree/textbook-2023/chapters/03/23_dict.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/Cloudedu-Osaka/textbook-2023" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/03/23_dict.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pythonの配列と辞書と表</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pythonの配列と辞書と表</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">試験問題とデータ構造</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#json-web">複雑な辞書形式とJSON (Webで一般的なデータ交換形式)</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="python">
+<h1>Pythonの配列と辞書と表<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Pythonのデータ構造</p>
+<ul>
+<li><p>リスト</p></li>
+<li><p>不変なリスト (tuple)</p></li>
+<li><p>辞書</p></li>
+</ul>
+</li>
+<li><p>Pythonのデータ構造</p>
+<ul>
+<li><p>配列</p>
+<ul>
+<li><p>numpy array</p></li>
+</ul>
+</li>
+<li><p>表 (テーブル)</p>
+<ul>
+<li><p>pandas dataframe</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
+pythonの配列と辞書とテーブルについて
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Pythonには、配列、辞書、テーブルの3つのデータ構造があります。</p>
+<p>配列は、同じ種類のデータを順序付けて格納するためのデータ構造です。Pythonでは、リストと呼ばれます。リストは、角かっこで囲まれた要素のカンマ区切りのリストで表されます。例えば、[1, 2, 3, 4, 5]は、整数のリストです。</p>
+<p>辞書は、キーと値のペアを格納するためのデータ構造です。Pythonでは、波かっこで囲まれたキーと値のペアのカンマ区切りのリストで表されます。例えば、{‘apple’: 1, ‘banana’: 2, ‘orange’: 3}は、果物の名前とそれぞれの番号を表す辞書です。</p>
+<p>テーブルは、行と列の形式でデータを格納するためのデータ構造です。Pythonでは、pandasというライブラリを使用して、データフレームと呼ばれるテーブルを作成します。データフレームは、行と列のラベルを持つ2次元のデータ構造で、Excelのようなスプレッドシートのように扱うことができます。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+pythonの配列とリストの違いについて
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Pythonにおいて、配列とリストは似たような機能を持っていますが、いくつかの違いがあります。</p>
+<p>配列は、同じデータ型の要素を格納することができる固定長のデータ構造です。一方、リストは、異なるデータ型の要素を格納することができる可変長のデータ構造です。</p>
+<p>また、配列はNumPyライブラリを使用して作成され、高速な数値演算が可能です。一方、リストはPythonの組み込みデータ型であり、より柔軟な操作が可能です。</p>
+<p>例えば、以下のように配列とリストを作成することができます。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># 配列の作成</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+
+<span class="c1"># リストの作成</span>
+<span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>配列とリストの選択は、使用するデータの種類と操作の目的によって異なります。数値演算を行う場合は、配列を使用することが一般的です。一方、データの追加や削除が必要な場合は、リストを使用することが適しています。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+不変な配列についても
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Pythonにおいて、不変な配列は「タプル」と呼ばれます。タプルは、リストと同様に複数の要素を格納することができますが、一度作成されたタプルは変更できません。</p>
+<p>タプルは、リストと同様にカンマで区切られた要素を丸括弧で囲んで作成します。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># タプルの作成</span>
+<span class="n">tup</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>タプルは、リストと同様にインデックスを使用して要素にアクセスすることができます。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># タプルの要素にアクセス</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tup</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># 3</span>
+</pre></div>
+</div>
+<p>ただし、タプルは不変であるため、要素の変更や追加、削除はできません。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># タプルの要素を変更しようとするとエラーが発生する</span>
+<span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># TypeError: &#39;tuple&#39; object does not support item assignment</span>
+
+<span class="c1"># タプルに要素を追加しようとするとエラーが発生する</span>
+<span class="n">tup</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>  <span class="c1"># AttributeError: &#39;tuple&#39; object has no attribute &#39;append&#39;</span>
+
+<span class="c1"># タプルから要素を削除しようとするとエラーが発生する</span>
+<span class="k">del</span> <span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># TypeError: &#39;tuple&#39; object doesn&#39;t support item deletion</span>
+</pre></div>
+</div>
+<p>タプルは、変更できないため安全性が高く、また、リストよりも軽量であるため、処理速度が速いという利点があります。ただし、要素の変更や追加、削除が必要な場合は、リストを使用する必要があります。</p>
+</div>
+</div>
+</section>
+<section id="id1">
+<h1>試験問題とデータ構造<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+```
+Tomei = (&quot;A党&quot;, &quot;B党&quot;, &quot;C党&quot;, &quot;D党&quot;)
+Tokuhyo = (1200, 660, 1440, 180)
+```
+この二つの配列をこの順番でテーブルに変換してください。
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>以下は、pandasを使用して、<code class="docutils literal notranslate"><span class="pre">Tomei</span></code>と<code class="docutils literal notranslate"><span class="pre">Tokuhyo</span></code>の2つのタプルをテーブルに変換する例です。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">Tomei</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;A党&quot;</span><span class="p">,</span> <span class="s2">&quot;B党&quot;</span><span class="p">,</span> <span class="s2">&quot;C党&quot;</span><span class="p">,</span> <span class="s2">&quot;D党&quot;</span><span class="p">)</span>
+<span class="n">Tokuhyo</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1200</span><span class="p">,</span> <span class="mi">660</span><span class="p">,</span> <span class="mi">1440</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;政党名&#39;</span><span class="p">:</span> <span class="n">Tomei</span><span class="p">,</span>
+    <span class="s1">&#39;得票数&#39;</span><span class="p">:</span> <span class="n">Tokuhyo</span>
+<span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>この例では、<code class="docutils literal notranslate"><span class="pre">pd.DataFrame()</span></code>関数を使用して、<code class="docutils literal notranslate"><span class="pre">Tomei</span></code>と<code class="docutils literal notranslate"><span class="pre">Tokuhyo</span></code>の2つのタプルをテーブルに変換しています。<code class="docutils literal notranslate"><span class="pre">pd.DataFrame()</span></code>関数には、辞書形式でデータを渡します。ここでは、<code class="docutils literal notranslate"><span class="pre">'政党名'</span></code>と<code class="docutils literal notranslate"><span class="pre">'得票数'</span></code>という列名を指定しています。</p>
+<p>出力結果は以下のようになります。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">政党名</span>  <span class="n">得票数</span>
+<span class="mi">0</span>  <span class="n">A党</span>  <span class="mi">1200</span>
+<span class="mi">1</span>  <span class="n">B党</span>   <span class="mi">660</span>
+<span class="mi">2</span>  <span class="n">C党</span>  <span class="mi">1440</span>
+<span class="mi">3</span>  <span class="n">D党</span>   <span class="mi">180</span>
+</pre></div>
+</div>
+<p>このテーブルでは、<code class="docutils literal notranslate"><span class="pre">'政党名'</span></code>列と<code class="docutils literal notranslate"><span class="pre">'得票数'</span></code>列があり、それぞれの行には、政党名と得票数が含まれています。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+不変にできますか？
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>タプルは不変（immutable）なオブジェクトであるため、一度作成されたタプルの要素を変更することはできません。ただし、タプルを要素とするリストや辞書などの可変（mutable）なオブジェクトに対しては、要素の変更や追加が可能です。</p>
+<p>したがって、この例で言えば、<code class="docutils literal notranslate"><span class="pre">Tomei</span></code>と<code class="docutils literal notranslate"><span class="pre">Tokuhyo</span></code>のタプル自体は不変ですが、これらのタプルを要素とするリストや辞書を作成することができます。ただし、リストや辞書は可変なオブジェクトであるため、要素の変更や追加が可能です。</p>
+<p>以下は、<code class="docutils literal notranslate"><span class="pre">Tomei</span></code>と<code class="docutils literal notranslate"><span class="pre">Tokuhyo</span></code>のタプルを要素とするリストを作成する例です。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">Tomei</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;A党&quot;</span><span class="p">,</span> <span class="s2">&quot;B党&quot;</span><span class="p">,</span> <span class="s2">&quot;C党&quot;</span><span class="p">,</span> <span class="s2">&quot;D党&quot;</span><span class="p">)</span>
+<span class="n">Tokuhyo</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1200</span><span class="p">,</span> <span class="mi">660</span><span class="p">,</span> <span class="mi">1440</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Tomei</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Tokuhyo</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;政党名&#39;</span><span class="p">,</span> <span class="s1">&#39;得票数&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>この例では、<code class="docutils literal notranslate"><span class="pre">data</span></code>というリストを作成し、<code class="docutils literal notranslate"><span class="pre">Tomei</span></code>と<code class="docutils literal notranslate"><span class="pre">Tokuhyo</span></code>を要素として追加しています。そして、<code class="docutils literal notranslate"><span class="pre">pd.DataFrame()</span></code>関数に<code class="docutils literal notranslate"><span class="pre">data</span></code>を渡して、テーブルを作成しています。<code class="docutils literal notranslate"><span class="pre">index</span></code>引数には、行のラベルを指定し、<code class="docutils literal notranslate"><span class="pre">columns</span></code>引数には、列のラベルを指定しています。</p>
+<p>出力結果は以下のようになります。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="mi">0</span>    <span class="mi">1</span>    <span class="mi">2</span>    <span class="mi">3</span>
+<span class="n">政党名</span>  <span class="n">A党</span>  <span class="n">B党</span>  <span class="n">C党</span>  <span class="n">D党</span>
+<span class="n">得票数</span>  <span class="mi">1200</span>  <span class="mi">660</span>  <span class="mi">1440</span>  <span class="mi">180</span>
+</pre></div>
+</div>
+<p>このテーブルでは、<code class="docutils literal notranslate"><span class="pre">'政党名'</span></code>列と<code class="docutils literal notranslate"><span class="pre">'得票数'</span></code>列があり、それぞれの行には、政党名と得票数が含まれています。ただし、このテーブルは可変なオブジェクトであるため、要素の変更や追加が可能です。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+得票数でソートしてください
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>以下は、<code class="docutils literal notranslate"><span class="pre">sort_values()</span></code>メソッドを使用して、<code class="docutils literal notranslate"><span class="pre">df</span></code>テーブルを<code class="docutils literal notranslate"><span class="pre">'得票数'</span></code>列でソートする例です。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">Tomei</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;A党&quot;</span><span class="p">,</span> <span class="s2">&quot;B党&quot;</span><span class="p">,</span> <span class="s2">&quot;C党&quot;</span><span class="p">,</span> <span class="s2">&quot;D党&quot;</span><span class="p">)</span>
+<span class="n">Tokuhyo</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1200</span><span class="p">,</span> <span class="mi">660</span><span class="p">,</span> <span class="mi">1440</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Tomei</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Tokuhyo</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;政党名&#39;</span><span class="p">,</span> <span class="s1">&#39;得票数&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="n">sorted_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;得票数&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>この例では、<code class="docutils literal notranslate"><span class="pre">sort_values()</span></code>メソッドを使用して、<code class="docutils literal notranslate"><span class="pre">df</span></code>テーブルを<code class="docutils literal notranslate"><span class="pre">'得票数'</span></code>列でソートしています。<code class="docutils literal notranslate"><span class="pre">by</span></code>引数には、ソートするための列を指定します。ここでは、<code class="docutils literal notranslate"><span class="pre">'得票数'</span></code>列を指定しています。<code class="docutils literal notranslate"><span class="pre">axis</span></code>引数には、ソートする方向を指定します。ここでは、列方向にソートするために<code class="docutils literal notranslate"><span class="pre">1</span></code>を指定しています。<code class="docutils literal notranslate"><span class="pre">ascending</span></code>引数には、昇順か降順かを指定します。ここでは、降順にソートするために<code class="docutils literal notranslate"><span class="pre">False</span></code>を指定しています。</p>
+<p>ソートされたテーブルは、<code class="docutils literal notranslate"><span class="pre">sorted_df</span></code>変数に格納されます。出力結果は以下のようになります。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="mi">2</span>    <span class="mi">0</span>    <span class="mi">1</span>    <span class="mi">3</span>
+<span class="n">政党名</span>  <span class="n">C党</span>  <span class="n">A党</span>  <span class="n">B党</span>  <span class="n">D党</span>
+<span class="n">得票数</span>  <span class="mi">1440</span>  <span class="mi">1200</span>  <span class="mi">660</span>  <span class="mi">180</span>
+</pre></div>
+</div>
+<p>このテーブルでは、<code class="docutils literal notranslate"><span class="pre">'政党名'</span></code>列と<code class="docutils literal notranslate"><span class="pre">'得票数'</span></code>列があり、それぞれの行には、政党名と得票数が含まれています。<code class="docutils literal notranslate"><span class="pre">'得票数'</span></code>列が降順にソートされています。</p>
+</div>
+</div>
+</section>
+<section id="json-web">
+<h1>複雑な辞書形式とJSON (Webで一般的なデータ交換形式)<a class="headerlink" href="#json-web" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+さらに、辞書と辞書のリストについて
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Pythonにおいて、辞書はキーと値のペアを格納するデータ構造です。キーは一意であり、値は重複することがあります。辞書は波括弧で囲まれ、キーと値はコロンで区切られます。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 辞書の作成</span>
+<span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">:</span> <span class="mi">300</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>辞書の要素にアクセスするには、キーを指定します。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 辞書の要素にアクセス</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">])</span>  <span class="c1"># 100</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;orange&#39;</span><span class="p">])</span>  <span class="c1"># 300</span>
+</pre></div>
+</div>
+<p>辞書のリストは、辞書を要素とするリストです。辞書のリストは、複数の辞書をまとめて扱う場合に便利です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 辞書のリストの作成</span>
+<span class="n">dict_list</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Charlie&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">40</span><span class="p">}]</span>
+</pre></div>
+</div>
+<p>辞書のリストの要素にアクセスするには、インデックスを指定します。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 辞書のリストの要素にアクセス</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dict_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># {&#39;name&#39;: &#39;Alice&#39;, &#39;age&#39;: 20}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dict_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>  <span class="c1"># &#39;Bob&#39;</span>
+</pre></div>
+</div>
+<p>辞書のリストは、データの検索やフィルタリングに便利です。例えば、年齢が30歳以上の人の名前を取得するには、以下のようにします。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 年齢が30歳以上の人の名前を取得</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dict_list</span> <span class="k">if</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">30</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>  <span class="c1"># [&#39;Bob&#39;, &#39;Charlie&#39;]</span>
+</pre></div>
+</div>
+<p>辞書のリストは、リスト内包表記を使用して簡単に作成することができます。例えば、以下のようにします。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 辞書のリストの作成（リスト内包表記を使用）</span>
+<span class="n">dict_list</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="n">age</span><span class="p">}</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span> <span class="ow">in</span> <span class="p">[(</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Charlie&#39;</span><span class="p">,</span> <span class="mi">40</span><span class="p">)]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+辞書のリストとJSONの関係は？
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>辞書のリストとJSONは密接に関連しています。JSONは、JavaScript Object Notationの略で、JavaScriptのオブジェクトを表現するための軽量なデータ交換形式です。JSONは、辞書のリストを含む複雑なデータ構造を表現することができます。</p>
+<p>Pythonの辞書のリストは、JSON形式に変換することができます。Pythonには、JSONを扱うための標準ライブラリ「json」があります。以下は、辞書のリストをJSON形式に変換する例です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="c1"># 辞書のリストの作成</span>
+<span class="n">dict_list</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Charlie&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">40</span><span class="p">}]</span>
+
+<span class="c1"># 辞書のリストをJSON形式に変換</span>
+<span class="n">json_str</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">dict_list</span><span class="p">)</span>
+
+<span class="c1"># JSON形式の文字列を出力</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json_str</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>出力結果は以下のようになります。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">}]</span>
+</pre></div>
+</div>
+<p>JSON形式の文字列をPythonの辞書のリストに変換するには、json.loads()関数を使用します。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># JSON形式の文字列を辞書のリストに変換</span>
+<span class="n">dict_list2</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_str</span><span class="p">)</span>
+
+<span class="c1"># 辞書のリストを出力</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dict_list2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>出力結果は以下のようになります。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Charlie&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">40</span><span class="p">}]</span>
+</pre></div>
+</div>
+<p>JSONは、WebアプリケーションやAPIなどで広く使用されており、Pythonの辞書のリストをJSON形式に変換することで、WebアプリケーションとPythonの間でデータをやり取りすることができます。</p>
+</div>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Literal_(computer_programming)">Literal (computer programming) - Wikipedia</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/JSON">JSON - Wikipedia</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+リテラルってなんだろう？
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>プログラミングにおいて、リテラルとは、プログラム中で直接値を表現するために使用される表記法のことを指します。つまり、リテラルは、プログラム中で値そのものを表現するために使用される文字列や数値などの表記法です。</p>
+<p>例えば、以下のようなリテラルがあります。</p>
+<ul class="simple">
+<li><p>数値リテラル：整数や浮動小数点数などの数値を表現するためのリテラル。例えば、<code class="docutils literal notranslate"><span class="pre">123</span></code>や<code class="docutils literal notranslate"><span class="pre">3.14</span></code>などが数値リテラルです。</p></li>
+<li><p>文字列リテラル：文字列を表現するためのリテラル。例えば、<code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code>や<code class="docutils literal notranslate"><span class="pre">'Python'</span></code>などが文字列リテラルです。</p></li>
+<li><p>真偽値リテラル：真偽値（TrueまたはFalse）を表現するためのリテラル。例えば、<code class="docutils literal notranslate"><span class="pre">True</span></code>や<code class="docutils literal notranslate"><span class="pre">False</span></code>が真偽値リテラルです。</p></li>
+<li><p>Noneリテラル：何もないことを表現するためのリテラル。例えば、<code class="docutils literal notranslate"><span class="pre">None</span></code>がNoneリテラルです。</p></li>
+</ul>
+<p>リテラルは、プログラム中で値を直接表現するために使用されるため、変数や定数などの識別子を使用する必要がなく、直接値を使用することができます。また、リテラルは、プログラムの可読性を向上させるためにも重要な役割を果たします。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+pythonのリテラルとJSONについて
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>PythonのリテラルとJSONは密接に関連しています。JSONは、JavaScript Object Notationの略で、JavaScriptのオブジェクトを表現するための軽量なデータ交換形式です。JSONは、Pythonのリテラルを含む複雑なデータ構造を表現することができます。</p>
+<p>Pythonのリテラルは、JSON形式に変換することができます。Pythonには、JSONを扱うための標準ライブラリ「json」があります。以下は、PythonのリテラルをJSON形式に変換する例です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="c1"># Pythonのリテラルを含むデータ構造の作成</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s1">&#39;is_student&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;hobbies&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;reading&#39;</span><span class="p">,</span> <span class="s1">&#39;music&#39;</span><span class="p">,</span> <span class="s1">&#39;travel&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;address&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;zip&#39;</span><span class="p">:</span> <span class="s1">&#39;123-4567&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;prefecture&#39;</span><span class="p">:</span> <span class="s1">&#39;Tokyo&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Chiyoda-ku&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># データ構造をJSON形式に変換</span>
+<span class="n">json_str</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># JSON形式の文字列を出力</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json_str</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>出力結果は以下のようになります。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;is_student&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;hobbies&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;reading&quot;</span><span class="p">,</span> <span class="s2">&quot;music&quot;</span><span class="p">,</span> <span class="s2">&quot;travel&quot;</span><span class="p">],</span> <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;zip&quot;</span><span class="p">:</span> <span class="s2">&quot;123-4567&quot;</span><span class="p">,</span> <span class="s2">&quot;prefecture&quot;</span><span class="p">:</span> <span class="s2">&quot;Tokyo&quot;</span><span class="p">,</span> <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Chiyoda-ku&quot;</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p>JSON形式の文字列をPythonのリテラルに変換するには、json.loads()関数を使用します。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># JSON形式の文字列をPythonのリテラルに変換</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_str</span><span class="p">)</span>
+
+<span class="c1"># データ構造を出力</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>出力結果は以下のようになります。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;is_student&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;hobbies&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;reading&#39;</span><span class="p">,</span> <span class="s1">&#39;music&#39;</span><span class="p">,</span> <span class="s1">&#39;travel&#39;</span><span class="p">],</span> <span class="s1">&#39;address&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;zip&#39;</span><span class="p">:</span> <span class="s1">&#39;123-4567&#39;</span><span class="p">,</span> <span class="s1">&#39;prefecture&#39;</span><span class="p">:</span> <span class="s1">&#39;Tokyo&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Chiyoda-ku&#39;</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p>JSONは、WebアプリケーションやAPIなどで広く使用されており、PythonのリテラルをJSON形式に変換することで、WebアプリケーションとPythonの間でデータをやり取りすることができます。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+例示されたデータ構造のトラバースして型を表示するプログラムを書いてください
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>以下は、例示されたデータ構造の型をトラバースして表示するPythonのプログラムです。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">traverse</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="c1"># データの型を取得</span>
+    <span class="n">data_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
+
+    <span class="c1"># データの型に応じて処理を分岐</span>
+    <span class="k">if</span> <span class="n">data_type</span> <span class="o">==</span> <span class="s1">&#39;dict&#39;</span><span class="p">:</span>
+        <span class="c1"># 辞書の場合</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dictionary:&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Key: </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">traverse</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">data_type</span> <span class="o">==</span> <span class="s1">&#39;list&#39;</span><span class="p">:</span>
+        <span class="c1"># リストの場合</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;List:&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="n">traverse</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># その他の場合</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">data_type</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># 例示されたデータ構造の作成</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s1">&#39;is_student&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;hobbies&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;reading&#39;</span><span class="p">,</span> <span class="s1">&#39;music&#39;</span><span class="p">,</span> <span class="s1">&#39;travel&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;address&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;zip&#39;</span><span class="p">:</span> <span class="s1">&#39;123-4567&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;prefecture&#39;</span><span class="p">:</span> <span class="s1">&#39;Tokyo&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Chiyoda-ku&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># データ構造のトラバース</span>
+<span class="n">traverse</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>出力結果は以下のようになります。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Dictionary</span><span class="p">:</span>
+<span class="n">Key</span><span class="p">:</span> <span class="n">name</span>
+<span class="nb">str</span><span class="p">:</span> <span class="n">Alice</span>
+<span class="n">Key</span><span class="p">:</span> <span class="n">age</span>
+<span class="nb">int</span><span class="p">:</span> <span class="mi">20</span>
+<span class="n">Key</span><span class="p">:</span> <span class="n">is_student</span>
+<span class="nb">bool</span><span class="p">:</span> <span class="kc">True</span>
+<span class="n">Key</span><span class="p">:</span> <span class="n">hobbies</span>
+<span class="n">List</span><span class="p">:</span>
+<span class="nb">str</span><span class="p">:</span> <span class="n">reading</span>
+<span class="nb">str</span><span class="p">:</span> <span class="n">music</span>
+<span class="nb">str</span><span class="p">:</span> <span class="n">travel</span>
+<span class="n">Key</span><span class="p">:</span> <span class="n">address</span>
+<span class="n">Dictionary</span><span class="p">:</span>
+<span class="n">Key</span><span class="p">:</span> <span class="nb">zip</span>
+<span class="nb">str</span><span class="p">:</span> <span class="mi">123</span><span class="o">-</span><span class="mi">4567</span>
+<span class="n">Key</span><span class="p">:</span> <span class="n">prefecture</span>
+<span class="nb">str</span><span class="p">:</span> <span class="n">Tokyo</span>
+<span class="n">Key</span><span class="p">:</span> <span class="n">city</span>
+<span class="nb">str</span><span class="p">:</span> <span class="n">Chiyoda</span><span class="o">-</span><span class="n">ku</span>
+</pre></div>
+</div>
+<p>このプログラムでは、再帰的にデータ構造をトラバースして、各要素の型を表示しています。辞書の場合は、キーと値を表示し、値について再帰的にトラバースします。リストの場合は、各要素について再帰的にトラバースします。その他の場合は、そのまま型と値を表示します。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">traverse</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="c1"># データの型を取得</span>
+    <span class="n">data_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
+
+    <span class="c1"># データの型に応じて処理を分岐</span>
+    <span class="k">if</span> <span class="n">data_type</span> <span class="o">==</span> <span class="s1">&#39;dict&#39;</span><span class="p">:</span>
+        <span class="c1"># 辞書の場合</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dictionary:&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Key: </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">traverse</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">data_type</span> <span class="o">==</span> <span class="s1">&#39;list&#39;</span><span class="p">:</span>
+        <span class="c1"># リストの場合</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;List:&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="n">traverse</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># その他の場合</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">data_type</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># 例示されたデータ構造の作成</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s1">&#39;is_student&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;hobbies&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;reading&#39;</span><span class="p">,</span> <span class="s1">&#39;music&#39;</span><span class="p">,</span> <span class="s1">&#39;travel&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;address&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;zip&#39;</span><span class="p">:</span> <span class="s1">&#39;123-4567&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;prefecture&#39;</span><span class="p">:</span> <span class="s1">&#39;Tokyo&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Chiyoda-ku&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># データ構造のトラバース</span>
+<span class="n">traverse</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dictionary:
+Key: name
+str: Alice
+Key: age
+int: 20
+Key: is_student
+bool: True
+Key: hobbies
+List:
+str: reading
+str: music
+str: travel
+Key: address
+Dictionary:
+Key: zip
+str: 123-4567
+Key: prefecture
+str: Tokyo
+Key: city
+str: Chiyoda-ku
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="22_dict.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">データ構造に依存するプログラミング</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="40_positional.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">位取り記法の断絶と再興</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pythonの配列と辞書と表</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">試験問題とデータ構造</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#json-web">複雑な辞書形式とJSON (Webで一般的なデータ交換形式)</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Manabu Higashida
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
