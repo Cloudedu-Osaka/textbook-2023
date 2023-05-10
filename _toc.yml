@@ -2,6 +2,23 @@ format: jb-book
 root: chapters/intro
 title: Abstract
 parts:
+- caption: 2023/05/10
+  numberd: false
+  chapters:
+  - file: chapters/04/10_intro.ipynb
+    title: Past assignment and Introduction
+  - file: chapters/04/20_pythagoras.ipynb
+    title: Pythagorean numbers and theorem
+  - file: chapters/04/22_dict-Copy1.ipynb
+    title: Data format (1)
+  - file: chapters/04/23_dict-Copy1.ipynb
+    title: Data format (2)
+  - file: chapters/04/40_egyptian_numerals.ipynb
+    title: Egyptian numerals
+  - file: chapters/04/50_babylonian_numerals.ipynb
+    title: Babylonian numerals
+  - file: chapters/04/90_assignment.ipynb
+    title: Assignment
 - caption: 2023/04/26
   numberd: false
   chapters:
