@@ -1,0 +1,922 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>ピタゴラスの三数とピタゴラスの定理 &#8212; プログラミングで遡る科学史</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-148221575-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-148221575-1');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/04/20_pythagoras';</script>
+    <link rel="canonical" href="https://inferentialthinking.org/chapters/04/20_pythagoras.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="データ構造に依存するプログラミング" href="22_dict-Copy1.html" />
+    <link rel="prev" title="前回の課題" href="10_intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">プログラミングで遡る科学史</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/10</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="10_intro.html">Past assignment and Introduction</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pythagorean numbers and theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_dict-Copy1.html">Data format (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_dict-Copy1.html">Pythonの配列と辞書と表</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="40_egyptian_numerals.html">Egyptian numerals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="50_babylonian_numerals.html">Babylonian numerals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="90_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/26</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03/10_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/20_assignment.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/21_similarities.html">Code similarities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/22_dict.html">Data format (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/23_dict.html">Data format (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/40_positional.html">Positional notation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/50_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/19</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02/01_orientation.html">Orientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/02_assignment.html">Assignment (Last week)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/03_examination.html">Examination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/04_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/12</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/01_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/02_openai.html">Obtaining OpenAI API key</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/03_chatgpt.html">ChatGPT interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/04_assignment.html">Assignment</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/intro_add.html">Request for cooperation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_4.html">Experiment explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_5.html">Informed concent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_6.html">Withdrawal of concent</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://ecsosaka-jh2310.japaneast.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/Cloudedu-Osaka/textbook-2023&urlpath=lab/tree/textbook-2023/chapters/04/20_pythagoras.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/Cloudedu-Osaka/textbook-2023" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/04/20_pythagoras.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>ピタゴラスの三数とピタゴラスの定理</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">ビデオ教材</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">「ユークリッドと12歳のアインシュタイン、ジェームズ・ガーフィールド米大統領の共通点とは？」</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">「歴史学者の中には 古代エジプトの測量士が３､４､５といった数字の組み合わせで 直角を作ったと推測する人もいます」</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">「紀元前1800年頃のバビロニアの 粘土板にはこの定理を満たす15通りの数字の組み合わせが 記載されています」</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wikipedia">Wikipediaのデータを活用する</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">何故、古代メソポタミア人は、<span class="math notranslate nohighlight">\((3,4,5)\)</span> ではなく <span class="math notranslate nohighlight">\((45, 60, 75)\)</span> を使ったのだろうか?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>ピタゴラスの三数とピタゴラスの定理<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Pythagorean_triple">Pythagorean triple - Wikipedia</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Pythagorean_theorem">Pythagorean theorem - Wikipedia</a></p></li>
+</ul>
+<section id="id2">
+<h2>ビデオ教材<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>教材を視聴しながらChatGPTと対話してください:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=YompsDlEdtc">How many ways are there to prove the Pythagorean theorem? - Betty Fei - YouTube</a></p>
+<ul>
+<li><p>0:00 翻訳: Misaki Sato 校正: Hiroko Kawano</p></li>
+<li><p>0:01 「理性だけが不滅である」 ピタゴラス</p></li>
+<li><p>0:09 ユークリッドと12歳のアインシュタイン、ジェームズ・ガーフィールド米大統領の共通点とは？</p></li>
+<li><p>0:16 エレガントな方法でピタゴラスの定理の証明をしたことです</p></li>
+<li><p>0:20 これは直角三角形における直角と隣り合う一辺の二乗と 他辺の二乗との和は斜辺の二乗に等しいという規則でつまり A²+B²=C²ということです</p></li>
+<li><p>0:34 これは幾何学における 最も基本的な規則で実務的な応用の基礎となるものです</p></li>
+<li><p>0:40 例えば 安定した建物の建造や GPS座標の三角測量などで用います</p></li>
+<li><p>0:45 定理の名前の由来となった ピタゴラスは紀元前６世紀の哲学者で 数学者でもあります</p></li>
+<li><p>0:52 しかし この定理は その千年以上前から知られています</p></li>
+<li><p>0:56 紀元前1800年頃のバビロニアの 粘土板にはこの定理を満たす15通りの数字の組み合わせが 記載されています</p></li>
+<li><p>1:04 歴史学者の中には 古代エジプトの測量士が３､４､５といった数字の組み合わせで 直角を作ったと推測する人もいます</p></li>
+<li><p>1:13 測量士が12等分に結び目を付けた 縄を使って辺の長さがそれぞれ ３､４､５の三角形を作れたと言うのです</p></li>
+<li><p>1:23 ピタゴラスの定理の逆からこの三角形は 直角三角形のはずです</p></li>
+<li><p>1:28 よって 直角を得られるのです</p></li>
+<li><p>1:30 紀元前800年から600年に書かれた知られる限り最古のインドの数学書には正方形の対角に渡した縄を１辺とする正方形を作ると元の２倍の面積の正方形ができるとしています</p></li>
+<li><p>1:44 この関係はピタゴラスの定理から導き出せます</p></li>
+<li><p>1:49 数学者や測量士が知っていたものだけでなく平面上のどの三角形についてもなぜこの定理が真であるとわかるのでしょうか</p></li>
+<li><p>1:58 証明できるからです</p></li>
+<li><p>1:59 証明には数学の既存の定理や論理を使って、ある命題が常に真であることを示します</p></li>
+<li><p>2:07 古典的な証明はピタゴラス自身による再構成という戦略を使います</p></li>
+<li><p>2:14 辺の長さがaとbで斜辺がcの合同な直角三角形４つを考えてみましょう</p></li>
+<li><p>2:22 これらの斜辺で正方形を作るように並べます</p></li>
+<li><p>2:26 このエリアの面積はc²です</p></li>
+<li><p>2:29 今度は三角形で２つの長方形を作ると両側に小さな正方形ができますが、これらの面積はa²とb²です</p></li>
+<li><p>2:40 ここにカギがあります</p></li>
+<li><p>2:41 この図形の総面積は変化せず、各三角形の面積も変化していません</p></li>
+<li><p>2:48 ですから このひとつめの空白部分はc²で、もう一方の空白部分であるa²+b²と等しいはずです</p></li>
+<li><p>2:58 別の証明は同じくギリシャの数学者のユークリッドによるもので、その約２千年後に12歳のアインシュタインも考えた証明です</p></li>
+<li><p>3:07 この証明では直角三角形を二分して２つの三角形の対応する角が等しいときは</p></li>
+<li><p>3:15 ２つの三角形の対応する角が等しいときはその辺の比も等しいという原理を用います</p></li>
+<li><p>3:19 この３つの三角形は相似で、辺についてこれらの式で表すことができます</p></li>
+<li><p>3:33 次に項を整理します</p></li>
+<li><p>3:39 最後に２つの等式を足してAB²+AC²=BC²、つまりA²+B²=C²です</p></li>
+<li><p>3:57 この証明では平面充填、つまり幾何学パターンを繰り返して視覚的に証明します</p></li>
+<li><p>4:03 仕組みはわかりますか？</p></li>
+<li><p>4:05 ここでビデオを止めて 考えてみましょう</p></li>
+<li><p>4:10 さて回答です</p></li>
+<li><p>4:11 ダークグレーの正方形はa²</p></li>
+<li><p>4:13 ライトグレーのものはb²です</p></li>
+<li><p>4:16 青い線で示したものはc²です</p></li>
+<li><p>4:19 青い線の正方形は ダークグレーの正方形ひとつとライトグレーの正方形ひとつを含んでいて、ここでもピタゴラスの定理を証明できます</p></li>
+<li><p>4:28 自分を納得させたいなら直角三角形の周りに３つの正方形の箱をつけたターンテーブルをつくり</p></li>
+<li><p>4:37 一番大きい正方形に水を入れて ターンテーブルを回すと、その水は残りの２つの正方形を 完全に満たすはずです</p></li>
+<li><p>4:45 ピタゴラスの定理の証明には、すばらしいものから曖昧なものまで350以上の方法があります</p></li>
+<li><p>4:53 オリジナルの方法を考えられますか？</p></li>
+<li><p>4:56 このレッスンを 楽しんでいただけましたか？</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
+How many ways are there to prove the Pythagorean theorem?
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>There are over 300 known ways to prove the Pythagorean theorem, which states that in a right triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+in japanese
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>ピタゴラスの定理を証明する方法は300以上あります。ピタゴラスの定理とは、直角三角形において、斜辺の長さの二乗は、他の二辺の長さの二乗の和と等しいという定理です。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id3">
+<h3>「ユークリッドと12歳のアインシュタイン、ジェームズ・ガーフィールド米大統領の共通点とは？」<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Euclid">Euclid - Wikipedia</a> fl. 300 BC</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/James_A._Garfield">James A. Garfield - Wikipedia</a> 1831–1881</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Albert_Einstein">Albert Einstein - Wikipedia</a> 1879–1955</p></li>
+</ul>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.maa.org/press/periodicals/convergence/mathematical-treasure-james-a-garfields-proof-of-the-pythagorean-theorem">Mathematical Treasure: James A. Garfield’s Proof of the Pythagorean Theorem | Mathematical Association of America</a></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+2 \times \frac{1}{2} a b + \frac{1}{2} c^2 &amp;= \frac{1}{2} (a + b)^2 \\
+2 a b + c^2 &amp;= (a+b)^2 \\
+c^2 &amp;= a^2 + b^2 
+\end{aligned}
+\end{split}\]</div>
+<p><img alt="Screenshot 2023-05-09 at 15.50.07.png" src="chapters/04/attachment:782da375-0f4a-4e46-8dbe-0b8ec543ee67.png" /></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left\{
+\begin{eqnarray}
+\frac{\rm AC}{\rm CD} &amp;= \frac{\rm BC}{\rm AC} \\[5pt]
+\frac{\rm AB}{\rm BD} &amp;= \frac{\rm BC}{\rm AB}
+\end{eqnarray}
+\right.
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left\{
+\begin{eqnarray}
+{\rm AC}^2 &amp;= {\rm BC} \times {\rm CD} \\[5pt]
+{\rm AB}^2 &amp;= {\rm BC} \times {\rm BD}
+\end{eqnarray}
+\right.
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[{\rm AB}^2 + {\rm AC}^2 = {\rm BC} \times \left({\rm CD} + {\rm BD} \right) = {\rm BC}^2\]</div>
+</section>
+<section id="id4">
+<h3>「歴史学者の中には 古代エジプトの測量士が３､４､５といった数字の組み合わせで 直角を作ったと推測する人もいます」<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Rope_stretcher">Rope stretcher - Wikipedia</a></p></li>
+</ul>
+</section>
+<section id="id5">
+<h3>「紀元前1800年頃のバビロニアの 粘土板にはこの定理を満たす15通りの数字の組み合わせが 記載されています」<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Plimpton_322">Plimpton 322 - Wikipedia</a></p></li>
+</ul>
+<p><img alt="Screenshot 2023-05-09 at 15.52.31.png" src="chapters/04/attachment:ebdcb49b-cdc2-4b21-b912-62e493df3d2b.png" /></p>
+</section>
+</section>
+<section id="wikipedia">
+<h2>Wikipediaのデータを活用する<a class="headerlink" href="#wikipedia" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
+pandasでwebデータをスクレイピングしたい
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>pandasのread_html()関数を使用すると、WebページからテーブルデータをスクレイピングしてDataFrameとして読み込むことができます。以下は、例です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://example.com/table.html&#39;</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="c1"># ページ内の全てのテーブルをDataFrameとして取得する場合</span>
+<span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">dfs</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># 特定のテーブルをDataFrameとして取得する場合</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>ただし、この方法はすべてのWebページで動作するわけではなく、テーブル以外のデータをスクレイピングする場合は別の方法を使用する必要があります。また、Webスクレイピングには法的な制限があるため、注意が必要です。</p>
+</div>
+</div>
+<p>pandasのライブラリ関数 <code class="docutils literal notranslate"><span class="pre">read_html()</span></code> を使ってWikipediaの表を読み込む:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Web_scraping">Web scraping - Wikipedia</a></p>
+<ul>
+<li><p><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_html.html">pandas.read_html — pandas 2.0.1 documentation</a></p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://en.wikipedia.org/wiki/Plimpton_322&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>or</th>
+      <th>Short Side</th>
+      <th>Diagonal</th>
+      <th>Row #</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>(1).9834028</td>
+      <td>119</td>
+      <td>169</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>(1).9491586</td>
+      <td>3367</td>
+      <td>4825</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>(1).9188021</td>
+      <td>4601</td>
+      <td>6649</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>(1).8862479</td>
+      <td>12709</td>
+      <td>18541</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>(1).8150077</td>
+      <td>65</td>
+      <td>97</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>(1).7851929</td>
+      <td>319</td>
+      <td>481</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>(1).7199837</td>
+      <td>2291</td>
+      <td>3541</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>(1).6927094</td>
+      <td>799</td>
+      <td>1249</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>(1).6426694</td>
+      <td>481</td>
+      <td>769</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>(1).5861226</td>
+      <td>4961</td>
+      <td>8161</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>(1).5625</td>
+      <td>45*</td>
+      <td>75*</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>(1).4894168</td>
+      <td>1679</td>
+      <td>2929</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>(1).4500174</td>
+      <td>161</td>
+      <td>289</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>(1).4302388</td>
+      <td>1771</td>
+      <td>3229</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>(1).3871605</td>
+      <td>56*</td>
+      <td>106*</td>
+      <td>15</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">75</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">45</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3600
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60.0
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(45^2+60^2 = (15 \times 3)^2 + (15\times 4)^2 = 15^2 \times (3^2 + 4^2) = 15^2 \times 5^2 = (15 \times 5)^2 = 75^2\)</span></p>
+</section>
+<section id="id6">
+<h2>何故、古代メソポタミア人は、<span class="math notranslate nohighlight">\((3,4,5)\)</span> ではなく <span class="math notranslate nohighlight">\((45, 60, 75)\)</span> を使ったのだろうか?<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Sign-value_notation">Sign-value notation - Wikipedia</a></p>
+<ul>
+<li><p>Non-alphabetic</p>
+<ul>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Roman_numerals">Roman numerals - Wikipedia</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Egyptian_numerals">Egyptian numerals - Wikipedia</a></p></li>
+</ul>
+</li>
+<li><p>Alphabetic</p>
+<ul>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Greek_numerals">Greek numerals - Wikipedia</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Positional_notation">Positional notation - Wikipedia</a></p>
+<ul>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Babylonian_cuneiform_numerals">Babylonian cuneiform numerals - Wikipedia</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/04"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="10_intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">前回の課題</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="22_dict-Copy1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">データ構造に依存するプログラミング</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">ビデオ教材</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">「ユークリッドと12歳のアインシュタイン、ジェームズ・ガーフィールド米大統領の共通点とは？」</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">「歴史学者の中には 古代エジプトの測量士が３､４､５といった数字の組み合わせで 直角を作ったと推測する人もいます」</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">「紀元前1800年頃のバビロニアの 粘土板にはこの定理を満たす15通りの数字の組み合わせが 記載されています」</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wikipedia">Wikipediaのデータを活用する</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">何故、古代メソポタミア人は、<span class="math notranslate nohighlight">\((3,4,5)\)</span> ではなく <span class="math notranslate nohighlight">\((45, 60, 75)\)</span> を使ったのだろうか?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Manabu Higashida
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
