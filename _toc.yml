@@ -2,6 +2,21 @@ format: jb-book
 root: chapters/intro
 title: Abstract
 parts:
+- caption: 2023/05/17
+  numberd: false
+  chapters:
+  - file: chapters/05/490_assignment.ipynb
+    title: Past assignment
+  - file: chapters/05/500_arche.ipynb
+    title: Introduction
+  - file: chapters/05/510_octave.ipynb
+    title: Octave
+  - file: chapters/05/520_timbre.ipynb
+    title: Timbre
+  - file: chapters/05/530_temerament.ipynb
+    title: Temerament
+  - file: chapters/05/590_assignment.ipynb
+    title: Assignment
 - caption: 2023/05/10
   numberd: false
   chapters:
