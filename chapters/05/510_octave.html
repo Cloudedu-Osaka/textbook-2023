@@ -1,0 +1,794 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Harmonic and Octave &#8212; プログラミングで遡る科学史</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-148221575-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-148221575-1');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/05/510_octave';</script>
+    <link rel="canonical" href="https://inferentialthinking.org/chapters/05/510_octave.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Timbre (音色)" href="520_timbre.html" />
+    <link rel="prev" title="Arche" href="500_arche.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">プログラミングで遡る科学史</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/17</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="490_assignment.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="500_arche.html">Introduction</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Octave</a></li>
+<li class="toctree-l1"><a class="reference internal" href="520_timbre.html">Timbre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="590_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/10</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04/10_intro.html">Past assignment and Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/20_pythagoras.html">Pythagorean numbers and theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/22_dict-Copy1.html">Data format (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/23_dict-Copy1.html">Pythonの配列と辞書と表</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../04/40_egyptian_numerals.html">Egyptian numerals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/50_babylonian_numerals.html">Babylonian numerals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/90_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/26</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03/10_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/20_assignment.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/21_similarities.html">Code similarities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/22_dict.html">Data format (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/23_dict.html">Data format (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/40_positional.html">Positional notation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/50_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/19</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02/01_orientation.html">Orientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/02_assignment.html">Assignment (Last week)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/03_examination.html">Examination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/04_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/12</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/01_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/02_openai.html">Obtaining OpenAI API key</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/03_chatgpt.html">ChatGPT interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/04_assignment.html">Assignment</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/intro_add.html">Request for cooperation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_4.html">Experiment explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_5.html">Informed concent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_6.html">Withdrawal of concent</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://ecsosaka-jh2310.japaneast.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/Cloudedu-Osaka/textbook-2023&urlpath=lab/tree/textbook-2023/chapters/05/510_octave.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/Cloudedu-Osaka/textbook-2023" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/05/510_octave.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Harmonic and Octave</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="harmonic-and-octave">
+<h1>Harmonic and Octave<a class="headerlink" href="#harmonic-and-octave" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.audiolabs-erlangen.de/resources/MIR/FMP/C1/C1S3_Waveform.html">C1S3: Waves and Waveforms</a></p></li>
+</ul>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Octave">Octave - Wikipedia</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Overtone">Overtone - Wikipedia</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Harmonic">Harmonic - Wikipedia</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://en.wikipedia.org/wiki/Harmonic&#39;</span><span class="p">)</span>
+<span class="n">dfs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Harmonic</th>
+      <th>Stop note</th>
+      <th>Sounded note relative to open string</th>
+      <th>Audio frequency (Hz)</th>
+      <th>Cents above fundamental (offset by octave)</th>
+      <th>Audio octave shifted</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>fundamental perfect unison</td>
+      <td>P1</td>
+      <td>600</td>
+      <td>0.0</td>
+      <td>Play (help·info)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>first perfect octave</td>
+      <td>P8</td>
+      <td>1200</td>
+      <td>0.0</td>
+      <td>Play (help·info)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>perfect fifth</td>
+      <td>P8 + P5</td>
+      <td>1800</td>
+      <td>702.0</td>
+      <td>Play (help·info)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>doubled perfect octave</td>
+      <td>2·P8</td>
+      <td>2400</td>
+      <td>0.0</td>
+      <td>Play (help·info)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>just major third major third</td>
+      <td>2·P8 + M3</td>
+      <td>3000</td>
+      <td>386.3</td>
+      <td>Play (help·info)</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>perfect fifth</td>
+      <td>2·P8 + P5</td>
+      <td>3600</td>
+      <td>702.0</td>
+      <td>Play (help·info)</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>harmonic seventh septimal minor seventh (‘the ...</td>
+      <td>2·P8 + m7↓</td>
+      <td>4200</td>
+      <td>968.8</td>
+      <td>Play (help·info)</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>third perfect octave</td>
+      <td>3·P8</td>
+      <td>4800</td>
+      <td>0.0</td>
+      <td>Play (help·info)</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>Pythagorean major second</td>
+      <td>3·P8 + M2</td>
+      <td>5400</td>
+      <td>203.9</td>
+      <td>Play (help·info)</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>just major third</td>
+      <td>3·P8 + M3</td>
+      <td>6000</td>
+      <td>386.3</td>
+      <td>Play (help·info)</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>11</td>
+      <td>lesser undecimal tritone undecimal semi-augmen...</td>
+      <td>3·P8 + a4</td>
+      <td>4950</td>
+      <td>551.3</td>
+      <td>Play (help·info)</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>12</td>
+      <td>perfect fifth</td>
+      <td>3·P8 + P5</td>
+      <td>5400</td>
+      <td>702.0</td>
+      <td>Play (help·info)</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>13</td>
+      <td>tridecimal neutral sixth</td>
+      <td>3·P8 + n6↓</td>
+      <td>7800</td>
+      <td>840.5</td>
+      <td>Play (help·info)</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>14</td>
+      <td>harmonic seventh septimal minor seventh (‘the ...</td>
+      <td>3·P8 + m7⤈</td>
+      <td>8400</td>
+      <td>968.8</td>
+      <td>Play (help·info)</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>15</td>
+      <td>just major seventh</td>
+      <td>3·P8 + M7</td>
+      <td>6750</td>
+      <td>1088.3</td>
+      <td>Play (help·info)</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>16</td>
+      <td>fourth perfect octave</td>
+      <td>4·P8</td>
+      <td>4800</td>
+      <td>0.0</td>
+      <td>Play (help·info)</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>17</td>
+      <td>septidecimal semitone</td>
+      <td>4·P8 + m2⇟</td>
+      <td>10200</td>
+      <td>105.0</td>
+      <td>Play (help·info)</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>18</td>
+      <td>Pythagorean major second</td>
+      <td>4·P8 + M2</td>
+      <td>10800</td>
+      <td>203.9</td>
+      <td>Play (help·info)</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>19</td>
+      <td>nanodecimal minor third</td>
+      <td>4·P8 + m3</td>
+      <td>11400</td>
+      <td>297.5</td>
+      <td>Play (help·info)</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>20</td>
+      <td>just major third</td>
+      <td>4·P8 + M3</td>
+      <td>12000</td>
+      <td>386.3</td>
+      <td>Play (help·info)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
+オクターブは何故同じ音として聞こえるのですか？
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>オクターブにおいて、周波数が2倍になると、音の高さは1オクターブ上がります。つまり、同じ音階の音でも、周波数が2倍になると、音の高さが上がりますが、その音の特徴や質は変わりません。そのため、周波数が2倍になっても、同じ音として聞こえるのです。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+オクターブで変わらない音の特徴や質とは、具体的にはどのような量ですか？
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>オクターブが上がっても、同じ音階の音は基本周波数が2倍になるため、音の高さは上がりますが、音の特徴や質は変わりません。具体的には、以下のような量が変わらないです。</p>
+<ol class="arabic simple">
+<li><p>波形の形状：同じ音階の音は、基本周波数が2倍になっても、波形の形状は変わりません。</p></li>
+<li><p>音色：同じ楽器で演奏された同じ音階の音は、基本周波数が2倍になっても、音色は変わりません。</p></li>
+<li><p>音量：同じ音階の音は、基本周波数が2倍になっても、音量は変わりません。</p></li>
+<li><p>音の長さ：同じ音階の音は、基本周波数が2倍になっても、音の長さは変わりません。</p></li>
+</ol>
+<p>これらの量が変わらないため、同じ音として聞こえるのです。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+人間の聴覚は、波形の形状まで認識できるのですか？
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>はい、人間の聴覚は波形の形状まで認識することができます。人間の耳は、音波の振動によって内部の鼓膜が振動し、その振動が内耳に伝わります。内耳には、カタツムリの中にある毛細胞があり、その毛細胞が音波の振動に応じて刺激されます。この刺激が脳に伝わり、音として認識されます。</p>
+<p>この毛細胞は、音波の振動によって刺激される位置によって、どの周波数の音であるかを判断することができます。また、波形の形状によっても、音の特徴や質を認識することができます。例えば、同じ音階の音でも、ピアノとギターで演奏された場合、波形の形状が異なるため、音の特徴や質が異なります。人間の聴覚は、このような微妙な違いも認識することができます。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+音色とはどのような量で特徴付けられますか？
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>音色とは、同じ音高であっても、楽器や声質によって異なる音の特徴や質のことを指します。音色は、以下のような量で特徴付けられます。</p>
+<ol class="arabic simple">
+<li><p>波形の形状：楽器や声質によって、音波の振動の形状が異なります。そのため、波形の形状が音色に大きく影響します。</p></li>
+<li><p>振動数スペクトル：楽器や声質によって、音波の振動数スペクトルが異なります。振動数スペクトルとは、音波を構成する周波数成分の強さを表したグラフです。振動数スペクトルが異なると、音色も異なります。</p></li>
+<li><p>音量：同じ楽器や声質でも、音量が異なると、音色も異なります。音量が大きいほど、音色は明るくなります。</p></li>
+<li><p>音の長さ：同じ楽器や声質でも、音の長さが異なると、音色も異なります。音の長さが長いほど、音色は豊かになります。</p></li>
+<li><p>音の強弱の変化：同じ楽器や声質でも、音の強弱の変化が異なると、音色も異なります。音の強弱の変化が大きいほど、音色は表情豊かになります。</p></li>
+</ol>
+<p>これらの量が音色に影響を与えます。楽器や声質によって、これらの量が異なるため、音色も異なると言えます。</p>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/05"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="500_arche.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Arche</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="520_timbre.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Timbre (音色)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Manabu Higashida
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
