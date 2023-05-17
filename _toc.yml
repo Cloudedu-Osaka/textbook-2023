@@ -13,8 +13,8 @@ parts:
     title: Octave
   - file: chapters/05/520_timbre.ipynb
     title: Timbre
-  - file: chapters/05/530_temerament.ipynb
-    title: Temerament
+  - file: chapters/05/530_teperament.ipynb
+    title: Temperament
   - file: chapters/05/590_assignment.ipynb
     title: Assignment
 - caption: 2023/05/10
