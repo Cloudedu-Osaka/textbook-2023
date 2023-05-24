@@ -154,6 +154,7 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/24</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="590_assignment-Copy1.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="610_intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="620_timbre.html">波形を生成し音色を聞き比べる</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="650_optimization.html">Optimization</a></li>
@@ -427,6 +428,14 @@ document.write(`
 <h1>課題<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
 <section id="id2">
 <h2>組み合わせ: ピタゴラスの三数<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Pythagorean_triple">Pythagorean triple - Wikipedia</a></p>
+<ul>
+<li><p><a class="reference external" href="https://manabitimes.jp/math/661">ピタゴラス数の求め方とその証明 | 高校数学の美しい物語</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Plimpton_322">Plimpton 322 - Wikipedia</a></p></li>
+</ul>
+</li>
+</ul>
 <p>正の整数 <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(q\)</span> <span class="math notranslate nohighlight">\((p&gt;q)\)</span> に対して、</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -469,63 +478,36 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations_with_replacement</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations_with_replacement</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">0</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(2, 2, 2),
- (2, 2, 3),
- (2, 2, 5),
- (2, 3, 3),
- (2, 3, 5),
- (2, 5, 5),
- (3, 3, 3),
- (3, 3, 5),
- (3, 5, 5),
- (5, 5, 5)]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[()]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations_with_replacement</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations_with_replacement</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(2, 2, 2),
- (2, 2, 3),
- (2, 2, 5),
- (2, 3, 3),
- (2, 3, 5),
- (2, 5, 5),
- (3, 3, 3),
- (3, 3, 5),
- (3, 5, 5),
- (5, 5, 5)]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(2,), (3,), (5,)]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations_with_replacement</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations_with_replacement</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(2, 2, 2),
- (2, 2, 3),
- (2, 2, 5),
- (2, 3, 3),
- (2, 3, 5),
- (2, 5, 5),
- (3, 3, 3),
- (3, 3, 5),
- (3, 5, 5),
- (5, 5, 5)]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(2, 2), (2, 3), (2, 5), (3, 3), (3, 5), (5, 5)]
 </pre></div>
 </div>
 </div>
