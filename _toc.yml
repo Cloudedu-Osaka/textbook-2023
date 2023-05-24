@@ -2,6 +2,23 @@ format: jb-book
 root: chapters/intro
 title: Abstract
 parts:
+- caption: 2023/05/24
+  numberd: false
+  chapters:
+  - file: chapters/06/590_assignment-Copy1.ipynb
+    title: Past assignment
+  - file: chapters/06/610_intro.ipynb
+    title: Introduction
+  - file: chapters/06/620_timbre.ipynb
+    title: Timbre
+  - file: chapters/06/650_optimization.ipynb
+    title: Optimization
+  - file: chapters/06/660_combination.ipynb
+    title: Combination
+  - file: chapters/06/661_combination.ipynb
+    title: Combination (1)
+  - file: chapters/06/662_combination.ipynb
+    title: Combination (2) as a assignment
 - caption: 2023/05/17
   numberd: false
   chapters:
