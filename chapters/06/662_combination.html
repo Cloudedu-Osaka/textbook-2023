@@ -1,0 +1,1210 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>課題 &#8212; プログラミングで遡る科学史</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-148221575-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-148221575-1');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/06/662_combination';</script>
+    <link rel="canonical" href="https://inferentialthinking.org/chapters/06/662_combination.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="課題" href="../05/490_assignment.html" />
+    <link rel="prev" title="組み合わせ: ピタゴラス音律を生成する" href="661_combination.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">プログラミングで遡る科学史</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/24</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="590_assignment-Copy1.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="620_timbre.html">波形を生成し音色を聞き比べる</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="650_optimization.html">Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="660_combination.html">Combination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="661_combination.html">Combination (1)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Combination (2) as a assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/17</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../05/490_assignment.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/500_arche.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/510_octave.html">Octave</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/520_timbre.html">Timbre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/530_temperament.html">Temperament</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/590_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/10</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04/10_intro.html">Past assignment and Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/20_pythagoras.html">Pythagorean numbers and theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/22_dict-Copy1.html">Data format (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/23_dict-Copy1.html">Pythonの配列と辞書と表</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../04/40_egyptian_numerals.html">Egyptian numerals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/50_babylonian_numerals.html">Babylonian numerals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/90_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/26</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03/10_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/20_assignment.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/21_similarities.html">Code similarities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/22_dict.html">Data format (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/23_dict.html">Data format (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/40_positional.html">Positional notation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/50_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/19</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02/01_orientation.html">Orientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/02_assignment.html">Assignment (Last week)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/03_examination.html">Examination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/04_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/12</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/01_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/02_openai.html">Obtaining OpenAI API key</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/03_chatgpt.html">ChatGPT interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/04_assignment.html">Assignment</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/intro_add.html">Request for cooperation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_4.html">Experiment explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_5.html">Informed concent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_6.html">Withdrawal of concent</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://ecsosaka-jh2310.japaneast.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/Cloudedu-Osaka/textbook-2023&urlpath=lab/tree/textbook-2023/chapters/06/662_combination.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/Cloudedu-Osaka/textbook-2023" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/06/662_combination.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>課題</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">組み合わせ: ピタゴラスの三数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plimpton-322">Plimpton 322の数表を生成する</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">60進法の基数を組み合わせた合成数を生成する</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">合成数の組み合わせ (直積) を作る</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">互いに素なものだけ抽出する</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">数表の式に当てはめる</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">課題</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>課題<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="id2">
+<h2>組み合わせ: ピタゴラスの三数<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>正の整数 <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(q\)</span> <span class="math notranslate nohighlight">\((p&gt;q)\)</span> に対して、</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{align}
+    a &amp; =  2 p q \\
+    b &amp; =  p^2 - q^2\\
+    d &amp; =  p^2 + q^2\\
+  \end{align}
+\end{split}\]</div>
+<p>とおくと、<span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(d\)</span> はピタゴラスの三数となり、<span class="math notranslate nohighlight">\(a^2+b^2 = d^2\)</span> を満たす。</p>
+<p>解) 恒等式</p>
+<div class="math notranslate nohighlight">
+\[
+  (x-y)^2 = (x+y)^2 - 4xy
+\]</div>
+<p>に対して <span class="math notranslate nohighlight">\(x=p^2\)</span>, <span class="math notranslate nohighlight">\(y=q^2\)</span> とおいて <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(q\)</span> を消去する。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{align}
+    (p^2-q^2)^2 &amp;= (p^2+q^2)^2 - 4p^2q^2 \\
+    b^2 &amp;= d^2 - a^2
+  \end{align}
+\end{split}\]</div>
+</section>
+<section id="plimpton-322">
+<h2>Plimpton 322の数表を生成する<a class="headerlink" href="#plimpton-322" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id3">
+<h3>60進法の基数を組み合わせた合成数を生成する<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Composite_number">Composite number - Wikipedia</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations_with_replacement</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(2, 2, 2),
+ (2, 2, 3),
+ (2, 2, 5),
+ (2, 3, 3),
+ (2, 3, 5),
+ (2, 5, 5),
+ (3, 3, 3),
+ (3, 3, 5),
+ (3, 5, 5),
+ (5, 5, 5)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations_with_replacement</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(2, 2, 2),
+ (2, 2, 3),
+ (2, 2, 5),
+ (2, 3, 3),
+ (2, 3, 5),
+ (2, 5, 5),
+ (3, 3, 3),
+ (3, 3, 5),
+ (3, 5, 5),
+ (5, 5, 5)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations_with_replacement</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(2, 2, 2),
+ (2, 2, 3),
+ (2, 2, 5),
+ (2, 3, 3),
+ (2, 3, 5),
+ (2, 5, 5),
+ (3, 3, 3),
+ (3, 3, 5),
+ (3, 5, 5),
+ (5, 5, 5)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations_with_replacement</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(2, 2, 2),
+ (2, 2, 3),
+ (2, 2, 5),
+ (2, 3, 3),
+ (2, 3, 5),
+ (2, 5, 5),
+ (3, 3, 3),
+ (3, 3, 5),
+ (3, 5, 5),
+ (5, 5, 5)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">t</span>
+ <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+ <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">combinations_with_replacement</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">n</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(),
+ (2,),
+ (3,),
+ (5,),
+ (2, 2),
+ (2, 3),
+ (2, 5),
+ (3, 3),
+ (3, 5),
+ (5, 5),
+ (2, 2, 2),
+ (2, 2, 3),
+ (2, 2, 5),
+ (2, 3, 3),
+ (2, 3, 5),
+ (2, 5, 5),
+ (3, 3, 3),
+ (3, 3, 5),
+ (3, 5, 5),
+ (5, 5, 5)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pp</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">combinations_with_replacement</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">n</span><span class="p">)])</span>
+<span class="n">pp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 18, 20, 25, 27, 30, 45, 50, 75, 125]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>np.prod<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span>
+np<span class=" -Color -Color-Blue">.</span>prod<span class=" -Color -Color-Blue">(</span>
+    a<span class=" -Color -Color-Blue">,</span>
+    axis<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    dtype<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    out<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    keepdims<span class=" -Color -Color-Blue">=&lt;</span>no value<span class=" -Color -Color-Blue">&gt;,</span>
+    initial<span class=" -Color -Color-Blue">=&lt;</span>no value<span class=" -Color -Color-Blue">&gt;,</span>
+    where<span class=" -Color -Color-Blue">=&lt;</span>no value<span class=" -Color -Color-Blue">&gt;,</span>
+<span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Red">Docstring:</span>
+Return the product of array elements over a given axis.
+
+Parameters
+----------
+a : array_like
+    Input data.
+axis : None or int or tuple of ints, optional
+    Axis or axes along which a product is performed.  The default,
+    axis=None, will calculate the product of all the elements in the
+    input array. If axis is negative it counts from the last to the
+    first axis.
+
+    .. versionadded:: 1.7.0
+
+    If axis is a tuple of ints, a product is performed on all of the
+    axes specified in the tuple instead of a single axis or all the
+    axes as before.
+dtype : dtype, optional
+    The type of the returned array, as well as of the accumulator in
+    which the elements are multiplied.  The dtype of `a` is used by
+    default unless `a` has an integer dtype of less precision than the
+    default platform integer.  In that case, if `a` is signed then the
+    platform integer is used while if `a` is unsigned then an unsigned
+    integer of the same precision as the platform integer is used.
+out : ndarray, optional
+    Alternative output array in which to place the result. It must have
+    the same shape as the expected output, but the type of the output
+    values will be cast if necessary.
+keepdims : bool, optional
+    If this is set to True, the axes which are reduced are left in the
+    result as dimensions with size one. With this option, the result
+    will broadcast correctly against the input array.
+
+    If the default value is passed, then `keepdims` will not be
+    passed through to the `prod` method of sub-classes of
+    `ndarray`, however any non-default value will be.  If the
+    sub-class&#39; method does not implement `keepdims` any
+    exceptions will be raised.
+initial : scalar, optional
+    The starting value for this product. See `~numpy.ufunc.reduce` for details.
+
+    .. versionadded:: 1.15.0
+
+where : array_like of bool, optional
+    Elements to include in the product. See `~numpy.ufunc.reduce` for details.
+
+    .. versionadded:: 1.17.0
+
+Returns
+-------
+product_along_axis : ndarray, see `dtype` parameter above.
+    An array shaped as `a` but with the specified axis removed.
+    Returns a reference to `out` if specified.
+
+See Also
+--------
+ndarray.prod : equivalent method
+:ref:`ufuncs-output-type`
+
+Notes
+-----
+Arithmetic is modular when using integer types, and no error is
+raised on overflow.  That means that, on a 32-bit platform:
+
+&gt;&gt;&gt; x = np.array([536870910, 536870910, 536870910, 536870910])
+&gt;&gt;&gt; np.prod(x)
+16 # may vary
+
+The product of an empty array is the neutral element 1:
+
+&gt;&gt;&gt; np.prod([])
+1.0
+
+Examples
+--------
+By default, calculate the product of all elements:
+
+&gt;&gt;&gt; np.prod([1.,2.])
+2.0
+
+Even when the input array is two-dimensional:
+
+&gt;&gt;&gt; np.prod([[1.,2.],[3.,4.]])
+24.0
+
+But we can also specify the axis over which to multiply:
+
+&gt;&gt;&gt; np.prod([[1.,2.],[3.,4.]], axis=1)
+array([  2.,  12.])
+
+Or select specific elements to include:
+
+&gt;&gt;&gt; np.prod([1., np.nan, 3.], where=[True, False, True])
+3.0
+
+If the type of `x` is unsigned, then the output type is
+the unsigned platform integer:
+
+&gt;&gt;&gt; x = np.array([1, 2, 3], dtype=np.uint8)
+&gt;&gt;&gt; np.prod(x).dtype == np.uint
+True
+
+If `x` is of a signed integer type, then the output type
+is the default platform integer:
+
+&gt;&gt;&gt; x = np.array([1, 2, 3], dtype=np.int8)
+&gt;&gt;&gt; np.prod(x).dtype == int
+True
+
+You can also start the product with a value other than one:
+
+&gt;&gt;&gt; np.prod([1, 2], initial=5)
+10
+<span class=" -Color -Color-Red">File:</span>      /opt/conda/lib/python3.10/site-packages/numpy/core/fromnumeric.py
+<span class=" -Color -Color-Red">Type:</span>      function
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h3>合成数の組み合わせ (直積) を作る<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pp</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">combinations_with_replacement</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">n</span><span class="p">)])</span>
+<span class="n">pp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6, 9, 10, 15, 25]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">pp</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(1, 1),
+ (1, 2),
+ (1, 3),
+ (1, 4),
+ (1, 5),
+ (1, 6),
+ (1, 9),
+ (1, 10),
+ (1, 15),
+ (1, 25),
+ (2, 1),
+ (2, 2),
+ (2, 3),
+ (2, 4),
+ (2, 5),
+ (2, 6),
+ (2, 9),
+ (2, 10),
+ (2, 15),
+ (2, 25),
+ (3, 1),
+ (3, 2),
+ (3, 3),
+ (3, 4),
+ (3, 5),
+ (3, 6),
+ (3, 9),
+ (3, 10),
+ (3, 15),
+ (3, 25),
+ (4, 1),
+ (4, 2),
+ (4, 3),
+ (4, 4),
+ (4, 5),
+ (4, 6),
+ (4, 9),
+ (4, 10),
+ (4, 15),
+ (4, 25),
+ (5, 1),
+ (5, 2),
+ (5, 3),
+ (5, 4),
+ (5, 5),
+ (5, 6),
+ (5, 9),
+ (5, 10),
+ (5, 15),
+ (5, 25),
+ (6, 1),
+ (6, 2),
+ (6, 3),
+ (6, 4),
+ (6, 5),
+ (6, 6),
+ (6, 9),
+ (6, 10),
+ (6, 15),
+ (6, 25),
+ (9, 1),
+ (9, 2),
+ (9, 3),
+ (9, 4),
+ (9, 5),
+ (9, 6),
+ (9, 9),
+ (9, 10),
+ (9, 15),
+ (9, 25),
+ (10, 1),
+ (10, 2),
+ (10, 3),
+ (10, 4),
+ (10, 5),
+ (10, 6),
+ (10, 9),
+ (10, 10),
+ (10, 15),
+ (10, 25),
+ (15, 1),
+ (15, 2),
+ (15, 3),
+ (15, 4),
+ (15, 5),
+ (15, 6),
+ (15, 9),
+ (15, 10),
+ (15, 15),
+ (15, 25),
+ (25, 1),
+ (25, 2),
+ (25, 3),
+ (25, 4),
+ (25, 5),
+ (25, 6),
+ (25, 9),
+ (25, 10),
+ (25, 15),
+ (25, 25)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">pp</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(10, 100)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id5">
+<h3>互いに素なものだけ抽出する<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pq</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">pp</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">p</span><span class="o">/</span><span class="n">q</span> <span class="o">&gt;=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span> <span class="ow">and</span> <span class="n">p</span><span class="o">/</span><span class="n">q</span> <span class="o">&lt;=</span> <span class="mi">12</span><span class="o">/</span><span class="mi">5</span> <span class="ow">and</span> <span class="n">math</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">],</span>
+            <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id6">
+<h3>数表の式に当てはめる<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">pq</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">p</span> <span class="o">*</span> <span class="n">q</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">p</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">q</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">p</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">q</span><span class="o">**</span><span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">format</span><span class="p">((</span><span class="n">d</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;#04f&#39;</span><span class="p">),</span> <span class="n">b</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.815008 65 97
+1.562500 3 5
+1.387160 56 106
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plimpton 322の最も左のカラム:</p>
+<div class="math notranslate nohighlight">
+\[\left( \frac{d}{a} \right)^2 = \frac{p^2+q^2}{2pq} 
+  = \frac{1}{2}\left( \frac{p}{q} + \frac{q}{p} \right)\]</div>
+<p><span class="math notranslate nohighlight">\(p &gt; q\)</span> のとき、<span class="math notranslate nohighlight">\(\frac{p}{q}&gt;1\)</span> かつ <span class="math notranslate nohighlight">\(\frac{q}{p} &lt; 1\)</span> が成り立つ</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://en.wikipedia.org/wiki/Plimpton_322&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>or</th>
+      <th>Short Side</th>
+      <th>Diagonal</th>
+      <th>Row #</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>(1).9834028</td>
+      <td>119</td>
+      <td>169</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>(1).9491586</td>
+      <td>3367</td>
+      <td>4825</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>(1).9188021</td>
+      <td>4601</td>
+      <td>6649</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>(1).8862479</td>
+      <td>12709</td>
+      <td>18541</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>(1).8150077</td>
+      <td>65</td>
+      <td>97</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>(1).7851929</td>
+      <td>319</td>
+      <td>481</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>(1).7199837</td>
+      <td>2291</td>
+      <td>3541</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>(1).6927094</td>
+      <td>799</td>
+      <td>1249</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>(1).6426694</td>
+      <td>481</td>
+      <td>769</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>(1).5861226</td>
+      <td>4961</td>
+      <td>8161</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>(1).5625</td>
+      <td>45*</td>
+      <td>75*</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>(1).4894168</td>
+      <td>1679</td>
+      <td>2929</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>(1).4500174</td>
+      <td>161</td>
+      <td>289</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>(1).4302388</td>
+      <td>1771</td>
+      <td>3229</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>(1).3871605</td>
+      <td>56*</td>
+      <td>106*</td>
+      <td>15</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="id7">
+<h2>課題<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
+<p>どこまで探索範囲を広げるとPlimpton 322の数表が埋まるか試してみる</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/06"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="661_combination.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">組み合わせ: ピタゴラス音律を生成する</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../05/490_assignment.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">課題</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">組み合わせ: ピタゴラスの三数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plimpton-322">Plimpton 322の数表を生成する</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">60進法の基数を組み合わせた合成数を生成する</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">合成数の組み合わせ (直積) を作る</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">互いに素なものだけ抽出する</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">数表の式に当てはめる</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">課題</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Manabu Higashida
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
