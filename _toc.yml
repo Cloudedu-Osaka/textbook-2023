@@ -7,16 +7,12 @@ parts:
   chapters:
   - file: chapters/07/662_combination-Copy1.ipynb
     title: Past assignment
-  chapters:
   - file: chapters/07/701_plimpton322.ipynb
     title: Decoding Plimpton 322 (1)
-  chapters:
   - file: chapters/07/702_plimpton322.ipynb
     title: Decoding Plimpton 322 (2)
-  chapters:
   - file: chapters/07/710_intro.ipynb
     title: Introduction
-  chapters:
   - file: chapters/07/720_assignment.ipynb
     title: Assignment
 - caption: 2023/05/24
