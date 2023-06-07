@@ -2,6 +2,23 @@ format: jb-book
 root: chapters/intro
 title: Abstract
 parts:
+- caption: 2023/06/07
+  numberd: false
+  chapters:
+  - file: chapters/08/720_assignment-Copy1.ipynb
+    title: Past assignment (1)
+  - file: chapters/08/721_assignment.ipynb
+    title: Past assignment (2)
+  - file: chapters/08/800_assignment.ipynb
+    title: Past assignment (3)
+  - file: chapters/08/801_ybc7289.ipynb
+    title: YBC 7289 (1)
+  - file: chapters/08/802_ybc7289.ipynb
+    title: YBC 7289 (2)
+  - file: chapters/08/810_intro.ipynb
+    title: Think by programming
+  - file: chapters/08/830_assignment.ipynb
+    title: Assignment
 - caption: 2023/05/31
   numberd: false
   chapters:
