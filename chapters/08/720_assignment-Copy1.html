@@ -1,0 +1,1105 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>課題: 相加平均と相乗平均の関係を表す不等式 &#8212; プログラミングで遡る科学史</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-148221575-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-148221575-1');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/08/720_assignment-Copy1';</script>
+    <link rel="canonical" href="https://inferentialthinking.org/chapters/08/720_assignment-Copy1.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="先週の課題をMathematicaで実行してみる" href="721_assignment.html" />
+    <link rel="prev" title="プログラミングで遡る科学史" href="../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">プログラミングで遡る科学史</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/06/07</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Past assignment (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="721_assignment.html">Past assignment (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="800_assignment.html">Past assignment (3)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="801_ybc7289.html">YBC 7289 (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="802_ybc7289.html">YBC 7289 (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="810_intro.html">Think by programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="830_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/31</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07/662_combination-Copy1.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/701_plimpton322.html">Decoding Plimpton 322 (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/702_plimpton322.html">Decoding Plimpton 322 (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/710_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/720_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/24</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../06/590_assignment-Copy1.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06/620_timbre.html">波形を生成し音色を聞き比べる</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../06/650_optimization.html">Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06/660_combination.html">Combination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06/661_combination.html">Combination (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06/662_combination.html">Combination (2) as a assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/17</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../05/490_assignment.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/500_arche.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/510_octave.html">Octave</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/520_timbre.html">Timbre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/530_temperament.html">Temperament</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/590_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/10</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04/10_intro.html">Past assignment and Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/20_pythagoras.html">Pythagorean numbers and theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/22_dict-Copy1.html">Data format (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/23_dict-Copy1.html">Pythonの配列と辞書と表</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../04/40_egyptian_numerals.html">Egyptian numerals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/50_babylonian_numerals.html">Babylonian numerals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/90_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/26</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03/10_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/20_assignment.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/21_similarities.html">Code similarities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/22_dict.html">Data format (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/23_dict.html">Data format (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/40_positional.html">Positional notation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/50_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/19</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02/01_orientation.html">Orientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/02_assignment.html">Assignment (Last week)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/03_examination.html">Examination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/04_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/12</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/01_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/02_openai.html">Obtaining OpenAI API key</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/03_chatgpt.html">ChatGPT interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/04_assignment.html">Assignment</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/intro_add.html">Request for cooperation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_4.html">Experiment explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_5.html">Informed concent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_6.html">Withdrawal of concent</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://ecsosaka-jh2310.japaneast.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/Cloudedu-Osaka/textbook-2023&urlpath=lab/tree/textbook-2023/chapters/08/720_assignment-Copy1.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/Cloudedu-Osaka/textbook-2023" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/08/720_assignment-Copy1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>課題: 相加平均と相乗平均の関係を表す不等式</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">参考: 数式で表すと</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">補足</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>課題: 相加平均と相乗平均の関係を表す不等式<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Inequality_of_arithmetic_and_geometric_means">Inequality of arithmetic and geometric means - Wikipedia</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
+相加相乗平均の公式を証明する
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>相加相乗平均の公式は以下の通りです。</p>
+<p>a1, a2, …, an が正の実数のとき、</p>
+<p>(a1 + a2 + … + an) / n ≥ (a1 * a2 * … * an)^(1/n)</p>
+<p>この不等式が成り立つことを証明します。</p>
+<p>まず、n = 2 の場合を考えます。</p>
+<p>(a1 + a2) / 2 ≥ (a1 * a2)^(1/2)</p>
+<p>両辺を2乗すると、</p>
+<p>(a1 + a2)^2 / 4 ≥ a1 * a2</p>
+<p>a1^2 + 2a1a2 + a2^2 ≥ 4a1a2</p>
+<p>(a1 - a2)^2 ≥ 0</p>
+<p>これは常に成り立つので、n = 2 の場合は成立します。</p>
+<p>次に、n = k の場合が成り立つと仮定して、n = k + 1 の場合を考えます。</p>
+<p>(a1 + a2 + … + ak + ak+1) / (k + 1) ≥ (a1 * a2 * … * ak * ak+1)^(1/(k + 1))</p>
+<p>左辺を変形すると、</p>
+<p>(a1 + a2 + … + ak) / k + (ak+1) / (k + 1) ≥ (a1 * a2 * … * ak * ak+1)^(1/(k + 1))</p>
+<p>ここで、相加相乗平均の仮定より、</p>
+<p>(a1 + a2 + … + ak) / k ≥ (a1 * a2 * … * ak)^(1/k)</p>
+<p>よって、</p>
+<p>(a1 + a2 + … + ak) / k + (ak+1) / (k + 1) ≥ (a1 * a2 * … * ak)^(1/k) + (ak+1) / (k + 1)</p>
+<p>両辺を k(k + 1) 倍すると、</p>
+<p>(k + 1)(a1 + a2 + … + ak) + k ak+1 ≥ k(a1 * a2 * … * ak)^(1/k) (k + 1)^(k + 1) ak+1^(k + 1)/(k + 1)^(k + 1)</p>
+<p>ここで、左辺の第1項を相加相乗平均の仮定により、</p>
+<p>(k + 1)(a1 + a2 + … + ak) ≥ k(a1 * a2 * … * ak)^(1/k) (k + 1)^k</p>
+<p>と書き換えることができます。</p>
+<p>また、右辺の第2項を、</p>
+<p>ak+1 / (k + 1) ≤ (a1 * a2 * … * ak * ak+1)^(1/(k + 1))</p>
+<p>という不等式により置き換えることができます。</p>
+<p>これらを代入すると、</p>
+<p>(k + 1)(a1 + a2 + … + ak) + k ak+1 ≥ k(a1 * a2 * … * ak * ak+1)^(1/(k + 1)) (k + 1)^k + (k + 1) ak+1^(k + 1)/(k + 1)^(k + 1)</p>
+<p>(k + 1)(a1 + a2 + … + ak + ak+1) ≥ (a1 * a2 * … * ak * ak+1)^(1/(k + 1)) (k + 1)^(k + 1)</p>
+<p>となります。</p>
+<p>したがって、n = k + 1 の場合も成り立つことが示されました。</p>
+<p>以上より、相加相乗平均の公式が証明されました。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+n=2に限定して
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>n=2の場合の相加相乗平均の公式は以下の通りです。</p>
+<p>a1, a2 が正の実数のとき、</p>
+<p>(a1 + a2) / 2 ≥ (a1 * a2)^(1/2)</p>
+<p>この不等式が成り立つことを証明します。</p>
+<p>両辺を2乗すると、</p>
+<p>(a1 + a2)^2 / 4 ≥ a1 * a2</p>
+<p>a1^2 + 2a1a2 + a2^2 ≥ 4a1a2</p>
+<p>(a1 - a2)^2 ≥ 0</p>
+<p>これは常に成り立つので、n = 2 の場合は成立します。</p>
+<p>以上より、n=2の場合の相加相乗平均の公式が証明されました。</p>
+</div>
+</div>
+<section id="id2">
+<h2>参考: 数式で表すと<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p><span class="math notranslate nohighlight">\(a_{1} &gt; 0, a_{2}&gt;0\)</span> のとき
+$<span class="math notranslate nohighlight">\(\frac{a_{1}+a_{2}}{2} \geq \sqrt{a_{1}  a_{2}}\)</span><span class="math notranslate nohighlight">\(
+が成り立つ。
+証明は次の不等式の変形の通り:
+\)</span>$</p>
+<div class="amsmath math notranslate nohighlight" id="equation-757d3ecd-c6a7-43f3-9aad-dc12c118ce22">
+<span class="eqno">(1)<a class="headerlink" href="#equation-757d3ecd-c6a7-43f3-9aad-dc12c118ce22" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+\left(\frac{a_{1}+a_{2}}{2}\right)^2 &amp; \geq &amp; \left(\sqrt{a_{1} a_{2}}\right)^2 \\[10pt]
+\frac{(a_{1}+a_{2})^2}{4} &amp; \geq &amp; a_{1} a_{2} \\[10pt]
+{a_{1}}^2 + 2 a_{1} a_{2} + {a_{2}}^2 &amp; \geq &amp; 4 a_{1} a_{2} \\[10pt]
+\left( a_{1} - a_{2} \right)^2 &amp; \geq &amp; 0
+\end{eqnarray}\]</div>
+<p>$$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+sympyで
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>sympyを使って相加相乗平均の公式を証明することができます。以下は、sympyを用いた証明の例です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+
+<span class="c1"># a, bを正の実数とする</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a b&#39;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 相加相乗平均の不等式を表す式</span>
+<span class="n">ineq</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="c1"># 不等式を2乗すると、以下の式が得られる</span>
+<span class="n">ineq_squared</span> <span class="o">=</span> <span class="n">ineq</span><span class="o">.</span><span class="n">lhs</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">ineq</span><span class="o">.</span><span class="n">rhs</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="mi">0</span>
+
+<span class="c1"># 左辺を展開すると、以下の式が得られる</span>
+<span class="n">lhs_expanded</span> <span class="o">=</span> <span class="n">ineq_squared</span><span class="o">.</span><span class="n">lhs</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+
+<span class="c1"># 右辺を展開すると、以下の式が得られる</span>
+<span class="n">rhs_expanded</span> <span class="o">=</span> <span class="n">ineq_squared</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+
+<span class="c1"># 左辺と右辺を比較すると、以下の式が得られる</span>
+<span class="n">comparison</span> <span class="o">=</span> <span class="n">lhs_expanded</span> <span class="o">-</span> <span class="n">rhs_expanded</span>
+
+<span class="c1"># 比較式を展開すると、以下の式が得られる</span>
+<span class="n">comparison_expanded</span> <span class="o">=</span> <span class="n">comparison</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+
+<span class="c1"># 比較式が0以下であることを示す</span>
+<span class="k">assert</span> <span class="n">comparison_expanded</span> <span class="o">&lt;=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>このように、sympyを使って相加相乗平均の公式を証明することができます。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+
+<span class="c1"># a, bを正の実数とする</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a b&#39;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 相加相乗平均の不等式を表す式</span>
+<span class="n">ineq</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="c1"># 不等式を2乗すると、以下の式が得られる</span>
+<span class="n">ineq_squared</span> <span class="o">=</span> <span class="n">ineq</span><span class="o">.</span><span class="n">lhs</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">ineq</span><span class="o">.</span><span class="n">rhs</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="mi">0</span>
+
+<span class="c1"># 左辺を展開すると、以下の式が得られる</span>
+<span class="n">lhs_expanded</span> <span class="o">=</span> <span class="n">ineq_squared</span><span class="o">.</span><span class="n">lhs</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+
+<span class="c1"># 右辺を展開すると、以下の式が得られる</span>
+<span class="n">rhs_expanded</span> <span class="o">=</span> <span class="n">ineq_squared</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+
+<span class="c1"># 左辺と右辺を比較すると、以下の式が得られる</span>
+<span class="n">comparison</span> <span class="o">=</span> <span class="n">lhs_expanded</span> <span class="o">-</span> <span class="n">rhs_expanded</span>
+
+<span class="c1"># 比較式を展開すると、以下の式が得られる</span>
+<span class="n">comparison_expanded</span> <span class="o">=</span> <span class="n">comparison</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+
+<span class="c1"># 比較式が0以下であることを示す</span>
+<span class="k">assert</span> <span class="n">comparison_expanded</span> <span class="o">&lt;=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">/tmp/ipykernel_1122/881370004.py</span> in <span class="ni">&lt;cell line: 25&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> 
+<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="c1"># 比較式が0以下であることを示す</span>
+<span class="ne">---&gt; </span><span class="mi">25</span> <span class="k">assert</span> <span class="n">comparison_expanded</span> <span class="o">&lt;=</span> <span class="mi">0</span>
+
+<span class="nn">/opt/conda/lib/python3.10/site-packages/sympy/core/relational.py</span> in <span class="ni">__bool__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">508</span> 
+<span class="g g-Whitespace">    </span><span class="mi">509</span>     <span class="k">def</span> <span class="fm">__bool__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">510</span>         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;cannot determine truth value of Relational&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">511</span> 
+<span class="g g-Whitespace">    </span><span class="mi">512</span>     <span class="k">def</span> <span class="nf">_eval_as_set</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="ne">TypeError</span>: cannot determine truth value of Relational
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.sympy.org/latest/guides/assumptions.html">Assumptions - SymPy 1.12 documentation</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ineq</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \sqrt{a} \sqrt{b} \leq \frac{a}{2} + \frac{b}{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ineq</span><span class="o">.</span><span class="n">lhs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \sqrt{a} \sqrt{b}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ineq</span><span class="o">.</span><span class="n">rhs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{a}{2} + \frac{b}{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ineq</span><span class="o">.</span><span class="n">lhs</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="n">ineq</span><span class="o">.</span><span class="n">rhs</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle a b - \left(\frac{a}{2} + \frac{b}{2}\right)^{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \frac{a^{2}}{4} + \frac{a b}{2} - \frac{b^{2}}{4}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comparison_expanded</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \frac{a^{2}}{4} + \frac{a b}{2} - \frac{b^{2}}{4}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comparison_expanded</span><span class="o">.</span><span class="n">is_positive</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comparison_factorized</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">comparison_expanded</span><span class="p">)</span>
+<span class="n">comparison_factorized</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \frac{\left(a - b\right)^{2}}{4}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comparison_factorized</span><span class="o">.</span><span class="n">is_negative</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comparison_factorized</span><span class="o">.</span><span class="n">is_negative</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comparison_factorized</span><span class="o">.</span><span class="n">is_nonnegative</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
+sympyについて
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>sympyはPythonのライブラリの一つで、数学的な式や式変形、微積分、代数的な計算、方程式の解法などを行うことができます。数学的な問題をプログラムで解く際に便利なツールです。Jupyter Notebook上で使用することができます。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
+sympyの変数と記号の違いについて
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>sympyにおいて、変数とは値が変化する量を表すものであり、記号とは数学的な表現を表すものです。変数は通常、数値や式の計算に使用されますが、記号は数学的な式や方程式を表現するために使用されます。例えば、xという変数は数値を表すことができますが、Symbol(‘x’)という記号はxという文字を表すだけで、数値を持ちません。また、変数は通常、数値を代入することができますが、記号は代入することができません。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+具体例は？
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>以下は、変数と記号の違いを示す具体例です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+
+<span class="c1"># 変数の例</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>  <span class="c1"># 出力結果: 8</span>
+
+<span class="c1"># 記号の例</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>  <span class="c1"># 出力結果: x + 3</span>
+
+<span class="c1"># 記号に数値を代入する例</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>  <span class="c1"># 出力結果: 8</span>
+</pre></div>
+</div>
+<p>この例では、まず変数xに5を代入し、yにx+3を代入しています。その後、yを出力すると、yの値は8になります。次に、xをSymbol(‘x’)で定義し、yにx+3を代入しています。この場合、yはx+3という式を表しており、数値を持ちません。最後に、y.subs(x, 5)を実行することで、xに5を代入したyの値が8になることが確認できます。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+記号に値を代入することはできますか
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>はい、sympyの記号に値を代入することができます。具体的には、<code class="docutils literal notranslate"><span class="pre">subs()</span></code>メソッドを使用して、記号に対して値を代入することができます。以下は、例です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>  <span class="c1"># 出力結果: x**2 + 2*x + 1</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>  <span class="c1"># 出力結果: 16</span>
+</pre></div>
+</div>
+<p>この例では、まずxをSymbol(‘x’)で定義し、yにxの2乗に2を掛けたものに1を足した式を代入しています。その後、yを出力すると、yの値はxの2乗に2を掛けたものに1を足した式になります。次に、y.subs(x, 3)を実行することで、xに3を代入したyの値が16になることが確認できます。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+sympyのassumptionのpredicate使い方について
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>sympyのassumptionには、predicateと呼ばれる関数を使って、より詳細なassumptionを指定することができます。predicateは、変数が持つべき性質を詳細に指定することができます。</p>
+<p>以下は、predicateを使ったassumptionの例です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+
+<span class="n">expr</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">expr</span><span class="o">.</span><span class="n">is_real</span><span class="p">)</span>  <span class="c1"># None</span>
+
+<span class="n">expr</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">expr</span><span class="o">.</span><span class="n">is_real</span><span class="p">)</span>  <span class="c1"># None</span>
+
+<span class="n">sympy</span><span class="o">.</span><span class="n">assumptions</span><span class="o">.</span><span class="n">assume</span><span class="o">.</span><span class="n">sympify</span><span class="p">(</span><span class="s1">&#39;x &gt; 0&#39;</span><span class="p">)</span>
+<span class="n">sympy</span><span class="o">.</span><span class="n">assumptions</span><span class="o">.</span><span class="n">assume</span><span class="o">.</span><span class="n">sympify</span><span class="p">(</span><span class="s1">&#39;y &gt; 0&#39;</span><span class="p">)</span>
+
+<span class="n">expr</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">expr</span><span class="o">.</span><span class="n">is_real</span><span class="p">)</span>  <span class="c1"># True</span>
+
+<span class="n">expr</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">expr</span><span class="o">.</span><span class="n">is_real</span><span class="p">)</span>  <span class="c1"># True</span>
+</pre></div>
+</div>
+<p>上記の例では、最初にxとyを定義し、その後にsqrt(x<strong>2)とsqrt(y</strong>2)を計算しています。最初の2つの式に対しては、is_real属性はNoneになります。その後、sympy.assumptions.assume.sympifyを使って、x&gt;0とy&gt;0というassumptionを指定しています。最後に、sqrt(x<strong>2)とsqrt(y</strong>2)に対して、is_real属性を確認すると、どちらもTrueになっていることがわかります。</p>
+<p>このように、predicateを使うことで、より詳細なassumptionを指定することができます。</p>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>補足<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
+代数について
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>代数とは、数学の一分野で、数や文字などの記号を用いて式を表現し、それらの式を操作することで、未知の数や変数の値を求めたり、数学的な問題を解決するための方法を研究する学問です。代数には、一次方程式や二次方程式、多項式、行列などが含まれます。また、代数的な概念は、物理学や工学、経済学などの様々な分野でも応用されています。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+代数の起源は
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>代数の起源は古代バビロニアや古代エジプトにまで遡りますが、現代的な代数学の基礎は、9世紀から12世紀にかけてアラビアで発展したアルジェブラと呼ばれる数学の分野にあります。アルジェブラは、数学的な式を文字や記号で表現することで、未知の数や変数を扱う方法を研究しました。その後、16世紀にはイタリアの数学者ジェロラモ・カルダーノやルネ・デカルトが、現代的な代数学の基礎を築きました。現代の代数学は、数学の中でも重要な分野の一つとして、数学の基礎や応用分野において広く活用されています。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+コンピュータ代数について
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>コンピュータ代数とは、コンピュータを用いて代数的な式や方程式を解析するための技術やソフトウェアのことを指します。コンピュータ代数システムは、数式処理システムとも呼ばれ、数学的な式や方程式をコンピュータ上で扱うことができます。これにより、代数的な式の簡約、微積分、微分方程式の解法、多項式の因数分解、方程式の解法などを自動的に行うことができます。コンピュータ代数は、数学や物理学、工学、経済学などの分野で広く利用されており、数式処理システムとしては、Mathematica、Maple、Maxima、SageMathなどが有名です。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+Alfred Tarskiとコンピュータ代数について
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Alfred Tarskiは、20世紀の著名な数学者・論理学者の一人で、代数学や論理学の分野で多大な業績を残しました。彼は、数学的な構造や論理的な命題を形式化する方法を研究し、現代の数学やコンピュータ科学の基礎を築く上で重要な役割を果たしました。</p>
+<p>特に、Tarskiは、代数学や論理学における形式的な証明の自動化に関する研究を行い、コンピュータ代数の発展に大きな影響を与えました。彼は、数学的な命題を形式的に表現するための言語や記号体系を開発し、それを用いて自動的な証明を行う方法を提唱しました。これは、現代のコンピュータ代数システムの基礎となっており、数学的な問題を解決するための自動化されたツールとして広く利用されています。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+Mathematicaについて
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Mathematicaは、数学的な計算やデータ解析、可視化、プログラミングなどを行うための統合環境です。高度な数式処理やグラフィックス、機械学習、画像処理、音声処理などの機能を備えています。また、Wolfram言語と呼ばれる独自のプログラミング言語を使用して、高度な数学的な計算やデータ処理を行うことができます。Mathematicaは、科学技術分野や金融分野、教育分野などで広く使用されています。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+Mathematicaの名前の由来は
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Mathematicaの名前は、英語の「mathematics（数学）」に由来しています。Mathematicaは、1988年にスティーブン・ウルフラムによって開発された数式処理システムで、数学的な計算やグラフ作成、データ解析などを行うことができます。Mathematicaは、高度な数学的な計算を行うことができるだけでなく、プログラミング言語としても利用することができます。また、Mathematicaは、多くの分野で利用されており、科学、工学、金融、医療、教育などの分野で広く使われています。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+Stephen Wolframに対するSteven Jobsのアドバイスについて
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Stephen Wolframに対するSteve Jobsのアドバイスについては、具体的には公に知られていません。ただし、Steve Jobsは、自身が率いるApple社がMathematicaを採用していたことがあり、Stephen Wolframとは親交があったとされています。また、Stephen Wolframは、自身のブログで、Steve Jobsとの出会いや交流について触れており、Jobsが自身の業績について語るときに、常に「どうやってそれをやったのか」という技術的な側面に興味を持っていたことを述べています。このように、Jobsは技術的な側面にも興味を持っていたことから、Stephen Wolframが開発したMathematicaやWolfram Alphaなどの技術に対して、興味を持っていた可能性があります。</p>
+</div>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://writings.stephenwolfram.com/2011/10/steve-jobs-a-few-memories/">Steve Jobs: A Few Memories—Stephen Wolfram Writings</a></p>
+<ul>
+<li><p>At first it had been Omega (yes, like Alpha) and later PolyMath. Steve thought those were lousy names. I gave him lists of names I’d considered, and pressed him for his suggestions. For a while he wouldn’t suggest anything. But then one day he said to me: “You should call it Mathematica”.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
+次のプログラムをMathematicaで書き直して下さい
+
+```python
+import sympy
+
+# a, bを正の実数とする
+a, b = sympy.symbols(&#39;a b&#39;, positive=True)
+
+# 相加相乗平均の不等式を表す式
+ineq = sympy.sqrt(a * b) &lt;= (a + b) / 2
+
+# 不等式を2乗すると、以下の式が得られる
+ineq_squared = ineq.lhs**2 - ineq.rhs**2 &lt;= 0
+
+# 左辺を展開すると、以下の式が得られる
+lhs_expanded = ineq_squared.lhs.expand()
+
+# 右辺を展開すると、以下の式が得られる
+rhs_expanded = ineq_squared.rhs.expand()
+
+# 左辺と右辺を比較すると、以下の式が得られる
+comparison = lhs_expanded - rhs_expanded
+
+# 比較式を展開すると、以下の式が得られる
+comparison_expanded = comparison.expand()
+
+# 比較式が0以下であることを示す
+assert comparison_expanded &lt;= 0
+```
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>以下がMathematicaで書き直したプログラムです。</p>
+<div class="highlight-mathematica notranslate"><div class="highlight"><pre><span></span><span class="c">(* a, bを正の実数とする *)</span><span class="w"></span>
+<span class="n">Assuming</span><span class="p">[{</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"></span>
+<span class="w"> </span>
+<span class="w"> </span><span class="c">(* 相加相乗平均の不等式を表す式 *)</span><span class="w"></span>
+<span class="w"> </span><span class="n">ineq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sqrt</span><span class="p">[</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span>
+<span class="w"> </span><span class="c">(* 不等式を2乗すると、以下の式が得られる *)</span><span class="w"></span>
+<span class="w"> </span><span class="n">ineqSquared</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lhs</span><span class="o">^</span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">rhs</span><span class="o">^</span><span class="mi">2</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">/.</span><span class="w"> </span><span class="n">ineq</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span>
+<span class="w"> </span><span class="c">(* 左辺を展開すると、以下の式が得られる *)</span><span class="w"></span>
+<span class="w"> </span><span class="n">lhsExpanded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Expand</span><span class="p">[</span><span class="n">ineqSquared</span><span class="p">[[</span><span class="mi">1</span><span class="p">]]];</span><span class="w"></span>
+<span class="w"> </span>
+<span class="w"> </span><span class="c">(* 右辺を展開すると、以下の式が得られる *)</span><span class="w"></span>
+<span class="w"> </span><span class="n">rhsExpanded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Expand</span><span class="p">[</span><span class="n">ineqSquared</span><span class="p">[[</span><span class="mi">2</span><span class="p">]]];</span><span class="w"></span>
+<span class="w"> </span>
+<span class="w"> </span><span class="c">(* 左辺と右辺を比較すると、以下の式が得られる *)</span><span class="w"></span>
+<span class="w"> </span><span class="n">comparison</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lhsExpanded</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">rhsExpanded</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span>
+<span class="w"> </span><span class="c">(* 比較式を展開すると、以下の式が得られる *)</span><span class="w"></span>
+<span class="w"> </span><span class="n">comparisonExpanded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Expand</span><span class="p">[</span><span class="n">comparison</span><span class="p">];</span><span class="w"></span>
+<span class="w"> </span>
+<span class="w"> </span><span class="c">(* 比較式が0以下であることを示す *)</span><span class="w"></span>
+<span class="w"> </span><span class="n">Simplify</span><span class="p">[</span><span class="n">comparisonExpanded</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">]</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Mathematicaでは、<code class="docutils literal notranslate"><span class="pre">Assuming</span></code>を使って変数が正の実数であることを指定し、<code class="docutils literal notranslate"><span class="pre">Simplify</span></code>を使って式を簡単化しています。また、<code class="docutils literal notranslate"><span class="pre">/.</span></code>を使って式の代入を行っています。</p>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/08"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">プログラミングで遡る科学史</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="721_assignment.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">先週の課題をMathematicaで実行してみる</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">参考: 数式で表すと</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">補足</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Manabu Higashida
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

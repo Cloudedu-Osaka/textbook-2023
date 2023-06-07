@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>“Big ideas simply explained” &#8212; プログラミングで遡る科学史</title>
+    <title>プログラミング言語で考える &#8212; プログラミングで遡る科学史</title>
   
   
   
@@ -67,12 +67,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/07/710_intro';</script>
-    <link rel="canonical" href="https://inferentialthinking.org/chapters/07/710_intro.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/08/810_intro';</script>
+    <link rel="canonical" href="https://inferentialthinking.org/chapters/08/810_intro.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="課題: 相加平均と相乗平均の関係を表す不等式" href="720_assignment.html" />
-    <link rel="prev" title="Plimpton 322 の解読 (2)" href="702_plimpton322.html" />
+    <link rel="next" title="課題: 補助線を引かずに初等幾何学の問題を解く" href="830_assignment.html" />
+    <link rel="prev" title="YBC 7289" href="802_ybc7289.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -150,22 +150,22 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/06/07</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../08/720_assignment-Copy1.html">Past assignment (1)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../08/721_assignment.html">Past assignment (2)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../08/800_assignment.html">Past assignment (3)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../08/801_ybc7289.html">YBC 7289 (1)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../08/802_ybc7289.html">YBC 7289 (2)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../08/810_intro.html">Think by programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../08/830_assignment.html">Assignment</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="720_assignment-Copy1.html">Past assignment (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="721_assignment.html">Past assignment (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="800_assignment.html">Past assignment (3)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="801_ybc7289.html">YBC 7289 (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="802_ybc7289.html">YBC 7289 (2)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Think by programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="830_assignment.html">Assignment</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/31</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="662_combination-Copy1.html">Past assignment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="701_plimpton322.html">Decoding Plimpton 322 (1)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="702_plimpton322.html">Decoding Plimpton 322 (2)</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="720_assignment.html">Assignment</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07/662_combination-Copy1.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/701_plimpton322.html">Decoding Plimpton 322 (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/702_plimpton322.html">Decoding Plimpton 322 (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/710_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/720_assignment.html">Assignment</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/24</span></p>
 <ul class="nav bd-sidenav">
@@ -281,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://ecsosaka-jh2310.japaneast.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/Cloudedu-Osaka/textbook-2023&urlpath=lab/tree/textbook-2023/chapters/07/710_intro.ipynb&branch=main" target="_blank"
+      <li><a href="https://ecsosaka-jh2310.japaneast.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/Cloudedu-Osaka/textbook-2023&urlpath=lab/tree/textbook-2023/chapters/08/810_intro.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onJupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -327,7 +327,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/chapters/07/710_intro.ipynb" target="_blank"
+      <li><a href="../../_sources/chapters/08/810_intro.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -409,7 +409,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>“Big ideas simply explained”</h1>
+    <h1>プログラミング言語で考える</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -419,11 +419,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#epochs-in-the-science-book">Epochs in “the Science Book”</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#epochs-in-the-math-book">Epochs in “the Math Book”</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ancient-and-classical-periods-6-000-bce-500-ce">Ancient and Classical Periods (6,000 BCE – 500 CE)</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">入試問題を解く人工知能</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chatgpt">東ロボくんが引かなかった補助線をChatGPTに引かせてみる</a></li>
 </ul>
             </nav>
         </div>
@@ -435,182 +432,198 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="big-ideas-simply-explained">
-<h1>“Big ideas simply explained”<a class="headerlink" href="#big-ideas-simply-explained" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>プログラミング言語で考える<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="id2">
+<h2>入試問題を解く人工知能<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.dk.com/us/book/9781465481221-the-science-book/">The Science Book | DK US</a></p></li>
+<li><p><a class="reference external" href="https://ja.wikipedia.org/wiki/%E6%9D%B1%E3%83%AD%E3%83%9C%E3%81%8F%E3%82%93">東ロボくん - Wikipedia</a> (2011–2021)</p>
+<ul>
+<li><p><a class="reference external" href="https://www.anlp.jp/anniversary/20th_symposium.html">言語処理学会20周年記念シンポジウム</a> (2014/10/04)</p>
+<ul>
+<li><p><a class="reference external" href="https://www.anlp.jp/anniversary/20th_sympo/slide_arai.pdf">数理的演繹をめざす言葉の理解：近似ではない言語処理はいつか可能になるか？</a> (新井紀子, NII)</p>
+<ul>
+<li><p>「機械が入試数学を解く」ための３つの課題</p>
+<ol class="arabic simple">
+<li><p>言語理解: 問題の意味を形式表現へ正確に翻訳する</p></li>
+<li><p>言語理解と推論系の接合: 直訳された問題を、現実的に推論が可能な表現へと変換する</p></li>
+<li><p>推論の実行: 限量子消去、自動証明</p></li>
+</ol>
+</li>
 </ul>
-<p><img alt="image.png" src="chapters/07/attachment:image.png" /></p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.dk.com/us/book/9781465480248-the-math-book/">The Math Book | DK US</a></p></li>
+</li>
 </ul>
-<p><img alt="image.png" src="chapters/07/attachment:image.png" /></p>
-<p><img alt="image.png" src="chapters/07/attachment:image.png" /></p>
-<section id="epochs-in-the-science-book">
-<h2>Epochs in “the Science Book”<a class="headerlink" href="#epochs-in-the-science-book" title="Permalink to this headline">#</a></h2>
+</li>
+<li><p><a class="reference external" href="https://www.nikkei.com/article/DGXKZO12401780R00C17A2X12000/">人間のみが可能な領域は？　「機械の能力」検証を - 日本経済新聞</a> (2017/02/02)</p>
+<ul>
+<li><p>『「補助線を引くセンスこそ、数学のセンス」との信念を持つ読者もおられよう。』</p></li>
+<li><p>『では、うまい補助線を引けるようなセンスは不可欠なのか。』</p></li>
+<li><p>『東ロボくんが問題を解くときには、補助線どころか図を書く必要もなかった。』</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <ul class="simple">
-<li><p>The Beginning of Science (600 BCE – 1,400 CE)</p></li>
-<li><p>Scientific Revolution (1,400 – 1,700)</p></li>
-<li><p>Expanding Horizons (1,700 – 1,800)</p></li>
-<li><p>A Century of Progress (1,800 – 1,900)</p></li>
-<li><p>A Paradigm Shift (1,900 – 1,945)</p></li>
-<li><p>Fundamental Building Blocks (1,945 – Present)</p></li>
+<li><p>「二等辺三角形の2つの底角が等しいことを示せ」</p></li>
+</ul>
+<p><img alt="image.png" src="chapters/08/attachment:019dd4d6-f5c8-4cab-839e-90d5888363ee.png" /></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://toyokeizai.net/articles/-/656682">｢ChatGPT｣に浮かれる人が知らない恐ろしい未来 新井紀子氏｢非常に危険なものが生み出された｣ | IT･電機･半導体･部品 | 東洋経済オンライン</a></p>
+<ul>
+<li><p>『「東ロボくん」はストーリーを作ることができず、一文一文事実を述べることしかできなかった。」</p></li>
+<li><p>『(ChatGPTは) 自信満々かつスムーズにウソをつく』</p>
+<ul>
+<li><p>ChatGPTに東大の入試問題を解かせてみた</p></li>
+<li><p>ChatGPTは独裁国家と相性がいい？</p></li>
+<li><p>ChatGPTに身を委ねるのは恐ろしい</p></li>
+<li><p>「ウェブ」という資源を失う？</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Alfred_Tarski">Alfred Tarski - Wikipedia</a> (1901–1983)</p>
+<ul>
+<li><p>“A decision method for elementary algebra and geometry.” (1948)</p>
+<ul>
+<li><p>『初等代数と初等幾何の自動処理の方法』</p></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </section>
-<section id="epochs-in-the-math-book">
-<h2>Epochs in “the Math Book”<a class="headerlink" href="#epochs-in-the-math-book" title="Permalink to this headline">#</a></h2>
+<section id="chatgpt">
+<h2>東ロボくんが引かなかった補助線をChatGPTに引かせてみる<a class="headerlink" href="#chatgpt" title="Permalink to this headline">#</a></h2>
+<p><img alt="image.png" src="chapters/08/attachment:df1aa715-1c61-4edf-a790-734f59189b9a.png" /></p>
 <ul class="simple">
-<li><p>Ancient and Classical Periods (6,000 BCE – 500 CE)</p></li>
-<li><p>The Middle Ages (500 CE – 1,500)</p></li>
-<li><p>The Renaissance (1,500 – 1,680)</p></li>
-<li><p>The Enlightenment (1,680 – 1,800)</p></li>
-<li><p>The 19th Century (1,800 – 1,900)</p></li>
-<li><p>Modern Mathematics (1,900 – Present)</p></li>
-</ul>
-<p><img alt="image.png" src="chapters/07/attachment:image.png" /></p>
-<section id="ancient-and-classical-periods-6-000-bce-500-ce">
-<h3>Ancient and Classical Periods (6,000 BCE – 500 CE)<a class="headerlink" href="#ancient-and-classical-periods-6-000-bce-500-ce" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.dk.com/us/book/9781465480248-the-math-book/">The Math Book | DK US</a></p>
-<ul>
-<li><p>p.20</p></li>
-</ul>
-</li>
-</ul>
-<p><img alt="image.png" src="chapters/07/attachment:image.png" /></p>
-<ul class="simple">
-<li><p>c.6000BCE</p>
-<ul>
-<li><p>“Different quantities are denoted on Sumerian clay tablets, prefiguring a numerical system.”</p>
-<ul>
-<li><p>シュメールの粘土板に様々な数量が表記され、数的体系を予見させる。</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Sumer">Sumer - Wikipedia</a></p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>c.4000BCE</p>
-<ul>
-<li><p>“The Babylonians introduce a base-60 numerical system, in which a small cone denotes 1 and a large cone denotes 60.”</p>
-<ul>
-<li><p>バビロニアで60進法が導入され、小さな楔が1を、大きな楔が60を表した。</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Sexagesimal">Sexagesimal - Wikipedia</a></p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>c.1650BCE</p>
-<ul>
-<li><p>“The ancient Egyptians describe methods of working out areas and volumes and record them on the Rhind papyrus.”</p>
-<ul>
-<li><p>古代エジプトでは、面積や体積を計算する方法がまとめられて、リンド数学パピルスに記録された。</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Rhind_Mathematical_Papyrus">Rhind Mathematical Papyrus - Wikipedia</a></p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>c.530BCE</p>
-<ul>
-<li><p>“Pythagoras founds a school where he teaches his metaphysical beliefs and mathematical discoveries, including Pythagoras’s theorem.”</p>
-<ul>
-<li><p>ピタゴラスが学校を設立し、ピタゴラスの定理を含む彼の形而上学的信念と数学的発見を教える。</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Pythagoras">Pythagoras - Wikipedia</a> (c.570–c.495 BC)</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>c.430BCE</p>
-<ul>
-<li><p>“Hippasus of Metapontum discovers irrational numbers, which cannot be expressed in fractions.”</p>
-<ul>
-<li><p>メタポンティオンのヒッパソスは、分数で表せない無理数を発見した。</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Hippasus">Hippasus - Wikipedia</a> (c.530–c.450 BC)</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>c.387BCE</p>
-<ul>
-<li><p>“Plato founds his Academy in Thenes - the sign over the entrance reads “Let no one ignorant of geometry enter here.”</p>
-<ul>
-<li><p>プラトンがテネスに学校を開設した際に、「幾何学を知らないものは入れない」と門に記した。</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Plato">Plato - Wikipedia</a> (c.427–c.347 BC)</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>c.300BCE</p>
-<ul>
-<li><p>“One of the most infuluential textbooks ever written, Ecuclid’s Elements, contains mathematical advances including proof of the infinity of prime numbers.”</p>
-<ul>
-<li><p>最も影響力のある教科書の一つであるユークリッドの『原論』には、素数の無限性の証明など数学的な進歩が含まれている。</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Euclid%27s_Elements">Euclid’s Elements - Wikipedia</a></p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Circa">Circa - Wikipedia</a></p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Common_Era">Common Era - Wikipedia</a></p></li>
+<li><p>羽海野チカ, “3月のライオン 9”, Chapter. 86 あたらしい年, 2012年.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
-素数は無限にあるのですか？
+初等幾何において、補助線の引き方にコツはありますか？
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<p>はい、素数は無限に存在します。これは、エウクレイドの原理と呼ばれる数学的原理によって証明されています。</p>
+<p>補助線を引く際には、問題の図形の性質や条件を考慮し、目的に合わせた補助線を引くことが重要です。また、補助線を引いた後は、図形の性質を利用して問題を解くことができるため、図形の性質についても理解しておくことが大切です。補助線を引く際には、線分の中点や垂線、平行線、相似などの性質を利用することが多いため、これらの性質についても理解しておくと良いでしょう。</p>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
-エウクレイドの原理について詳しく
+「まず一番さびしそうな所に引いてごらん」というアドバイスは的確ですか？
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<p>エウクレイドの原理とは、古代ギリシャの数学者エウクレイドが提唱した、素数が無限に存在することを証明するための原理です。</p>
-<p>この原理は、以下のように述べられます。「ある有限個の素数があるとき、それらの素数の積に1を加えた数は、必ず別の素数で割り切れる。」</p>
-<p>この原理により、素数が有限個しか存在しないと仮定すると、その有限個の素数の積に1を加えた数は、必ず別の素数で割り切れることになります。つまり、仮定した有限個の素数には含まれていない新しい素数が存在することになり、素数が無限に存在することが証明されます。</p>
-<p>この原理は、数学の基礎的な原理の一つであり、素数に関する多くの定理や問題の解決に役立っています。</p>
+<p>「まず一番さびしそうな所に引いてごらん」というアドバイスは、補助線を引く際に一つのアプローチとしては有効かもしれませんが、必ずしも的確とは言えません。問題によっては、一番さびしそうな所に補助線を引いても解決できない場合があります。そのため、問題の図形の性質や条件をよく読み、目的に合わせた補助線を引くことが重要です。また、補助線を引いた後には、図形の性質を利用して問題を解くことができるため、図形の性質についても理解しておくことが大切です。</p>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
-その原理は原論に記されていますか？
+目的に合わせた補助線を引くセンスは初等幾何学に不可欠ですか？
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<p>はい、エウクレイドの原理は、エウクレイドの著書『原論』の中で記されています。『原論』は、古代ギリシャの数学者エウクレイドが著した、数学の基礎的な原理や定理をまとめた書物で、現代の数学においても重要な教科書として扱われています。エウクレイドの原理は、『原論』の第九巻命題20に記されています。</p>
+<p>目的に合わせた補助線を引くセンスは、初等幾何学において非常に重要なスキルの一つです。補助線を引くことで、問題をより簡単に解くことができる場合があります。しかし、適切な補助線を引くことができないと、問題を解くことができない場合もあります。そのため、図形の性質や条件をよく読み、目的に合わせた補助線を引くセンスを身につけることは、初等幾何学において不可欠なスキルの一つと言えます。</p>
 </div>
 </div>
-<ul class="simple">
-<li><p><a class="reference external" href="http://aleph0.clarku.edu/~djoyce/elements/bookIX/propIX20.html">Euclid’s Elements, Book IX, Proposition 20</a></p>
-<ul>
-<li><p>“Prime numbers are more than any assigned multitude of prime numbers.”</p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="http://aleph0.clarku.edu/~djoyce/elements/bookVII/propVII31.html">Euclid’s Elements, Book VII, Proposition 31</a></p>
-<ul>
-<li><p>“Any composite number is measured by some prime number.”</p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="http://aleph0.clarku.edu/~djoyce/elements/bookI/cn.html">Euclid’s Elements, Common Notions</a></p>
-<ul>
-<li><p>“If equals are subtracted from equals, then the remainders are equal.”</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p><a class="reference external" href="https://writings.stephenwolfram.com/2020/09/the-empirical-metamathematics-of-euclid-and-beyond/">The Empirical Metamathematics of Euclid and Beyond—Stephen Wolfram Writings</a></p></li>
-</ul>
-</section>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+例えば、「二等辺三角形の2つの底角が等しいことを示せ」という問題が出されたとき、
+どのように補助線を引くべきですか？
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>「二等辺三角形の2つの底角が等しいことを示せ」という問題において、目的は底角が等しいことを示すことです。この場合、三角形の対辺の長さが等しいことを利用して、底角が等しいことを示すことができます。</p>
+<p>具体的には、三角形の底辺の中点を取り、その点から対辺に垂線を引きます。すると、底辺の中点から垂線の足までの距離が等しいため、三角形が二等辺三角形であることから、垂線の足から各頂点までの距離も等しくなります。そして、垂線の足から各頂点までの距離が等しいことから、各頂点までの距離も等しくなり、つまり三角形の各辺の長さが等しくなります。このようにして、底角が等しいことを示すことができます。</p>
+<p>このように、問題の目的に合わせて、図形の性質や条件を利用して適切な補助線を引くことが重要です。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+対辺とは、ある頂点に相対する辺のことなので、「返の中点に対する対辺」は存在しないのではないですか。
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>ご指摘いただきありがとうございます。確かに、対辺とはある頂点に相対する辺のことであり、返の中点に対する対辺という表現は不適切でした。訂正いたします。</p>
+<p>「二等辺三角形の2つの底角が等しいことを示せ」という問題において、目的は底角が等しいことを示すことです。この場合、三角形の対辺の長さが等しいことを利用して、底角が等しいことを示すことができます。</p>
+<p>具体的には、三角形の底辺の中点を取り、その点から底辺に垂線を引きます。すると、底辺の中点から垂線の足までの距離が等しいため、三角形が二等辺三角形であることから、垂線の足から各頂点までの距離も等しくなります。そして、垂線の足から各頂点までの距離が等しいことから、各頂点までの距離も等しくなり、つまり三角形の各辺の長さが等しくなります。このようにして、底角が等しいことを示すことができます。</p>
+<p>このように、問題の目的に合わせて、図形の性質や条件を利用して適切な補助線を引くことが重要です。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+その垂線の足は底辺の中点なので、それらの距離は0です。
+確かに底返上の頂点までの距離は同じですが、底辺にない頂点までの距離は必ずしもそれらと等しくないはずです。
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>再度、ご指摘いただきありがとうございます。確かに、私の前回の回答に誤りがありました。底辺の中点から底辺に垂線を引いた場合、垂線の足は底辺の中点と一致するため、各頂点までの距離が等しくなるという説明は誤りでした。</p>
+<p>正しい補助線の引き方としては、例えば、底辺の中点を取り、その点から対辺に垂線を引く方法があります。すると、底辺の中点から垂線の足までの距離が等しいため、三角形が二等辺三角形であることから、垂線の足から各頂点までの距離も等しくなります。そして、垂線の足から各頂点までの距離が等しいことから、各頂点までの距離も等しくなり、つまり三角形の各辺の長さが等しくなります。このようにして、底角が等しいことを示すことができます。</p>
+<p>改めて、正しい情報を提供できず、申し訳ありませんでした。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+補助線を引かずに証明することはできますか？
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>はい、二等辺三角形の2つの底角が等しいことは、補助線を引かずに証明することができます。</p>
+<p>具体的には、二等辺三角形の底辺に対して、その中点を通る直線を引きます。すると、この直線は底辺を等分するため、二等辺三角形の底辺の両側にある2つの三角形は合同になります。そして、合同な三角形の対応する角度は等しいため、底辺の両側にある2つの三角形の底角は等しくなります。つまり、二等辺三角形の2つの底角が等しいことが証明できます。</p>
+<p>このように、図形の性質や条件を利用して、補助線を引かずに問題を解くこともできます。ただし、補助線を引くことで問題を解くことができる場合もあるため、目的に合わせて適切な方法を選択することが重要です。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+余弦定理を使って証明して下さい。
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>二等辺三角形の2つの底角が等しいことを余弦定理を用いて証明することができます。</p>
+<p>まず、三角形の底辺をc、その他の2辺をaとbとします。また、底辺の中点をMとし、頂点をA、底辺の両端点をBとCとします。このとき、三角形ABCは二等辺三角形であるため、AB=AC=c/2となります。</p>
+<p>次に、余弦定理を用いて、aとbの関係を求めます。余弦定理によれば、a^2 = b^2 + c^2 - 2bc cosA です。ここで、Aは角BACの大きさです。</p>
+<p>また、底辺の中点Mから頂点Aまでの距離をhとすると、三角形ABMは直角三角形となり、h^2 = (c/2)^2 - (a/2)^2 となります。</p>
+<p>さらに、三角形ACMも直角三角形となるため、h^2 = (c/2)^2 - (b/2)^2 となります。</p>
+<p>これらの式を組み合わせると、(c/2)^2 - (a/2)^2 = (c/2)^2 - (b/2)^2 となり、a^2 = b^2 となります。つまり、二等辺三角形の2つの底角が等しいことが証明できます。</p>
+<p>以上が、余弦定理を用いた二等辺三角形の2つの底角が等しいことの証明です。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+AB=AC=c/2となるのは正三角形のときではありませんか？
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>申し訳ありません。前回の回答に誤りがありました。二等辺三角形の底辺の中点から頂点に引いた垂線の長さは、底辺の長さの半分になります。つまり、底辺の長さをc、底辺の中点から頂点に引いた垂線の長さをhとすると、h = c/2 となります。</p>
+<p>余弦定理を用いて、二等辺三角形の2つの底角が等しいことを証明する場合、以下のようになります。</p>
+<p>まず、三角形の底辺をc、その他の2辺をaとbとします。また、底辺の中点をMとし、頂点をA、底辺の両端点をBとCとします。このとき、三角形ABCは二等辺三角形であるため、AB=AC=c/2となります。</p>
+<p>次に、余弦定理を用いて、aとbの関係を求めます。余弦定理によれば、a^2 = b^2 + c^2 - 2bc cosA です。ここで、Aは角BACの大きさです。</p>
+<p>また、底辺の中点Mから頂点Aまでの距離をhとすると、三角形ABMは直角三角形となり、h^2 = (c/2)^2 - (a/2)^2 となります。</p>
+<p>さらに、三角形ACMも直角三角形となるため、h^2 = (c/2)^2 - (b/2)^2 となります。</p>
+<p>これらの式を組み合わせると、(c/2)^2 - (a/2)^2 = (c/2)^2 - (b/2)^2 となり、a^2 = b^2 となります。つまり、二等辺三角形の2つの底角が等しいことが証明できます。</p>
+<p>以上が、余弦定理を用いた二等辺三角形の2つの底角が等しいことの証明です。</p>
+</div>
+</div>
 </section>
 </section>
 
@@ -627,7 +640,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapters/07"
+            path: "./chapters/08"
         },
         predefinedOutput: true
     }
@@ -646,20 +659,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="702_plimpton322.html"
+       href="802_ybc7289.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Plimpton 322 の解読 (2)</p>
+        <p class="prev-next-title">YBC 7289</p>
       </div>
     </a>
     <a class="right-next"
-       href="720_assignment.html"
+       href="830_assignment.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">課題: 相加平均と相乗平均の関係を表す不等式</p>
+        <p class="prev-next-title">課題: 補助線を引かずに初等幾何学の問題を解く</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -681,11 +694,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#epochs-in-the-science-book">Epochs in “the Science Book”</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#epochs-in-the-math-book">Epochs in “the Math Book”</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ancient-and-classical-periods-6-000-bce-500-ce">Ancient and Classical Periods (6,000 BCE – 500 CE)</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">入試問題を解く人工知能</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chatgpt">東ロボくんが引かなかった補助線をChatGPTに引かせてみる</a></li>
 </ul>
   </nav></div>
 
