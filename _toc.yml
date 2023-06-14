@@ -2,6 +2,15 @@ format: jb-book
 root: chapters/intro
 title: Abstract
 parts:
+- caption: 2023/06/14
+  numberd: false
+  chapters:
+  - file: chapters/09/810_intro-Copy1.ipynb
+    title: Thin by programming
+  - file: chapters/09/assignment-Copy1.ipynb
+    title: Elementary geometry without auxiliary lines
+  - file: chapters/09/902.ipynb
+    title: Thales's 2nd theorem
 - caption: 2023/06/07
   numberd: false
   chapters:
