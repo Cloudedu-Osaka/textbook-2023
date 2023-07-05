@@ -1,0 +1,1706 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>ケプラーの第一法則 &#8212; プログラミングで遡る科学史</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-148221575-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-148221575-1');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/12/1210-kepler_1';</script>
+    <link rel="canonical" href="https://inferentialthinking.org/chapters/12/1210-kepler_1.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ケプラーの第二法則" href="1220-kepler_2.html" />
+    <link rel="prev" title="ケプラーの法則" href="1200-intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">プログラミングで遡る科学史</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/07/05</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1200-intro.html">Introduction</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Kepler's 1st Law</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1220-kepler_2.html">ケプラーの第二法則</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="1230-cycloid.html">Newton's Cycloid</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/06/28</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../11/1091_assignment.html">Past Assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../11/1190_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/06/21</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../10/1090_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/06/14</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../09/810_intro-Copy1.html">Thin by programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09/830_assignment-Copy1.html">Elementary geometry without auxiliary lines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09/902.html">Thales's 2nd theorem</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/06/07</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../08/720_assignment-Copy1.html">Past assignment (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/721_assignment.html">Past assignment (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/800_assignment.html">Past assignment (3)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/801_ybc7289.html">YBC 7289 (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/802_ybc7289.html">YBC 7289 (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/810_intro.html">Think by programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/830_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/31</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07/662_combination-Copy1.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/701_plimpton322.html">Decoding Plimpton 322 (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/702_plimpton322.html">Decoding Plimpton 322 (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/710_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/720_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/24</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../06/590_assignment-Copy1.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06/620_timbre.html">波形を生成し音色を聞き比べる</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../06/650_optimization.html">Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06/660_combination.html">Combination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06/661_combination.html">Combination (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06/662_combination.html">Combination (2) as a assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/17</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../05/490_assignment.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/500_arche.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/510_octave.html">Octave</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/520_timbre.html">Timbre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/530_temperament.html">Temperament</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/590_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/10</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04/10_intro.html">Past assignment and Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/20_pythagoras.html">Pythagorean numbers and theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/22_dict-Copy1.html">Data format (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/23_dict-Copy1.html">Pythonの配列と辞書と表</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../04/40_egyptian_numerals.html">Egyptian numerals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/50_babylonian_numerals.html">Babylonian numerals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/90_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/26</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03/10_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/20_assignment.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/21_similarities.html">Code similarities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/22_dict.html">Data format (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/23_dict.html">Data format (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/40_positional.html">Positional notation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/50_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/19</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02/01_orientation.html">Orientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/02_assignment.html">Assignment (Last week)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/03_examination.html">Examination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/04_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/12</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/01_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/02_openai.html">Obtaining OpenAI API key</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/03_chatgpt.html">ChatGPT interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/04_assignment.html">Assignment</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/intro_add.html">Request for cooperation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_4.html">Experiment explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_5.html">Informed concent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_6.html">Withdrawal of concent</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://ecsosaka-jh2310.japaneast.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/Cloudedu-Osaka/textbook-2023&urlpath=lab/tree/textbook-2023/chapters/12/1210-kepler_1.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/Cloudedu-Osaka/textbook-2023" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/12/1210-kepler_1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>ケプラーの第一法則</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">楕円</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eccentricity">離心率 (eccentricity)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">惑星の離心率</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">近日点、遠日点</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">火星の次の近日点・遠日点通過日</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">地球の次の近日点・遠日点通過日</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">まとめ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">参考) ニュートンの運動方程式と楕円軌道</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>ケプラーの第一法則<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>(1609) The orbit of a planet is an ellipse with the Sun at one of the two foci.</p></li>
+</ul>
+<p><img alt="fig-01" src="https://upload.wikimedia.org/wikipedia/commons/9/98/Kepler_laws_diagram.svg" /></p>
+<section id="id2">
+<h2>楕円<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<section id="eccentricity">
+<h3>離心率 (eccentricity)<a class="headerlink" href="#eccentricity" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Conic_section">Conic section - Wikipedia</a></p>
+<ul>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Conic_section#Eccentricity,_focus_and_directrix">Conic section - Wikipedia</a>#Eccentricity,_focus_and_directrix</p></li>
+</ul>
+</li>
+</ul>
+<p>円錐曲線の離心率 <span class="math notranslate nohighlight">\(e\)</span> は、曲線上の点 <span class="math notranslate nohighlight">\(P\)</span> と焦点 <span class="math notranslate nohighlight">\(F\)</span> の距離と準線 <span class="math notranslate nohighlight">\(L\)</span> の距離の比である。</p>
+<p><img alt="fig-0" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Eccentricity.png" /></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Eccentricity_%28mathematics%29">Eccentricity (mathematics) - Wikipedia</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Ellipse">Ellipse - Wikipedia</a></p>
+<ul>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Semi-major_and_semi-minor_axes">Semi-major and semi-minor axes - Wikipedia</a></p></li>
+</ul>
+</li>
+</ul>
+<p>楕円は、準線を導入せずに定義できる。
+楕円は、2つの焦点 <span class="math notranslate nohighlight">\(F_{1}, F_{2}\)</span> からの距離の和が等しい点 <span class="math notranslate nohighlight">\(P\)</span> の集合である。</p>
+<p><img alt="fig-10" src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Ellipse-def-e.svg" /></p>
+<p><img alt="fig-1" src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Ellipse_semi-major_and_minor_axes.svg" /></p>
+<p>楕円は、長軸の長半径 <span class="math notranslate nohighlight">\(a\)</span> と短軸の短半径 <span class="math notranslate nohighlight">\(b\)</span> を用いて二次方程式の解として定義できる。
+$<span class="math notranslate nohighlight">\(
+  \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1
+\)</span>$</p>
+<p>この場合、離心率は次の式で表されるが、準線を用いて定義した離心率と等しい。</p>
+<div class="math notranslate nohighlight">
+\[
+  \epsilon = \sqrt{1-\frac{b^2}{a^2}}
+\]</div>
+</section>
+</section>
+<section id="id3">
+<h2>惑星の離心率<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Orbital_eccentricity">Orbital eccentricity - Wikipedia</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://en.wikipedia.org/wiki/Orbital_eccentricity&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Object</th>
+      <th>eccentricity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Triton</td>
+      <td>0.00002</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Venus</td>
+      <td>0.0068</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Neptune</td>
+      <td>0.0086</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Earth</td>
+      <td>0.0167</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Titan</td>
+      <td>0.0288</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Uranus</td>
+      <td>0.0472</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Jupiter</td>
+      <td>0.0484</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Saturn</td>
+      <td>0.0541</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Moon</td>
+      <td>0.0549</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1 Ceres</td>
+      <td>0.0758</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>4 Vesta</td>
+      <td>0.0887</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Mars</td>
+      <td>0.0934</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>10 Hygiea</td>
+      <td>0.1146</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Makemake</td>
+      <td>0.1559</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Haumea</td>
+      <td>0.1887</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Mercury</td>
+      <td>0.2056</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2 Pallas</td>
+      <td>0.2313</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Pluto</td>
+      <td>0.2488</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>3 Juno</td>
+      <td>0.2555</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>324 Bamberga</td>
+      <td>0.3400</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Eris</td>
+      <td>0.4407</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Nereid</td>
+      <td>0.7507</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Sedna</td>
+      <td>0.8549</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Halley's Comet</td>
+      <td>0.9671</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Comet Hale-Bopp</td>
+      <td>0.9951</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Comet Ikeya-Seki</td>
+      <td>0.9999</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>C/1980 E1</td>
+      <td>1.057</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>ʻOumuamua</td>
+      <td>1.20[a]</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>2I/Borisov</td>
+      <td>3.5[b]</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 火星の離心率</span>
+<span class="nb">float</span><span class="p">(</span><span class="n">dfs</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">dfs</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;Object&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Mars&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;eccentricity&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0934
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 地球の離心率</span>
+<span class="nb">float</span><span class="p">(</span><span class="n">dfs</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">dfs</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;Object&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Earth&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;eccentricity&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0167
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Mars">Mars - Wikipedia</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Earth">Earth - Wikipedia</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://en.wikipedia.org/wiki/Mars&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Mars in true color,[a] taken by the Emirates M...</td>
+      <td>Mars in true color,[a] taken by the Emirates M...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Designations</td>
+      <td>Designations</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Adjectives</td>
+      <td>Martian</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Symbol</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Orbital characteristics[1]</td>
+      <td>Orbital characteristics[1]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Epoch J2000</td>
+      <td>Epoch J2000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Aphelion</td>
+      <td>249261000 km (154884000 mi; 1.66621 AU)[2]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Perihelion</td>
+      <td>206650000 km (128410000 mi; 1.3814 AU)[2]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Semi-major axis</td>
+      <td>227939366 km (141634956 mi; 1.52368055 AU)[3]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Eccentricity</td>
+      <td>0.0934[2]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Orbital period (sidereal)</td>
+      <td>686.980 d (1.88085 yr; 668.5991 sols)[2]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Orbital period (synodic)</td>
+      <td>779.94 d (2.1354 yr)[3]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Average orbital speed</td>
+      <td>24.07 km/s (86700 km/h; 53800 mph)[2]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Mean anomaly</td>
+      <td>19.412°[2]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Inclination</td>
+      <td>.mw-parser-output .plainlist ol,.mw-parser-out...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Longitude of ascending node</td>
+      <td>49.57854°[2]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Time of perihelion</td>
+      <td>2022-Jun-21[5]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Argument of perihelion</td>
+      <td>286.5°[3]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Satellites</td>
+      <td>2 (Phobos and Deimos)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Physical characteristics</td>
+      <td>Physical characteristics</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Mean radius</td>
+      <td>3389.5 ± 0.2 km[b] [6] (2106.1 ± 0.1 mi)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Equatorial radius</td>
+      <td>3396.2 ± 0.1 km[b] [6] (2110.3 ± 0.1 mi; 0.533...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Polar radius</td>
+      <td>3376.2 ± 0.1 km[b] [6] (2097.9 ± 0.1 mi; 0.531...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Flattening</td>
+      <td>0.00589±0.00015[5][6]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Surface area</td>
+      <td>144.37×106 km2[7] (5.574×107 sq mi; 0.284 Earths)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Volume</td>
+      <td>1.63118×1011 km3[8] (0.151 Earths)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Mass</td>
+      <td>6.4171×1023 kg[9] (0.107 Earths)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Mean density</td>
+      <td>3.9335 g/cm3[8] (0.1421 lb/cu in)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Surface gravity</td>
+      <td>3.72076 m/s2[10] (12.2072 ft/s2; 0.3794 g)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Moment of inertia factor</td>
+      <td>0.3644±0.0005[9]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Escape velocity</td>
+      <td>5.027 km/s (18100 km/h; 11250 mph)[11]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Synodic rotation period</td>
+      <td>1.02749125 d[12]  24h 39m 36s</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Sidereal rotation period</td>
+      <td>1.025957 d 24h 37m 22.7s[8]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Equatorial rotation velocity</td>
+      <td>241 m/s (870 km/h; 540 mph)[2]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Axial tilt</td>
+      <td>25.19° to its orbital plane[2]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>North pole right ascension</td>
+      <td>317.68143°[6] 21h 10m 44s</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>North pole declination</td>
+      <td>52.88650°[6]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Albedo</td>
+      <td>0.170 geometric[13]0.25 Bond[2]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>Temperature</td>
+      <td>209 K (−64 °C) (blackbody temperature)[14]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Surface temp. min mean max Celsius −110 °C[15]...</td>
+      <td>Surface temp. min mean max Celsius −110 °C[15]...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>Surface temp.</td>
+      <td>min</td>
+      <td>mean</td>
+      <td>max</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>Celsius</td>
+      <td>−110 °C[15]</td>
+      <td>−60 °C[16]</td>
+      <td>35 °C[15]</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>Fahrenheit</td>
+      <td>−166 °F[15]</td>
+      <td>−80 °F[16]</td>
+      <td>95 °F[15]</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Surface absorbed dose rate</td>
+      <td>8.8 μGy/h[17]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>Surface equivalent dose rate</td>
+      <td>27 μSv/h[17]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>Apparent magnitude</td>
+      <td>−2.94 to +1.86[18]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>Absolute magnitude (H)</td>
+      <td>−1.5[19]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Angular diameter</td>
+      <td>3.5–25.1″[2]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>Atmosphere[2][20]</td>
+      <td>Atmosphere[2][20]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>Surface pressure</td>
+      <td>0.636 (0.4–0.87) kPa 0.00628 atm</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>Composition by volume</td>
+      <td>95.97% carbon dioxide 1.93% argon 1.89% nitrog...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>.mw-parser-output .reflist{font-size:90%;margi...</td>
+      <td>.mw-parser-output .reflist{font-size:90%;margi...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">dfs</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Eccentricity&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>9</th>
+      <td>Eccentricity</td>
+      <td>0.0934[2]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="id4">
+<h3>近日点、遠日点<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Apsis">Apsis - Wikipedia</a> (近点・遠点)</p>
+<ul>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Apsis#Perihelion_and_aphelion">Apsis - Wikipedia</a>#Perihelion_and_aphelion (近日点・遠日点)</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="fig-2" src="https://upload.wikimedia.org/wikipedia/commons/9/94/Perihelion-Aphelion.svg" /></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+\left\{ 
+\begin{array}{l}r_{\min} = a (1-\epsilon)\\
+r_{\max} = a (1+\epsilon) 
+\end{array}\right.
+\end{eqnarray}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[a = \frac{r_{\max} + r_{\min}}{2}\]</div>
+<div class="math notranslate nohighlight">
+\[\epsilon = \frac{r_{\max} - r_{\min}}{r_{\max}+r_{\min}}\]</div>
+</section>
+<section id="id5">
+<h3>火星の次の近日点・遠日点通過日<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">astronomy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a0</span> <span class="o">=</span> <span class="n">astronomy</span><span class="o">.</span><span class="n">SearchPlanetApsis</span><span class="p">(</span><span class="n">astronomy</span><span class="o">.</span><span class="n">Body</span><span class="o">.</span><span class="n">Mars</span><span class="p">,</span> <span class="n">astronomy</span><span class="o">.</span><span class="n">Time</span><span class="o">.</span><span class="n">Now</span><span class="p">())</span>
+<span class="n">a0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Apsis(Time(&#39;2024-05-08T10:42:34.168Z&#39;), ApsisKind.Pericenter, dist_au=1.3814902460162795)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">astronomy</span><span class="o">.</span><span class="n">NextPlanetApsis</span><span class="p">(</span><span class="n">astronomy</span><span class="o">.</span><span class="n">Body</span><span class="o">.</span><span class="n">Mars</span><span class="p">,</span> <span class="n">a0</span><span class="p">)</span>
+<span class="n">a1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Apsis(Time(&#39;2025-04-16T22:54:51.376Z&#39;), ApsisKind.Apocenter, dist_au=1.6660577981008968)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 火星の離心率</span>
+<span class="nb">abs</span><span class="p">(</span><span class="n">a0</span><span class="o">.</span><span class="n">dist_au</span> <span class="o">-</span> <span class="n">a1</span><span class="o">.</span><span class="n">dist_au</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">a0</span><span class="o">.</span><span class="n">dist_au</span> <span class="o">+</span> <span class="n">a1</span><span class="o">.</span><span class="n">dist_au</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.09337590350181069
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
+jupyterのpythonで火星の公転軌道と同じ離心率の楕円を描く
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>以下のコードを実行することで、jupyterのpythonで火星の公転軌道と同じ離心率の楕円を描くことができます。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mf">1.524</span> <span class="c1"># 火星の軌道長半径</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mf">0.0934</span> <span class="c1"># 火星の離心率</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 火星の軌道短半径</span>
+
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1"># 角度を0から2πまで1000分割</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="c1"># x座標</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="c1"># y座標</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># 楕円を描画</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span> <span class="c1"># アスペクト比を調整</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># 描画</span>
+</pre></div>
+</div>
+<p>このコードでは、matplotlibとnumpyを使用しています。また、火星の軌道長半径と離心率を変数に代入し、楕円のx座標とy座標を計算しています。最後に、plot関数で楕円を描画し、set_aspect関数でアスペクト比を調整しています。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mf">1.524</span> <span class="c1"># 火星の軌道長半径</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mf">0.0934</span> <span class="c1"># 火星の離心率</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 火星の軌道短半径</span>
+
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1"># 角度を0から2πまで1000分割</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="c1"># x座標</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="c1"># y座標</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># 楕円を描画</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span> <span class="c1"># アスペクト比を調整</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># 描画</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/c1b295fc0e25c43d61cdcb77154fa59878781e271e3ab3b10816589d7f1a98fc.png" src="../../_images/c1b295fc0e25c43d61cdcb77154fa59878781e271e3ab3b10816589d7f1a98fc.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
+jupyterのpythonで火星の公転軌道と同じ離心率の楕円を描く。
+その際に、2つの焦点を同時に描く。
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>以下のコードを使用して、Jupyter Notebook上で火星の公転軌道と同じ離心率の楕円を描くことができます。また、楕円の2つの焦点も同時に描かれます。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mf">1.524</span> <span class="c1"># 長軸半径</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mf">0.0934</span> <span class="c1"># 離心率</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 短軸半径</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">e</span> <span class="o">*</span> <span class="n">a</span> <span class="c1"># 焦点間の距離</span>
+
+<span class="c1"># 楕円の描画</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># 焦点の描画</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="n">c</span><span class="p">,</span> <span class="n">c</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>このコードでは、<code class="docutils literal notranslate"><span class="pre">a</span></code>と<code class="docutils literal notranslate"><span class="pre">e</span></code>をそれぞれ長軸半径と離心率に設定し、短軸半径と焦点間の距離を計算しています。そして、<code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code>を使用して楕円の描画に必要な角度を生成し、<code class="docutils literal notranslate"><span class="pre">np.cos()</span></code>と<code class="docutils literal notranslate"><span class="pre">np.sin()</span></code>を使用して楕円の座標を計算しています。最後に、<code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>を使用して楕円と焦点を描画し、<code class="docutils literal notranslate"><span class="pre">plt.axis('equal')</span></code>を使用してアスペクト比を調整しています。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mf">1.524</span> <span class="c1"># 長軸半径</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mf">0.0934</span> <span class="c1"># 離心率</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 短軸半径</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">e</span> <span class="o">*</span> <span class="n">a</span> <span class="c1"># 焦点間の距離</span>
+
+<span class="c1"># 楕円の描画</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># 焦点の描画</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="n">c</span><span class="p">,</span> <span class="n">c</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/a7b619178d16157f4bdd4ec18d56eb03fee1e1e901fe5cec31777c7404d667f8.png" src="../../_images/a7b619178d16157f4bdd4ec18d56eb03fee1e1e901fe5cec31777c7404d667f8.png" />
+</div>
+</div>
+</section>
+<section id="id6">
+<h3>地球の次の近日点・遠日点通過日<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a0</span> <span class="o">=</span> <span class="n">astronomy</span><span class="o">.</span><span class="n">SearchPlanetApsis</span><span class="p">(</span><span class="n">astronomy</span><span class="o">.</span><span class="n">Body</span><span class="o">.</span><span class="n">Earth</span><span class="p">,</span> <span class="n">astronomy</span><span class="o">.</span><span class="n">Time</span><span class="o">.</span><span class="n">Now</span><span class="p">())</span>
+<span class="n">a0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Apsis(Time(&#39;2023-07-06T18:18:06.107Z&#39;), ApsisKind.Apocenter, dist_au=1.0166802314024639)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">astronomy</span><span class="o">.</span><span class="n">NextPlanetApsis</span><span class="p">(</span><span class="n">astronomy</span><span class="o">.</span><span class="n">Body</span><span class="o">.</span><span class="n">Earth</span><span class="p">,</span> <span class="n">a0</span><span class="p">)</span>
+<span class="n">a1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Apsis(Time(&#39;2024-01-03T00:38:25.131Z&#39;), ApsisKind.Pericenter, dist_au=0.9833008334298395)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 地球の離心率</span>
+<span class="nb">abs</span><span class="p">(</span><span class="n">a0</span><span class="o">.</span><span class="n">dist_au</span> <span class="o">-</span> <span class="n">a1</span><span class="o">.</span><span class="n">dist_au</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">a0</span><span class="o">.</span><span class="n">dist_au</span> <span class="o">+</span> <span class="n">a1</span><span class="o">.</span><span class="n">dist_au</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.016689856998932728
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+jupyterのpythonで地球の公転軌道と同じ離心率の楕円を描く。
+その際に、2つの焦点を同時に描く。
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>以下のコードを使用して、Jupyter Notebook上で地球の公転軌道と同じ離心率の楕円を描くことができます。また、楕円の2つの焦点も同時に描かれます。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mf">1.496e8</span> <span class="c1"># 長軸半径（単位：km）</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mf">0.0167</span> <span class="c1"># 離心率</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 短軸半径</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">e</span> <span class="o">*</span> <span class="n">a</span> <span class="c1"># 焦点間の距離</span>
+
+<span class="c1"># 楕円の描画</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># 焦点の描画</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="n">c</span><span class="p">,</span> <span class="n">c</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>このコードでは、<code class="docutils literal notranslate"><span class="pre">a</span></code>と<code class="docutils literal notranslate"><span class="pre">e</span></code>をそれぞれ長軸半径と離心率に設定し、短軸半径と焦点間の距離を計算しています。そして、<code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code>を使用して楕円の描画に必要な角度を生成し、<code class="docutils literal notranslate"><span class="pre">np.cos()</span></code>と<code class="docutils literal notranslate"><span class="pre">np.sin()</span></code>を使用して楕円の座標を計算しています。最後に、<code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>を使用して楕円と焦点を描画し、<code class="docutils literal notranslate"><span class="pre">plt.axis('equal')</span></code>を使用してアスペクト比を調整しています。</p>
+<p>なお、地球の公転軌道の長軸半径は約1.496×10^8 km、離心率は約0.0167です。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mf">1.496e8</span> <span class="c1"># 長軸半径（単位：km）</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mf">0.0167</span> <span class="c1"># 離心率</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 短軸半径</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">e</span> <span class="o">*</span> <span class="n">a</span> <span class="c1"># 焦点間の距離</span>
+
+<span class="c1"># 楕円の描画</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># 焦点の描画</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="n">c</span><span class="p">,</span> <span class="n">c</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b8788c439710482b6aeee7e6154958d09474cf44158cf919f324050685a125cb.png" src="../../_images/b8788c439710482b6aeee7e6154958d09474cf44158cf919f324050685a125cb.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="id7">
+<h2>まとめ<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.collections</span> <span class="k">as</span> <span class="nn">mc</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">mp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#epsilon = 0.6</span>
+<span class="c1">#epsilon = 0.9673 # 1P/Halley</span>
+<span class="c1">#epsilon = 0.0934 # mars</span>
+<span class="n">epsilon</span> <span class="o">=</span> <span class="mf">0.0167</span> <span class="c1"># earth</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">b</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="n">epsilon</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">*</span><span class="n">epsilon</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 0.99986054527619 0.0167
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+
+<span class="n">X0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">Y0</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X0</span><span class="p">,</span><span class="n">Y0</span><span class="p">)</span>
+
+<span class="n">X1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">Y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X1</span><span class="p">,</span><span class="n">Y1</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.5</span><span class="p">)</span>
+
+<span class="n">l</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">LineCollection</span><span class="p">([[(</span><span class="n">a</span><span class="o">/</span><span class="n">epsilon</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),(</span><span class="n">a</span><span class="o">/</span><span class="n">epsilon</span><span class="p">,</span><span class="mi">1</span><span class="p">)]])</span>
+<span class="c1">#ax.add_collection(l)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">a</span><span class="o">*</span><span class="n">epsilon</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">epsilon</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b3d65ccc3e595724ad4cf2828597bdee73e3965e69e59b00dc394400a2243762.png" src="../../_images/b3d65ccc3e595724ad4cf2828597bdee73e3965e69e59b00dc394400a2243762.png" />
+</div>
+</div>
+</section>
+<section id="id8">
+<h2>参考) ニュートンの運動方程式と楕円軌道<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://manabitimes.jp/math/1263">地球の公転軌道が楕円であることの導出 | 高校数学の美しい物語</a></p></li>
+<li><p><a class="reference external" href="https://w3e.kanazawa-it.ac.jp/math/physics/category/mechanics/masspoint_mechanics/simple_harmonic_motion/henkan-tex.cgi?target=/math/physics/category/mechanics/masspoint_mechanics/simple_harmonic_motion/shm_equation_of_motion.html">単振動：運動方程式</a></p></li>
+<li><p><a class="reference external" href="https://w3e.kanazawa-it.ac.jp/math/physics/category/mechanics/masspoint_mechanics/simple_harmonic_motion/henkan-tex.cgi?target=/math/physics/category/mechanics/masspoint_mechanics/simple_harmonic_motion/shm_solution.html">単振動：微分方程式の解法</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/12"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1200-intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">ケプラーの法則</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="1220-kepler_2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ケプラーの第二法則</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">楕円</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eccentricity">離心率 (eccentricity)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">惑星の離心率</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">近日点、遠日点</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">火星の次の近日点・遠日点通過日</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">地球の次の近日点・遠日点通過日</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">まとめ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">参考) ニュートンの運動方程式と楕円軌道</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Manabu Higashida
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

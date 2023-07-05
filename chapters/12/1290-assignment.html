@@ -1,0 +1,2407 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>課題: ティコの天体観測 &#8212; プログラミングで遡る科学史</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-148221575-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-148221575-1');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/12/1290-assignment';</script>
+    <link rel="canonical" href="https://inferentialthinking.org/chapters/12/1290-assignment.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">プログラミングで遡る科学史</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/07/05</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1200-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1210-kepler_1.html">Kepler's 1st Law</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1220-kepler_2.html">ケプラーの第二法則</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="1230-cycloid.html">Newton's Cycloid</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/06/28</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../11/1091_assignment.html">Past Assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../11/1190_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/06/21</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../10/1090_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/06/14</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../09/810_intro-Copy1.html">Thin by programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09/830_assignment-Copy1.html">Elementary geometry without auxiliary lines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09/902.html">Thales's 2nd theorem</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/06/07</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../08/720_assignment-Copy1.html">Past assignment (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/721_assignment.html">Past assignment (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/800_assignment.html">Past assignment (3)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/801_ybc7289.html">YBC 7289 (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/802_ybc7289.html">YBC 7289 (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/810_intro.html">Think by programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/830_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/31</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07/662_combination-Copy1.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/701_plimpton322.html">Decoding Plimpton 322 (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/702_plimpton322.html">Decoding Plimpton 322 (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/710_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/720_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/24</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../06/590_assignment-Copy1.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06/620_timbre.html">波形を生成し音色を聞き比べる</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../06/650_optimization.html">Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06/660_combination.html">Combination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06/661_combination.html">Combination (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06/662_combination.html">Combination (2) as a assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/17</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../05/490_assignment.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/500_arche.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/510_octave.html">Octave</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/520_timbre.html">Timbre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/530_temperament.html">Temperament</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/590_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/10</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04/10_intro.html">Past assignment and Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/20_pythagoras.html">Pythagorean numbers and theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/22_dict-Copy1.html">Data format (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/23_dict-Copy1.html">Pythonの配列と辞書と表</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../04/40_egyptian_numerals.html">Egyptian numerals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/50_babylonian_numerals.html">Babylonian numerals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/90_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/26</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03/10_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/20_assignment.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/21_similarities.html">Code similarities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/22_dict.html">Data format (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/23_dict.html">Data format (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/40_positional.html">Positional notation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/50_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/19</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02/01_orientation.html">Orientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/02_assignment.html">Assignment (Last week)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/03_examination.html">Examination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/04_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/12</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/01_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/02_openai.html">Obtaining OpenAI API key</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/03_chatgpt.html">ChatGPT interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/04_assignment.html">Assignment</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/intro_add.html">Request for cooperation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_4.html">Experiment explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_5.html">Informed concent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_6.html">Withdrawal of concent</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://ecsosaka-jh2310.japaneast.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/Cloudedu-Osaka/textbook-2023&urlpath=lab/tree/textbook-2023/chapters/12/1290-assignment.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/Cloudedu-Osaka/textbook-2023" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/12/1290-assignment.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>課題: ティコの天体観測</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">ルドルフ表</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">ティコの観測ノート (全集)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">惑星の逆行</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">地球から観測した火星の逆行をプロットする</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">位相アンラップ処理をして逆行だけを取り出す</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">時間指定が厄介なので、他のソフトを使う</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">チコの観測の検証</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>課題: ティコの天体観測<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<p>ティコ・ブラーエの火星の観測結果を検証する</p>
+<ul class="simple">
+<li><p>(1546–1601) <a class="reference external" href="https://en.wikipedia.org/wiki/Tycho_Brahe">Tycho Brahe - Wikipedia</a></p></li>
+<li><p>(1571–1630) <a class="reference external" href="https://en.wikipedia.org/wiki/Johannes_Kepler">Johannes Kepler - Wikipedia</a></p></li>
+</ul>
+<section id="id2">
+<h2>ルドルフ表<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>(1627) <a class="reference external" href="https://en.wikipedia.org/wiki/Rudolphine_Tables">Rudolphine Tables - Wikipedia</a></p>
+<ul>
+<li><p>(1576–1612) <a class="reference external" href="https://en.wikipedia.org/wiki/Rudolf_II,_Holy_Roman_Emperor">Rudolf II, Holy Roman Emperor - Wikipedia</a></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="fig-01" src="https://upload.wikimedia.org/wikipedia/commons/7/75/8107-2Keplertp.png" /></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.maa.org/press/periodicals/convergence/mathematical-treasures-johann-keplers-rudolphine-tables">Mathematical Treasures - Johann Kepler’s Rudolphine Tables | Mathematical Association of America</a></p></li>
+<li><p><a class="reference external" href="https://archive.org/details/den-kbd-pil-130018170346-001/">Tabulæ Rudolphinæ, quibus astronomicæ scientiæ temporum longinquitate collapsæ restauratio continetur, a Tychone, ex illustri &amp; generosa Braheorum in Regno Daniæ familia oriundo equite, primum animo concepta et destinata A.C. MDLXIV, tracta per annos XXV, … tandem traducta in Germaniam, in que aulam et nomen Rudolphi Imp. anno MDIIC., tabulas ipsas … continuavit … Joannes Keplerus, qui idem opus hoc in publicum extulit : Kepler, Johannes : Free Download, Borrow, and Streaming : Internet Archive</a></p>
+<ul>
+<li><p>(p.161–) 数表</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id3">
+<h2>ティコの観測ノート (全集)<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>“Tychonis Brahe Dani Opera Omnia” <a class="reference external" href="https://archive.org/search?query=%22Opera+omnia%2C+edidit+I.L.E.+Dreyer%22">Internet Archive: Digital Library of Free &amp; Borrowable Books, Movies, Music &amp; Wayback Machine</a></p></li>
+</ul>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.google.com/search?q=tychonic+system&amp;amp;sxsrf=ALiCzsZWvcxSV9IZ9qWS2TOWN0zCZekPOg:1657589719899&amp;amp;source=lnms&amp;amp;tbm=vid&amp;amp;sa=X&amp;amp;ved=2ahUKEwjl5r_zmvL4AhWVp1YBHduDCtgQ_AUoAnoECAIQBA&amp;amp;biw=960&amp;amp;bih=1096&amp;amp;dpr=1">https://www.google.com/search?q=tychonic+system&amp;sxsrf=ALiCzsZWvcxSV9IZ9qWS2TOWN0zCZekPOg:1657589719899&amp;source=lnms&amp;tbm=vid&amp;sa=X&amp;ved=2ahUKEwjl5r_zmvL4AhWVp1YBHduDCtgQ_AUoAnoECAIQBA&amp;biw=960&amp;bih=1096&amp;dpr=1</a></p></li>
+</ul>
+</section>
+<section id="id4">
+<h2>惑星の逆行<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Apparent_retrograde_motion">Apparent retrograde motion - Wikipedia</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
+惑星の逆行について
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>惑星の逆行とは、地球から見た他の惑星の動きが、一定期間にわたって逆方向に見える現象のことです。これは、地球と他の惑星が公転する軌道の関係によって起こります。逆行は、天文学的な観測において重要な現象であり、惑星の運動や軌道の解析に役立ちます。</p>
+</div>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.pafko.com/tycho/observe.html">Visualizing Tycho Brahe’s Mars Observations</a></p></li>
+</ul>
+<section id="id5">
+<h3>地球から観測した火星の逆行をプロットする<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Astronomical_coordinate_systems">Astronomical coordinate systems - Wikipedia</a> (天球座標系)</p>
+<ul>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Equatorial_coordinate_system">Equatorial coordinate system - Wikipedia</a> (赤道座標系)</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Ecliptic_coordinate_system">Ecliptic coordinate system - Wikipedia</a> (黄道座標系)</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Center point (origin)</p>
+<ul>
+<li><p>Earth (Geocentric)</p></li>
+<li><p>Sun (Heliocentric)</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+heliocentricとgeocentricに適切な日本語はありますか？
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>heliocentricは「太陽中心の」、geocentricは「地球中心の」と訳されます。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+赤道座標と黄道座標について
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>赤道座標とは、天球上の赤道を基準にして星座の位置を表す座標系です。赤道座標では、天球上の赤道を0度とし、北極星を90度として、その他の星座の位置を角度で表します。</p>
+<p>一方、黄道座標とは、天球上の黄道を基準にして星座の位置を表す座標系です。黄道座標では、天球上の黄道を0度とし、春分点を90度として、その他の星座の位置を角度で表します。</p>
+<p>赤道座標は、天体の運動を追跡するのに適しており、黄道座標は、太陽系の天体の運動を追跡するのに適しています。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+太陽中心の赤道座標系と黄道座標系に違いはありますか？
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>太陽中心の赤道座標系と黄道座標系は、地球中心の赤道座標系と黄道座標系と同様に、基準点が異なるために異なります。</p>
+<p>太陽中心の赤道座標系では、基準面は太陽の赤道面であり、基準点は春分点です。一方、太陽中心の黄道座標系では、基準面は太陽の黄道面であり、基準点は春分点です。</p>
+<p>地球中心の赤道座標系と黄道座標系と同様に、太陽中心の赤道座標系と黄道座標系も、天体の位置を表すために使用されます。太陽系の天体の運動を追跡するためには、太陽中心の座標系が使用されます。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+太陽の赤道面と黄道面は違いますか？
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>はい、太陽の赤道面と黄道面は異なります。太陽の赤道面は、太陽の自転軸に対して傾いており、地球から見ると太陽の北極と南極が存在します。一方、太陽の黄道面は、地球の公転面と太陽の赤道面の交点を基準に定義され、地球の公転軌道と交差する面です。太陽の黄道面は、地球から見ると、黄道と呼ばれる惑星の軌道面と交わる点が存在します。</p>
+</div>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/IoannisNasios/solarsystem">IoannisNasios/solarsystem: Python Library for Planetary Position Calculations</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">solarsystem</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="n">solarsystem</span><span class="o">.</span><span class="n">Heliocentric</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2020</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hour</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">0</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span><span class="o">.</span><span class="n">planets</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Mercury&#39;: (263.83033031837124, -4.057599521202387, 0.4659797616165433),
+ &#39;Venus&#39;: (5.228267566604352, -3.2222136733454763, 0.7262291936644325),
+ &#39;Earth&#39;: (100.5289245858366, 0.0, 0.9833180862528658),
+ &#39;Mars&#39;: (214.38221616457562, 0.4891253753974966, 1.5891803735433014),
+ &#39;Jupiter&#39;: (276.10498313633025, 0.10374961050190847, 5.228112674603031),
+ &#39;Saturn&#39;: (292.512767008796, 0.05134540100060894, 10.05212207219113),
+ &#39;Uranus&#39;: (35.35030250536327, 359.5159538071305, 19.809355998647174),
+ &#39;Neptune&#39;: (348.0172656026235, -1.039905299592724, 29.914939199387618),
+ &#39;Pluto&#39;: (292.7499413549187, 359.3290225249272, 33.87680754878506),
+ &#39;Ceres&#39;: (290.86531789432115, -5.404211011344595, 2.9204640444111933),
+ &#39;Chiron&#39;: (4.327136751763591, 2.943432379699923, 18.810534112295773),
+ &#39;Eris&#39;: (23.548094614031402, -11.744274334977886, 95.99830322945104)}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">solarsystem</span><span class="o">.</span><span class="n">Geocentric</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">1584</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hour</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">0</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">position</span><span class="p">()[</span><span class="s1">&#39;Mars&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(277.79300336467145, -0.8614115012318369, 2.4085976885499947)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1583</span><span class="p">,</span><span class="mi">1600</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">30</span><span class="p">):</span>
+            <span class="n">G</span> <span class="o">=</span> <span class="n">solarsystem</span><span class="o">.</span><span class="n">Geocentric</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="n">d</span><span class="p">,</span> <span class="n">hour</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">0</span> <span class="p">)</span>
+            <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">position</span><span class="p">()[</span><span class="s1">&#39;Mars&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">l</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[110.54670806000699,
+ 110.16787295581473,
+ 109.78356391381628,
+ 109.3945287639193,
+ 109.00153400645357,
+ 108.60536171405973,
+ 108.20680626865511,
+ 107.80667096459355,
+ 107.40576451564729,
+ 107.0048975015344,
+ 106.60487879506202,
+ 106.20651200724353,
+ 105.81059199122618,
+ 105.41790144082289,
+ 105.02920762162127,
+ 104.64525926590133,
+ 104.26678366319733,
+ 103.89448397076296,
+ 103.52903676812653,
+ 103.17108987146091,
+ 102.82126042268854,
+ 102.48013325992697,
+ 102.14825957532226,
+ 101.82615585808891,
+ 101.51430312017796,
+ 101.21314639474157,
+ 100.9230944981028,
+ 100.64452003938759,
+ 100.37775966313598,
+ 99.65120092048898,
+ 99.43436392765742,
+ 99.23050710816806,
+ 99.03976698337526,
+ 98.86225066558447,
+ 98.69803724504641,
+ 98.54717923073082,
+ 98.40970402965412,
+ 98.2856154477501,
+ 98.17489519952414,
+ 98.07750441239294,
+ 97.99338511598835,
+ 97.92246170524669,
+ 97.86464237010796,
+ 97.81982048340406,
+ 97.78787594245927,
+ 97.76867645842583,
+ 97.76207879084119,
+ 97.76792992354511,
+ 97.78606818121912,
+ 97.81632428501975,
+ 97.85852234652441,
+ 97.9124808012007,
+ 97.97801328106802,
+ 98.05492942865882,
+ 98.14303565276562,
+ 98.24213582883802,
+ 98.35203194507112,
+ 98.47252469723563,
+ 98.47252469723563,
+ 98.60341403364968,
+ 98.74449965366513,
+ 98.89558146124187,
+ 99.0564599768506,
+ 99.22693670933619,
+ 99.4068144910539,
+ 99.59589777787097,
+ 99.79399291704263,
+ 100.00090838446245,
+ 100.2164549942478,
+ 100.44044608202,
+ 100.67269766446941,
+ 100.91302857642224,
+ 101.16126058790208,
+ 101.4172185022341,
+ 101.68073023731804,
+ 101.95162689096313,
+ 102.22974279231627,
+ 102.51491554012098,
+ 102.80698602949506,
+ 103.10579846782937,
+ 103.4112003814256,
+ 103.72304261334142,
+ 104.0411793137598,
+ 104.36546792324111,
+ 104.695769150134,
+ 105.0319469424008,
+ 105.37386845486799,
+ 106.43281416093332,
+ 106.79644486960774,
+ 107.16520176185965,
+ 107.53897034528191,
+ 107.917639014768,
+ 108.30109899897025,
+ 108.68924430585356,
+ 109.0819716674701,
+ 109.47918048425488,
+ 109.88077276890824,
+ 110.28665309023809,
+ 110.69672851697374,
+ 111.11090856179413,
+ 111.52910512554197,
+ 111.95123244194686,
+ 112.37720702278767,
+ 112.80694760370211,
+ 113.24037509054216,
+ 113.6774125065731,
+ 114.11798494037835,
+ 114.56201949466671,
+ 115.00944523582183,
+ 115.46019314447842,
+ 115.91419606694039,
+ 116.37138866763176,
+ 116.83170738237722,
+ 117.29509037279209,
+ 117.7614774815637,
+ 118.2308101888119,
+ 119.17808625075382,
+ 119.6559203731116,
+ 120.1364815487831,
+ 120.61971882377728,
+ 121.1055826399135,
+ 121.59402479788822,
+ 122.08499842133531,
+ 122.57845792172905,
+ 123.0743589642481,
+ 123.57265843451509,
+ 124.0733144062139,
+ 124.57628610951505,
+ 125.08153390038024,
+ 125.58901923068615,
+ 126.09870461914602,
+ 126.61055362297905,
+ 127.12453081036834,
+ 127.640601733734,
+ 128.15873290357433,
+ 128.6788917631915,
+ 129.2010466639748,
+ 129.72516684149556,
+ 130.25122239208264,
+ 130.7791842502184,
+ 131.30902416641555,
+ 131.84071468584446,
+ 132.37422912736778,
+ 132.9095415633325,
+ 133.44662679977512,
+ 135.06827797919172,
+ 135.61221649194567,
+ 136.15781218783079,
+ 136.70504389017407,
+ 137.2538910322947,
+ 137.8043336416347,
+ 138.3563523244761,
+ 138.90992825087943,
+ 139.46504314022445,
+ 140.0216792469814,
+ 140.57981934702622,
+ 141.1394467241256,
+ 141.7005451569809,
+ 142.26309890645564,
+ 142.82709270330557,
+ 143.39251173603373,
+ 143.95934163926648,
+ 144.5275684822692,
+ 145.0971787579294,
+ 145.6681593718238,
+ 146.240497631773,
+ 146.81418123749643,
+ 147.3891982707037,
+ 147.96553718523342,
+ 148.5431867976499,
+ 149.12213627790481,
+ 149.7023751404084,
+ 150.28389323511527,
+ 150.8666807390414,
+ 152.03602626761673,
+ 152.6225662070945,
+ 153.2103393696924,
+ 153.7993374460275,
+ 154.389552406505,
+ 154.98097649406492,
+ 155.5736022171788,
+ 156.16742234293235,
+ 156.7624298903147,
+ 157.3586181236164,
+ 157.95598054606077,
+ 158.5545108934975,
+ 159.15420312828886,
+ 159.75505143328147,
+ 160.35705020599832,
+ 160.9601940528709,
+ 161.56447778364372,
+ 162.16989640589688,
+ 162.77644511963382,
+ 163.38411931212417,
+ 163.99291455263733,
+ 164.6028265875114,
+ 165.2138513351309,
+ 165.82598488119993,
+ 166.43922347388343,
+ 167.05356351927205,
+ 167.66900157674263,
+ 168.2855343546032,
+ 168.9031587055936,
+ 170.76255180289976,
+ 171.3845137154219,
+ 172.00755348485944,
+ 172.63166874350372,
+ 173.25685723976267,
+ 173.88311683425513,
+ 174.51044549620812,
+ 175.1388412997122,
+ 175.76830242024135,
+ 176.39882713099541,
+ 177.03041379953623,
+ 177.663060884275,
+ 178.2967669312185,
+ 178.93153057052822,
+ 179.56735051336122,
+ 180.20422554860338,
+ 180.84215453973263,
+ 181.4811364216527,
+ 182.12117019768183,
+ 182.76225493647397,
+ 183.40438976905995,
+ 184.04757388585156,
+ 184.6918065337967,
+ 185.33708701346163,
+ 185.98341467622902,
+ 186.63078892145404,
+ 187.27920919376746,
+ 187.92867498030108,
+ 188.57918580802658,
+ 190.53698434955598,
+ 191.19167131560798,
+ 191.8474014629489,
+ 192.5041745026981,
+ 193.1619901677939,
+ 193.82084821057188,
+ 194.48074840028505,
+ 195.14169052076906,
+ 195.8036743680128,
+ 196.4666997478403,
+ 197.13076647352983,
+ 197.79587436357758,
+ 198.46202323936424,
+ 199.12921292293015,
+ 199.79744323468685,
+ 200.46671399127135,
+ 201.13702500329987,
+ 201.80837607323173,
+ 202.48076699316533,
+ 203.1541975427763,
+ 203.82866748715537,
+ 204.5041765747523,
+ 205.18072453525318,
+ 205.85831107759824,
+ 206.53693588789693,
+ 207.21659862745145,
+ 207.89729893069983,
+ 208.57903640334396,
+ 209.26181062030784,
+ 210.63046742145738,
+ 211.31634898438287,
+ 212.00326524530553,
+ 212.69121559665805,
+ 213.3801993888022,
+ 214.0702159281449,
+ 214.76126447536575,
+ 215.45334424356895,
+ 216.14645439658116,
+ 216.8405940471408,
+ 217.53576225519691,
+ 218.2319580261347,
+ 218.92918030914674,
+ 219.62742799549443,
+ 220.3266999168819,
+ 221.0269948437546,
+ 221.7283114837451,
+ 222.43064848000984,
+ 223.13400440967803,
+ 223.8383777822262,
+ 224.54376703800094,
+ 225.25017054663272,
+ 225.95758660556274,
+ 226.66601343849592,
+ 227.3754491940038,
+ 228.0858919440177,
+ 228.79733968243747,
+ 229.50979032366612,
+ 230.22324170129625,
+ 232.36957734710384,
+ 233.08700834178495,
+ 233.8054279809724,
+ 234.52483358524265,
+ 235.24522238518568,
+ 235.96659152027112,
+ 236.68893803760608,
+ 237.41225889081312,
+ 238.1365509388367,
+ 238.8618109449062,
+ 239.5880355753921,
+ 240.3152213987846,
+ 241.04336488459018,
+ 241.77246240244585,
+ 242.5025102209857,
+ 243.23350450701793,
+ 243.96544132448258,
+ 244.6983166336833,
+ 245.43212629026524,
+ 246.1668660445028,
+ 246.90253154037185,
+ 247.6391183148962,
+ 248.37662179724185,
+ 249.11503730812422,
+ 249.8543600589993,
+ 250.5945851515333,
+ 251.33570757681863,
+ 252.07772221490794,
+ 252.82062383413052,
+ 254.30906652801974,
+ 255.05459657642905,
+ 255.80099155257318,
+ 256.54824565917886,
+ 257.2963529845282,
+ 258.045307502264,
+ 258.7951030709806,
+ 259.54573343410107,
+ 260.2971922195034,
+ 261.049472939459,
+ 261.80256899043155,
+ 262.55647365296966,
+ 263.3111800916651,
+ 264.06668135506146,
+ 264.8229703757406,
+ 265.58003997030914,
+ 266.3378828395255,
+ 267.09649156836684,
+ 267.8558586262748,
+ 268.615976367303,
+ 269.37683703040693,
+ 270.13843273967325,
+ 270.90075550473114,
+ 271.6637972210659,
+ 272.4275496704756,
+ 273.192004521459,
+ 273.9571533298451,
+ 274.7229875391799,
+ 275.4894984814504,
+ 277.79300336467145,
+ 278.5621323488841,
+ 279.3318930751319,
+ 280.102276220478,
+ 280.8732723556187,
+ 281.644871945958,
+ 282.41706535246954,
+ 283.1898428328603,
+ 283.96319454248084,
+ 284.7371105355768,
+ 285.51158076632606,
+ 286.28659509017785,
+ 287.0621432649379,
+ 287.83821495219354,
+ 288.61479971852543,
+ 289.3918870370188,
+ 290.16946628852065,
+ 290.9475267632357,
+ 291.7260576621077,
+ 292.5050480984994,
+ 293.28448709961634,
+ 294.0643636082682,
+ 294.84466648441446,
+ 295.6253845070058,
+ 296.4065063755678,
+ 297.1880207121208,
+ 297.9699160628807,
+ 298.752180900254,
+ 299.53480362457265,
+ 301.8847020837858,
+ 302.6686389879565,
+ 303.4528747697466,
+ 304.23739743924045,
+ 305.02219494882524,
+ 305.807255195191,
+ 306.59256602164703,
+ 307.37811522027084,
+ 308.16389053418885,
+ 308.9498796597873,
+ 309.7360702490863,
+ 310.52244991199854,
+ 311.3090062187086,
+ 312.09572670197696,
+ 312.8825988596006,
+ 313.669610156757,
+ 314.4567480284604,
+ 315.2439998819397,
+ 316.03135309916746,
+ 316.8187950392663,
+ 317.60631304101116,
+ 318.3938944253208,
+ 319.18152649769763,
+ 319.9691965508612,
+ 320.75689186710036,
+ 321.54459972093025,
+ 322.33230738149496,
+ 323.1200021152316,
+ 323.907671188234,
+ 324.6953018689173,
+ 325.48288143042055,
+ 326.2703971532646,
+ 327.0578363277056,
+ 327.8451862563802,
+ 328.6324342566858,
+ 329.4195676634079,
+ 330.20657383103725,
+ 330.9934401363738,
+ 331.78015398085785,
+ 332.56670279314375,
+ 333.35307403135624,
+ 334.1392551856282,
+ 334.9252337803589,
+ 335.7109973767092,
+ 336.4965335747742,
+ 337.28183001602963,
+ 338.0668743854945,
+ 338.85165441412397,
+ 339.63615788087424,
+ 340.42037261503583,
+ 341.20428649827664,
+ 341.98788746691105,
+ 342.7711635138343,
+ 343.5541026907098,
+ 344.3366931099245,
+ 345.11892294660765,
+ 345.90078044051876,
+ 346.68225389802694,
+ 349.02425415304043,
+ 349.8040759241462,
+ 350.58345625281015,
+ 351.362383882373,
+ 352.1408476347972,
+ 352.9188364122806,
+ 353.69633919868943,
+ 354.4733450610303,
+ 355.2498431507804,
+ 356.02582270529626,
+ 356.80127304903885,
+ 357.57618359483325,
+ 358.35054384498574,
+ 359.1243433924743,
+ 359.8975719219546,
+ 0.6702192107972567,
+ 1.4422751299801877,
+ 2.2137296450527426,
+ 2.9845728169124244,
+ 3.754794802611641,
+ 4.524385856017702,
+ 5.293336328542275,
+ 6.061636669683479,
+ 6.829277427594871,
+ 7.596249249508065,
+ 8.362542882222765,
+ 9.12814917240868,
+ 9.893059066934121,
+ 10.657263613046947,
+ 12.183521352224137,
+ 12.945557143187322,
+ 13.706852781559707,
+ 14.467399818093819,
+ 15.227189904122522,
+ 15.986214791273735,
+ 16.7444663313322,
+ 17.501936475865467,
+ 18.25861727588611,
+ 19.014500881367915,
+ 19.769579540828563,
+ 20.523845600726585,
+ 21.277291504884538,
+ 22.029909793768294,
+ 22.781693103831845,
+ 23.532634166679767,
+ 24.28272580825472,
+ 25.031960947884077,
+ 25.78033259739199,
+ 26.527833860030917,
+ 27.274457929439517,
+ 28.020198088460642,
+ 28.7650477080264,
+ 29.509000245864005,
+ 30.252049245228925,
+ 30.994188333500976,
+ 31.735411220846515,
+ 32.4757116987053,
+ 33.21508363830429,
+ 35.42756810281288,
+ 36.163166140824174,
+ 36.89780613637378,
+ 37.63148240448124,
+ 38.364189327818515,
+ 39.095921354803195,
+ 39.8266729975592,
+ 40.55643882994681,
+ 41.28521348542222,
+ 42.012991654926715,
+ 42.739768084645874,
+ 43.46553757383735,
+ 44.190294972490584,
+ 44.91403517901577,
+ 45.63675313780437,
+ 46.35844383685834,
+ 47.079102305251915,
+ 47.79872361062314,
+ 48.51730285652785,
+ 49.234835179920026,
+ 49.95131574832071,
+ 50.6667397572087,
+ 51.38110242713081,
+ 52.09439900099352,
+ 52.80662474103563,
+ 53.517774926020884,
+ 54.22784484815035,
+ 54.93682981015436,
+ 55.64472512206651,
+ 57.057228053931766,
+ 57.761826302444796,
+ 58.46531615144439,
+ 59.16769289986872,
+ 59.86895183440842,
+ 60.56908822618324,
+ 61.26809732710226,
+ 61.965974366432235,
+ 62.66271454708664,
+ 63.358313042082884,
+ 64.05276499068108,
+ 64.74606549472709,
+ 65.43820961471404,
+ 66.12919236600743,
+ 66.81900871474957,
+ 67.50765357395322,
+ 68.1951217993715,
+ 68.88140818536334,
+ 69.56650746070017,
+ 70.25041428424933,
+ 70.93312324069572,
+ 71.6146288360899,
+ 72.29492549339244,
+ 72.97400754788111,
+ 73.65186924258774,
+ 74.32850472355769,
+ 75.0039080350975,
+ 75.67807311487913,
+ 76.3509937890668,
+ 78.36222586060876,
+ 79.03010476584552,
+ 79.69670654462489,
+ 80.36202424551645,
+ 81.02605076855279,
+ 81.68877885968061,
+ 82.35020110487324,
+ 83.01030992438534,
+ 83.66909756669344,
+ 84.32655610253398,
+ 84.98267741858389,
+ 85.63745321126967,
+ 86.29087498025095,
+ 86.9429340219869,
+ 87.5936214229339,
+ 88.24292805285533,
+ 88.89084455779317,
+ 89.53736135310618,
+ 90.18246861612502,
+ 90.82615627890137,
+ 91.4684140206057,
+ 92.1092312599697,
+ 92.74859714733277,
+ 93.3865005567598,
+ 94.02293007779163,
+ 94.65787400721885,
+ 95.29132034043994,
+ 95.92325676286904,
+ 96.55367064095608,
+ 98.43564569799699,
+ 99.059836362745,
+ 99.68243620642724,
+ 100.30343048378022,
+ 100.92280406254906,
+ 101.54054141275314,
+ 102.15662659588769,
+ 102.77104325363987,
+ 103.38377459656337,
+ 103.99480339228991,
+ 104.60411195364219,
+ 105.21168212623087,
+ 105.81749527597053,
+ 106.42153227610197,
+ 107.02377349407372,
+ 107.62419877787494,
+ 108.22278744223259,
+ 108.81951825433909,
+ 109.41436941924688,
+ 110.00731856486945,
+ 110.59834272665536,
+ 111.1874183318078,
+ 111.77452118311288,
+ 112.35962644233035,
+ 112.94270861320481,
+ 113.52374152397782,
+ 114.10269830944499,
+ 114.67955139257006,
+ 115.25427246555385,
+ 116.39720157953069,
+ 116.96534917416967,
+ 117.53124382455935,
+ 118.0948532678735,
+ 118.65614438611844,
+ 119.21508318351344,
+ 119.77163476311019,
+ 120.32576330294415,
+ 120.87743203135588,
+ 121.42660320184913,
+ 121.9732380671307,
+ 122.51729685261299,
+ 123.05873872902639,
+ 123.59752178450121,
+ 124.13360299577288,
+ 124.66693819878111,
+ 125.19748205832312,
+ 125.72518803710975,
+ 126.25000836389223,
+ 126.77189400091916,
+ 127.29079461039944,
+ 127.806658520309,
+ 128.31943268922726,
+ 128.8290626704524,
+ 129.33549257508832,
+ 129.83866503443434,
+ 130.33852116138425,
+ 130.83500051107305,
+ 131.32804104049097,
+ 132.7858844351972,
+ 133.2645158327606,
+ 133.73937275277618,
+ 134.21038266935025,
+ 134.6774711526056,
+ 135.14056182182978,
+ 135.59957629787024,
+ 136.0544341549136,
+ 136.50505287155656,
+ 136.95134778142727,
+ 137.39323202327063,
+ 137.8306164906948,
+ 138.26340978149878,
+ 138.69151814691176,
+ 139.11484544067264,
+ 139.53329306823395,
+ 139.94675993602402,
+ 140.35514240120452,
+ 140.7583342218756,
+ 141.15622650812318,
+ 141.54870767388584,
+ 141.9356633901985,
+ 142.31697653982482,
+ 142.69252717380945,
+ 143.0621924699947,
+ 143.42584669422328,
+ 143.78336116432212,
+ 144.1346042175771,
+ 144.4794411818482,
+ 145.14934296662796,
+ 145.47412320173493,
+ 145.79192815545963,
+ 146.1026078512368,
+ 146.40600924406124,
+ 146.7019762363194,
+ 146.99034970292655,
+ 147.27096752727627,
+ 147.5436646486193,
+ 147.80827312237653,
+ 148.0646221943046,
+ 148.31253839003378,
+ 148.55184562134622,
+ 148.78236531058027,
+ 149.00391653477234,
+ 149.21631619117258,
+ 149.41937918606496,
+ 149.61291864820487,
+ 149.7967461694573,
+ 149.97067207395648,
+ 150.13450571842895,
+ 150.28805582508298,
+ 150.43113084998342,
+ 150.5635393883574,
+ 150.68509061969147,
+ 150.7955947940235,
+ 150.8948637624333,
+ 150.9827115529997,
+ 151.05895499496776,
+ 151.21628404294742,
+ 151.2443590671099,
+ 151.25998130532193,
+ 151.2630003795003,
+ 151.25327454488618,
+ 151.23067174134152,
+ 151.19507069726353,
+ 151.14636208531329,
+ 151.0844497261013,
+ 151.00925183723803,
+ 150.92070232199222,
+ 150.81875209320205,
+ 150.70337042449552,
+ 150.5745463220612,
+ 150.4322899065786,
+ 150.27663379632858,
+ 150.10763447853464,
+ 149.9253736573151,
+ 149.72995956277663,
+ 149.52152820753386,
+ 149.3002445729826,
+ 149.0663037095437,
+ 148.81993173156826,
+ 148.56138669020706,
+ 148.29095930421144,
+ 148.00897353171078,
+ 147.71578696341916,
+ 147.41179102181738,
+ 147.09741094895284,
+ 146.09671900880244,
+ 145.74571787774107,
+ 145.38694933163043,
+ 145.02102796534416,
+ 144.6485953145473,
+ 144.27031786262717,
+ 143.88688481240555,
+ 143.49900563728602,
+ 143.10740743199491,
+ 142.71283208479684,
+ 142.31603329828738,
+ 141.9177734870445,
+ 141.5188205844955,
+ 141.1199447911855,
+ 140.7219152997303,
+ 140.32549703049497,
+ 139.93144741352646,
+ 139.5405132494203,
+ 139.15342768218554,
+ 138.77090731335716,
+ 138.39364948524792,
+ 138.02232975738954,
+ 137.65759959588812,
+ 137.30008429415807,
+ 136.95038113614638,
+ 136.60905781261312,
+ 136.27665109361124,
+ 135.95366576015974,
+ 135.64057379085344,
+ 135.64057379085344,
+ 135.33781379921555,
+ 135.045790711273,
+ 134.76487567376276,
+ 134.49540617768713,
+ 134.2376863833738,
+ 133.99198762866774,
+ 133.75854910425883,
+ 133.53757867627465,
+ 133.32925383908145,
+ 133.13372277835626,
+ 132.95110552798695,
+ 132.78149520208362,
+ 132.62495928634414,
+ 132.48154097261607,
+ 132.35126052276073,
+ 132.23411664780335,
+ 132.13008789087388,
+ 132.03913400264986,
+ 131.9611973002679,
+ 131.89620400075546,
+ 131.84406552233222,
+ 131.80467974717297,
+ 131.77793224113,
+ 131.76369742590992,
+ 131.76183970107243,
+ 131.7722145132827,
+ 131.7946693717148,
+ 131.82904480829313,
+ 132.00201387194824,
+ 132.08236792721283,
+ 132.17377033553453,
+ 132.27603688121508,
+ 132.3889815886289,
+ 132.51241726756368,
+ 132.646156014115,
+ 132.79000966909635,
+ 132.94379023634804,
+ 133.10731026285185,
+ 133.28038318302274,
+ 133.4628236292263,
+ 133.65444771079626,
+ 133.85507326339385,
+ 134.06452007084656,
+ 134.2826100613346,
+ 134.5091674798833,
+ 134.74401903876455,
+ 134.98699404757534,
+ 135.23792452458343,
+ 135.49664529090956,
+ 135.76299404885225,
+ 136.03681144574523,
+ 136.31794112462578,
+ 136.60622976291745,
+ 136.90152710014755,
+ 137.20368595573058,
+ 137.5125622378197,
+ 137.82801494419266,
+ 138.47810102319815,
+ 138.81246774916414,
+ 139.15287756345674,
+ 139.49920469495962,
+ 139.85132633913847,
+ 140.2091226220386,
+ 140.57247656127169,
+ 140.94127402428506,
+ 141.31540368445198,
+ 141.69475697522526,
+ 142.07922804272843,
+ 142.4687136969557,
+ 142.86311336201524,
+ 143.2623290255221,
+ 143.6662651874354,
+ 144.07482880839308,
+ 144.48792925791182,
+ 144.9054782624509,
+ 145.3273898535914,
+ 145.75358031628235,
+ 146.18396813748993,
+ 146.61847395516054,
+ 147.0570205077241,
+ 147.49953258401712,
+ 147.94593697393796,
+ 148.39616241968588,
+ 148.8501395677901,
+ 149.30780092176232,
+ 149.7690807956675,
+ 151.1740008824136,
+ 151.6491326066215,
+ 152.12758001028737,
+ 152.60928734149223,
+ 153.09420035719907,
+ 153.58226628375473,
+ 154.07343377817548,
+ 154.56765289042482,
+ 155.06487502641764,
+ 155.5650529120416,
+ 156.06814055798833,
+ 156.57409322539758,
+ 157.08286739238912,
+ 157.59442072142133,
+ 158.10871202746378,
+ 158.62570124693306,
+ 159.14534940745173,
+ 159.66761859838505,
+ 160.19247194212636,
+ 160.71987356609142,
+ 161.24978857546748,
+ 161.78218302668336,
+ 162.31702390155672,
+ 162.85427908209587,
+ 163.3939173259801,
+ 163.93590824270763,
+ 164.48022227034645,
+ 165.0268306528835,
+ 165.57570541818083,
+ 166.68014599982538,
+ 167.23565960106137,
+ 167.7933351146648,
+ 168.35314817716255,
+ 168.9150750884047,
+ 169.4790927932666,
+ 170.04517886382527,
+ 170.61331148204525,
+ 171.1834694228682,
+ 171.7556320377507,
+ 172.32977923861682,
+ 172.90589148227377,
+ 173.4839497551766,
+ 174.06393555859788,
+ 174.64583089415794,
+ 175.22961824977773,
+ 175.81528058592983,
+ 176.40280132224748,
+ 176.99216432449154,
+ 177.58335389178356,
+ 178.1763547442843,
+ 178.7711520109733,
+ 179.36773121792686,
+ 179.96607827676388,
+ 180.56617947340672,
+ 181.16802145708277,
+ 181.77159122965543,
+ 182.3768761351403,
+ 182.98386384949933,
+ 184.8149253765931,
+ 185.42860738052914,
+ 186.0439352110838,
+ 186.66089833426426,
+ 187.27948648280997,
+ 187.8996896477077,
+ 188.5214980698504,
+ 189.1449022319572,
+ 189.76989285058642,
+ 190.39646086836524,
+ 191.02459744633686,
+ 191.65429395655104,
+ 192.28554197472633,
+ 192.91833327311016,
+ 193.55265981343635,
+ 194.18851374011055,
+ 194.8258873734461,
+ 195.4647732030853,
+ 196.1051638814966,
+ 196.74705221768903,
+ 197.39043117095827,
+ 198.0352938448047,
+ 198.68163348091355,
+ 199.32944345333885,
+ 199.97871726270355,
+ 200.62944853056266,
+ 201.28163099381237,
+ 201.9352584992955,
+ 202.5903249984066,
+ 204.5640994301302,
+ 205.22486332683778,
+ 205.88703736174023,
+ 206.55061600631137,
+ 207.21559380171158,
+ 207.88196535399962,
+ 208.54972532967074,
+ 209.21886845105868,
+ 209.88938949202685,
+ 210.5612832734799,
+ 211.23454465920162,
+ 211.90916855154495,
+ 212.58514988740882,
+ 213.26248363402897,
+ 213.94116478508857,
+ 214.62118835667727,
+ 215.30254938353232,
+ 215.98524291508753,
+ 216.66926401184068,
+ 217.35460774156192,
+ 218.04126917578412,
+ 218.72924338609394,
+ 219.41852544074126,
+ 220.10911040108346,
+ 220.80099331831198,
+ 221.49416922997432,
+ 222.18863315681313,
+ 222.88438009943823,
+ 223.58140503526744,
+ 224.97926866118374,
+ 225.68009716202124,
+ 226.38218327161482,
+ 227.08552180547662,
+ 227.79010753796106,
+ 228.49593519954266,
+ 229.20299947403004,
+ 229.91129499591398,
+ 230.62081634768836,
+ 231.331558057342,
+ 232.0435145957856,
+ 232.75668037441434,
+ 233.47104974264028,
+ 234.1866169855991,
+ 234.90337632179092,
+ 235.62132190085643,
+ 236.34044780132405,
+ 237.06074802853237,
+ 237.78221651248705,
+ 238.50484710585255,
+ 239.2286335819079,
+ 239.9535696327364,
+ 240.67964886720375,
+ 241.4068648092686,
+ 242.13521089611024,
+ 242.86468047655114,
+ 243.59526680925876,
+ 244.3269630612815,
+ 245.0597623064026,
+ 247.2647073098906,
+ 248.00184735090568,
+ 248.74005430626545,
+ 249.47932066147615,
+ 250.21963879976613,
+ 250.96100100090743,
+ 251.70339944034112,
+ 252.446826188081,
+ 253.19127320796113,
+ 253.93673235670076,
+ 254.6831953832749,
+ 255.4306539280642,
+ 256.17909952235027,
+ 256.92852358762923,
+ ...]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5916
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.92940403, 1.92279211, 1.91608465, ..., 2.41407093, 2.41289642,
+       2.4114855 ])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5916</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x12d5fcbb0&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/3c82fb9e2cc0feae08d90e747ced64ef1a07580c5f5665ba8517b7cdd9253aa7.png" src="../../_images/3c82fb9e2cc0feae08d90e747ced64ef1a07580c5f5665ba8517b7cdd9253aa7.png" />
+</div>
+</div>
+</section>
+<section id="id6">
+<h3>位相アンラップ処理をして逆行だけを取り出す<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>火星の公転周期: 687日</p>
+<ul>
+<li><p>約1年11ヶ月で逆行が観測できる</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5916</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">unwrap</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">l</span><span class="p">))</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">57</span><span class="p">,</span><span class="n">num</span><span class="o">=</span><span class="mi">5916</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x12d52adf0&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/b7994c0fc419d85c544d52ffa1bae756eaf9e321fd0bc05ce2f84254f136a0ac.png" src="../../_images/b7994c0fc419d85c544d52ffa1bae756eaf9e321fd0bc05ce2f84254f136a0ac.png" />
+</div>
+</div>
+</section>
+<section id="id7">
+<h3>時間指定が厄介なので、他のソフトを使う<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://rhodesmill.org/pyephem/tutorial.html">The PyEphem Tutorial — PyEphem home page</a></p></li>
+<li><p><a class="reference external" href="http://www.sci-museum.kita.osaka.jp/~egoshi/astronomy/python/python_solar_eclipse.html">Python で日食計算</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ephem</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">ephem</span><span class="o">.</span><span class="n">Mars</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="s1">&#39;1584/1/1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 日心経度, 日心緯度</span>
+<span class="n">m</span><span class="o">.</span><span class="n">hlon</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">hlat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4.880208969116211, -0.02591746859252453)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m0</span> <span class="o">=</span> <span class="n">ephem</span><span class="o">.</span><span class="n">Mars</span><span class="p">(</span><span class="n">ephem</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="s1">&#39;1584/1/1&#39;</span><span class="p">))</span>
+<span class="n">m1</span> <span class="o">=</span> <span class="n">ephem</span><span class="o">.</span><span class="n">Mars</span><span class="p">(</span><span class="n">ephem</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="s1">&#39;1584/1/1&#39;</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hops</span><span class="p">(</span><span class="n">body</span><span class="p">):</span> <span class="k">return</span> <span class="n">body</span><span class="o">.</span><span class="n">hlon</span><span class="p">,</span> <span class="n">body</span><span class="o">.</span><span class="n">hlat</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ephem</span><span class="o">.</span><span class="n">separation</span><span class="p">(</span><span class="n">hops</span><span class="p">(</span><span class="n">m0</span><span class="p">),</span> <span class="n">hops</span><span class="p">(</span><span class="n">m1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.010442553936505066
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 赤経, 赤緯</span>
+<span class="n">m</span><span class="o">.</span><span class="n">ra</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">dec</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4.89811066895129, -0.4190875793738444)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://ja.wikipedia.org/wiki/%E8%B5%A4%E7%B5%8C">赤経 - Wikipedia</a></p></li>
+<li><p><a class="reference external" href="https://ja.wikipedia.org/wiki/%E8%B5%A4%E7%B7%AF">赤緯 - Wikipedia</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">ephem</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="s1">&#39;1582/11/1&#39;</span><span class="p">)</span>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">365</span><span class="o">*</span><span class="p">(</span><span class="mi">1600</span><span class="o">-</span><span class="mi">1582</span><span class="p">)):</span>
+    <span class="n">m0</span> <span class="o">=</span> <span class="n">ephem</span><span class="o">.</span><span class="n">Mars</span><span class="p">(</span><span class="n">ephem</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+    <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m0</span><span class="o">.</span><span class="n">ra</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">+=</span><span class="mi">1</span>
+<span class="n">l</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6569
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plt.plot(range(len(l)), np.unwrap(l)-np.linspace(0,60,num=len(l)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x107e25d60&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/929eb3ee1f9e91d9127346ed436cea92b6d3c48e4f066bda9386ef284f1bae3f.png" src="../../_images/929eb3ee1f9e91d9127346ed436cea92b6d3c48e4f066bda9386ef284f1bae3f.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="id8">
+<h2>チコの観測の検証<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.pafko.com/tycho/observe.html">Visualizing Tycho Brahe’s Mars Observations</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;http://www.pafko.com/tycho/mars.xls&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>Year</th>
+      <th>Day</th>
+      <th>Time</th>
+      <th>Quote</th>
+      <th>Volume</th>
+      <th>Page</th>
+      <th>Unnamed: 7</th>
+      <th>Year.1</th>
+      <th>Month</th>
+      <th>...</th>
+      <th>Day (adj)</th>
+      <th>Hour</th>
+      <th>Min</th>
+      <th>Days since 1 AD</th>
+      <th>Date</th>
+      <th>Unnamed: 16</th>
+      <th>Dec (deg)</th>
+      <th>Dec (min)</th>
+      <th>Dec (sec)</th>
+      <th>Declination</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>1582</td>
+      <td>DIE 12 NOUEMBRIS, MANE.</td>
+      <td>NaN</td>
+      <td>Declinatio [MS]  23  7 B</td>
+      <td>10</td>
+      <td>174</td>
+      <td>NaN</td>
+      <td>1582</td>
+      <td>11</td>
+      <td>...</td>
+      <td>22</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>578150.500000</td>
+      <td>1582.889802</td>
+      <td>1</td>
+      <td>23</td>
+      <td>7</td>
+      <td>NaN</td>
+      <td>23.116667</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>1582</td>
+      <td>DIE 30 DECEMBRIS</td>
+      <td>NaN</td>
+      <td>Afc. R. [MS]  107o  56'  Declin. 26o  36' B.</td>
+      <td>10</td>
+      <td>197</td>
+      <td>NaN</td>
+      <td>1582</td>
+      <td>12</td>
+      <td>...</td>
+      <td>40</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>578198.500000</td>
+      <td>1583.021218</td>
+      <td>1</td>
+      <td>26</td>
+      <td>56</td>
+      <td>NaN</td>
+      <td>26.933333</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>1582</td>
+      <td>DIE 27 DECEMBRIS</td>
+      <td>NaN</td>
+      <td>declinatio [MS] 26o  22 1/3' et Afcenfio Recta...</td>
+      <td>10</td>
+      <td>200</td>
+      <td>NaN</td>
+      <td>1582</td>
+      <td>12</td>
+      <td>...</td>
+      <td>37</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>578195.500000</td>
+      <td>1583.013005</td>
+      <td>1</td>
+      <td>26</td>
+      <td>22</td>
+      <td>20.0</td>
+      <td>26.372222</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>1583</td>
+      <td>DIE 18 JANUARIJ, VESPERI.</td>
+      <td>NaN</td>
+      <td>Declinatio 27  18 minus bona</td>
+      <td>10</td>
+      <td>244</td>
+      <td>NaN</td>
+      <td>1583</td>
+      <td>1</td>
+      <td>...</td>
+      <td>28</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>578217.500000</td>
+      <td>1583.073238</td>
+      <td>1</td>
+      <td>27</td>
+      <td>18</td>
+      <td>NaN</td>
+      <td>27.300000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>1584</td>
+      <td>DIE 13 NOUEMBRIS, A.M.</td>
+      <td>H.13 26 P.M.</td>
+      <td>Declinatio [MS] B.  15  54</td>
+      <td>10</td>
+      <td>321</td>
+      <td>NaN</td>
+      <td>1584</td>
+      <td>11</td>
+      <td>...</td>
+      <td>23</td>
+      <td>13.0</td>
+      <td>26.0</td>
+      <td>578883.059722</td>
+      <td>1584.895441</td>
+      <td>1</td>
+      <td>15</td>
+      <td>54</td>
+      <td>NaN</td>
+      <td>15.900000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>918</th>
+      <td>NaN</td>
+      <td>1600</td>
+      <td>24 Januarij.</td>
+      <td>NaN</td>
+      <td>Declinatio [MS]  21  56  10 B.</td>
+      <td>13</td>
+      <td>221</td>
+      <td>NaN</td>
+      <td>1600</td>
+      <td>1</td>
+      <td>...</td>
+      <td>34</td>
+      <td>10.0</td>
+      <td>NaN</td>
+      <td>584432.916667</td>
+      <td>1600.090121</td>
+      <td>1</td>
+      <td>21</td>
+      <td>56</td>
+      <td>10.0</td>
+      <td>21.936111</td>
+    </tr>
+    <tr>
+      <th>919</th>
+      <td>NaN</td>
+      <td>1600</td>
+      <td>Die 2 Martij.</td>
+      <td>H.10 P.M.</td>
+      <td>Declinatio [MS]  24  8  0 B.</td>
+      <td>13</td>
+      <td>224</td>
+      <td>NaN</td>
+      <td>1600</td>
+      <td>3</td>
+      <td>...</td>
+      <td>12</td>
+      <td>10.0</td>
+      <td>NaN</td>
+      <td>584470.916667</td>
+      <td>1600.194159</td>
+      <td>1</td>
+      <td>24</td>
+      <td>8</td>
+      <td>0.0</td>
+      <td>24.133333</td>
+    </tr>
+    <tr>
+      <th>920</th>
+      <td>NaN</td>
+      <td>1600</td>
+      <td>Die 9 Martij</td>
+      <td>H.9 1/2 P.M.</td>
+      <td>Declinatio [MS]  23  59  0</td>
+      <td>13</td>
+      <td>224</td>
+      <td>NaN</td>
+      <td>1600</td>
+      <td>3</td>
+      <td>...</td>
+      <td>19</td>
+      <td>9.0</td>
+      <td>NaN</td>
+      <td>584477.875000</td>
+      <td>1600.213210</td>
+      <td>1</td>
+      <td>23</td>
+      <td>59</td>
+      <td>0.0</td>
+      <td>23.983333</td>
+    </tr>
+    <tr>
+      <th>921</th>
+      <td>NaN</td>
+      <td>1600</td>
+      <td>Die 15 Martij</td>
+      <td>H.9 1/3</td>
+      <td>Declinatio [MS]  23  41  40</td>
+      <td>13</td>
+      <td>224</td>
+      <td>NaN</td>
+      <td>1600</td>
+      <td>3</td>
+      <td>...</td>
+      <td>25</td>
+      <td>9.0</td>
+      <td>NaN</td>
+      <td>584483.875000</td>
+      <td>1600.229637</td>
+      <td>1</td>
+      <td>23</td>
+      <td>41</td>
+      <td>40.0</td>
+      <td>23.694444</td>
+    </tr>
+    <tr>
+      <th>922</th>
+      <td>NaN</td>
+      <td>1600</td>
+      <td>Die 16 Martij</td>
+      <td>H. 9 1/4</td>
+      <td>Declinatio [MS]  23  37  30</td>
+      <td>13</td>
+      <td>224</td>
+      <td>NaN</td>
+      <td>1600</td>
+      <td>3</td>
+      <td>...</td>
+      <td>26</td>
+      <td>9.0</td>
+      <td>NaN</td>
+      <td>584484.875000</td>
+      <td>1600.232375</td>
+      <td>1</td>
+      <td>23</td>
+      <td>37</td>
+      <td>30.0</td>
+      <td>23.625000</td>
+    </tr>
+  </tbody>
+</table>
+<p>923 rows × 21 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ephem</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="n">ephem</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1584</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">26</span><span class="p">))</span><span class="o">+</span><span class="p">(</span><span class="mf">584484.88</span><span class="o">-</span><span class="mf">578883.06</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1600/3/26 09:06:48
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,[</span><span class="mi">14</span><span class="p">,</span><span class="mi">20</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Days since 1 AD&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#df2.index.values - df2.index.values[0]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#df2.iloc[:,0].values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="o">+</span><span class="mf">1.1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df2</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span> <span class="o">-</span> <span class="n">df2</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">df2</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">),</span>
+            <span class="n">c</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/52acac734d6621ef747f09bef0e5f9576aa8223375162c418b8fc3b8c738907a.png" src="../../_images/52acac734d6621ef747f09bef0e5f9576aa8223375162c418b8fc3b8c738907a.png" />
+</div>
+</div>
+<p>後半のデータを修正･･･</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">bisect</span>
+<span class="n">bisect</span><span class="o">.</span><span class="n">bisect</span><span class="p">(</span><span class="n">df2</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span> <span class="o">-</span> <span class="n">df2</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">3000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>249
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span>
+    <span class="n">df2</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">268</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="n">df2</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">268</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">df2</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">268</span><span class="p">:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="o">+</span><span class="mf">1.1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df2</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span> <span class="o">-</span> <span class="n">df2</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">x</span><span class="p">),</span>
+            <span class="n">c</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/eaaed2cecc45055f0352467a37c3bb4ff1130d764c6cdb5134dcae822558aa9d.png" src="../../_images/eaaed2cecc45055f0352467a37c3bb4ff1130d764c6cdb5134dcae822558aa9d.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/12"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">ルドルフ表</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">ティコの観測ノート (全集)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">惑星の逆行</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">地球から観測した火星の逆行をプロットする</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">位相アンラップ処理をして逆行だけを取り出す</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">時間指定が厄介なので、他のソフトを使う</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">チコの観測の検証</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Manabu Higashida
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
