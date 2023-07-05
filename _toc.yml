@@ -5,7 +5,7 @@ parts:
 - caption: 2023/07/05
   numberd: false
   chapters:
-  - file: chapters/12/1190_assignment.ipynb
+  - file: chapters/11/1190_assignment.ipynb
     title: Past Assignment
   - file: chapters/12/1200-intro.ipynb
     title: Introduction
