@@ -2,6 +2,21 @@ format: jb-book
 root: chapters/intro
 title: Abstract
 parts:
+- caption: 2023/07/05
+  numberd: false
+  chapters:
+  - file: chapters/12/1190_assignment.ipynb
+    title: Past Assignment
+  - file: chapters/12/1200-intro.ipynb
+    title: Introduction
+  - file: chapters/12/1210-kepler_1.ipynb
+    title: Kepler's 1st Law
+  - file: chapters/12/1220-kepler_2.ipynb
+    title: Kepler's 2nd Law
+  - file: chapters/12/1230-cycloid.ipynb
+    title: Newton's Cycloid
+  - file: chapters/12/1290_assignment.ipynb
+    title: Assignment
 - caption: 2023/06/28
   numberd: false
   chapters:
