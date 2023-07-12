@@ -2,6 +2,19 @@ format: jb-book
 root: chapters/intro
 title: Abstract
 parts:
+- caption: 2023/07/12
+  numberd: false
+  chapters:
+  - file: chapters/13/1360-dncl.ipynb
+    title: Pseudocode
+  - file: chapters/13/1370-2008.ipynb
+    title: DNC 2008
+  - file: chapters/13/1220-kepler_2-Copy1.ipynb
+    title: Kepler's 2nd Law
+  - file: chapters/13/1230-cycloid-Copy1.ipynb
+    title: Newton's Cycloid
+  - file: chapters/13/1290-assignment-Copy1.ipynb
+    title: Past assignment
 - caption: 2023/07/05
   numberd: false
   chapters:
@@ -15,7 +28,7 @@ parts:
     title: Kepler's 2nd Law
   - file: chapters/12/1230-cycloid.ipynb
     title: Newton's Cycloid
-  - file: chapters/12/1290_assignment.ipynb
+  - file: chapters/12/1290-assignment.ipynb
     title: Assignment
 - caption: 2023/06/28
   numberd: false
