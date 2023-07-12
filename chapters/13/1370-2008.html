@@ -1,0 +1,1179 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>2008年度 大学入学共通テスト 情報関係基礎から &#8212; プログラミングで遡る科学史</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-148221575-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-148221575-1');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/13/1370-2008';</script>
+    <link rel="canonical" href="https://inferentialthinking.org/chapters/13/1370-2008.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="サイクロイドのアニメーション作成" href="1230-cycloid-Copy1.html" />
+    <link rel="prev" title="学校で教わらないけど試験に出る擬似コード (Pseudocode)" href="1360-dncl.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">プログラミングで遡る科学史</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/07/12</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1360-dncl.html">Pseudocode</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">DNC 2008</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1230-cycloid-Copy1.html">Newton's Cycloid</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/07/05</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../12/1190_assignment.html">Past Assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12/1200-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12/1210-kepler_1.html">Kepler's 1st Law</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12/1220-kepler_2.html">ケプラーの第二法則</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../12/1230-cycloid.html">Newton's Cycloid</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/06/28</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../11/1091_assignment.html">Past Assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../11/1190_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/06/21</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../10/1090_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/06/14</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../09/810_intro-Copy1.html">Thin by programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09/830_assignment-Copy1.html">Elementary geometry without auxiliary lines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09/902.html">Thales's 2nd theorem</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/06/07</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../08/720_assignment-Copy1.html">Past assignment (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/721_assignment.html">Past assignment (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/800_assignment.html">Past assignment (3)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/801_ybc7289.html">YBC 7289 (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/802_ybc7289.html">YBC 7289 (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/810_intro.html">Think by programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/830_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/31</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07/662_combination-Copy1.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/701_plimpton322.html">Decoding Plimpton 322 (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/702_plimpton322.html">Decoding Plimpton 322 (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/710_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/720_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/24</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../06/590_assignment-Copy1.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06/620_timbre.html">波形を生成し音色を聞き比べる</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../06/650_optimization.html">Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06/660_combination.html">Combination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06/661_combination.html">Combination (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06/662_combination.html">Combination (2) as a assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/17</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../05/490_assignment.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/500_arche.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/510_octave.html">Octave</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/520_timbre.html">Timbre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/530_temperament.html">Temperament</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/590_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/10</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04/10_intro.html">Past assignment and Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/20_pythagoras.html">Pythagorean numbers and theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/22_dict-Copy1.html">Data format (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/23_dict-Copy1.html">Pythonの配列と辞書と表</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../04/40_egyptian_numerals.html">Egyptian numerals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/50_babylonian_numerals.html">Babylonian numerals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/90_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/26</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03/10_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/20_assignment.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/21_similarities.html">Code similarities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/22_dict.html">Data format (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/23_dict.html">Data format (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/40_positional.html">Positional notation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/50_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/19</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02/01_orientation.html">Orientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/02_assignment.html">Assignment (Last week)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/03_examination.html">Examination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/04_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/12</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/01_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/02_openai.html">Obtaining OpenAI API key</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/03_chatgpt.html">ChatGPT interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/04_assignment.html">Assignment</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/intro_add.html">Request for cooperation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_4.html">Experiment explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_5.html">Informed concent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_6.html">Withdrawal of concent</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://ecsosaka-jh2310.japaneast.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/Cloudedu-Osaka/textbook-2023&urlpath=lab/tree/textbook-2023/chapters/13/1370-2008.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/Cloudedu-Osaka/textbook-2023" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/13/1370-2008.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>2008年度 大学入学共通テスト 情報関係基礎から</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">題材: バブルソート</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">情報処理学 問題作成部会の見解</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">問1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">問2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">問3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chatgpt">ChatGPTで解答してみる</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">問2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#of2">問2に関する問題作成部会の見解 (1of2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">問2に関する問題作成部会の見解 (2of2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">問3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">問3に関する問題作成部会の見解</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>2008年度 大学入学共通テスト 情報関係基礎から<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="id2">
+<h2>題材: バブルソート<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>if</p></th>
+<th class="head"><p>else</p></th>
+<th class="head"><p>elif</p></th>
+<th class="head"><p>前条件ループ</p></th>
+<th class="text-center head"><p>後条件ループ</p></th>
+<th class="text-center head"><p>for</p></th>
+<th class="head"><p>条件演算</p></th>
+<th class="head"><p>switch</p></th>
+<th class="text-center head"><p>一次元配列</p></th>
+<th class="head"><p>二次元配列</p></th>
+<th class="head"><p>配列初期化</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>◯</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td class="text-center"><p>◯</p></td>
+<td class="text-center"><p>◯</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td class="text-center"><p>◯</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id3">
+<h2>情報処理学 問題作成部会の見解<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>プログラミングを通じた論理的思考力を問う選択問題として出題して、3年目となる。
+高等学校でのプログラミング実習量が異なることを考慮し、四則演算や配列操作を中心にして、
+与えられた条件や手続きからアルゴリズムの動作を理解する能力を問う方針で作題している。</p></li>
+<li><p>今回の出題は、バブルソートを用いた「並べ替え」を取り上げた。並べ替えの際には、
+単に値だけを並べ替えるのではなく、名前も同時に並べ替えるようにした。
+導入部分は、受験者が選択しやすいように、並べ替えの様子を図示してルールが理解しやすいように配慮した。
+説明部分の文書量が多いため、受験者が理解しやすいように平易な表現に努めた。
+また、処理手順の記述は、特定のプログラミング言語を出題に用いることにより生じる不公平を避けるため、
+制限された構文を持つ日本語表記の言語を用いた。</p></li>
+</ul>
+<section id="id4">
+<h3>問1<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>「並べ替え」の手順の理解を問う導入問題である。
+手順の説明に続き、それを実際に用いて4人の並べ替えを行う様子を追跡できることを問う設問としている。</p></li>
+<li><p>【ア】・【イ】は並べ替えの初期段階に近い部分で、
+処理の対象となる人を答える易しい設問であるため9割程度の正答率を予想した。いずれも正答率は予想どおりであった。</p></li>
+<li><p>【ウ】は並べ替えがある程度進んだ状態で処理の対象となる人を答える問題であり、若干難しいと判断して8割程度の正答率を予想したが、
+実際には9割程度の正答率だったため予想よりも受験者にとって易しい設問となっていた。</p></li>
+</ul>
+<p><img alt="fig-21" src="../../_images/fig-21.png" /></p>
+<p><img alt="fig-22" src="../../_images/fig-22.png" /></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>問題番号 (配点)</p></th>
+<th class="text-center head"><p>設問</p></th>
+<th class="text-center head"><p>解答記号</p></th>
+<th class="text-center head"><p>正解</p></th>
+<th class="text-center head"><p>配点</p></th>
+<th class="head"><p>備考</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>第３問 (35)</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>ア</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>2</p></td>
+<td><p>はるこ</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>イ</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>2</p></td>
+<td><p>あきよ</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>ウ</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>2</p></td>
+<td><p>あきよ</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id5">
+<h3>問2<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>問1で説明した「並べ替え」を実際に手順に変換する方法について考える問題である。
+要素を入れ替える手順を問う【エ】~【キ】は予想よりも若干低い7割弱の正答率であった。</p></li>
+<li><p>【カ】・【キ】よりも【エ】・【オ】の方が低い正答率となったのは、
+名前と得点の両方を入れ替える必要があることが理解しづらかったのではないかと考える。</p></li>
+<li><p>【ク】の二重ループの内側のループの終了条件を問う問題は、5割程度の正答率を予想していたにもかかわらず、
+3割弱しか正解しなかった。二重ループで、表全体を走査するような使い方では、外側と内側の両方が固定回数になるが、
+今回の設問のようにすべての組合せを試すような場合には、内側のループの終了条件は外側のループ変数を用いたものとなる。
+このような形式のループ構造に受験者が慣れていなかったことがうかがえる。</p></li>
+</ul>
+<p><img alt="fig-23" src="../../_images/fig-23.png" /></p>
+<p><img alt="fig-24" src="../../_images/fig-24.png" /></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>問題番号 (配点)</p></th>
+<th class="text-center head"><p>設問</p></th>
+<th class="text-center head"><p>解答記号</p></th>
+<th class="text-center head"><p>正解</p></th>
+<th class="text-center head"><p>配点</p></th>
+<th class="head"><p>備考</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>第３問 (35)</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>エ</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Name[i]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>オ</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Name[i+1]</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>カ</p></td>
+<td class="text-center"><p>3</p></td>
+<td class="text-center"><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Tokuten[i]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>キ</p></td>
+<td class="text-center"><p>8</p></td>
+<td class="text-center"><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">t</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>ク</p></td>
+<td class="text-center"><p>9</p></td>
+<td class="text-center"><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">j</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>ケ</p></td>
+<td class="text-center"><p>5</p></td>
+<td class="text-center"><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Tokuten[i+1]</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id6">
+<h3>問3<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>並べ替えに必要な比較処理の回数を減らすためのアルゴリズムを示し、
+その理解と、手続きへの変換方法について考える問題である。</p></li>
+<li><p>アルゴリズムの理解を問う【コ】・【サ】は、図から読み取ることも可能であるため、
+5割程度の正答率を予想していたが、実際には4割程度となった。また、アルゴリズムを理解していないと正解を見つけられない</p></li>
+<li><p>【ス】も2割程度しか正解していない。標準的なアルゴリズムをほんの少し変えただけのものであっても、
+受験者にとっては難しい問題になってしまうことが分かる。</p></li>
+</ul>
+<p><img alt="fig-25" src="../../_images/fig-25.png" /></p>
+<p><img alt="fig-26" src="../../_images/fig-26.png" /></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>問題番号 (配点)</p></th>
+<th class="text-center head"><p>設問</p></th>
+<th class="text-center head"><p>解答記号</p></th>
+<th class="text-center head"><p>正解</p></th>
+<th class="text-center head"><p>配点</p></th>
+<th class="head"><p>備考</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>第３問 (35)</p></td>
+<td class="text-center"><p>3</p></td>
+<td class="text-center"><p>コ</p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-center"><p>2</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>サ</p></td>
+<td class="text-center"><p>3</p></td>
+<td class="text-center"><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>シ</p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-center"><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>ス</p></td>
+<td class="text-center"><p>5</p></td>
+<td class="text-center"><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">i</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>第3問の選択率は、昨年とほぼ同じ、約4割台半ばとなった。受験者の学科別に分析すると、
+普通科約半数に比べ、工業科約7割、商業科約3割とそれぞれ偏る傾向があった。
+これは高等学校段階での既習傾向に要因があると推測できる。</p></li>
+<li><p>第3問の平均得点率は、5割台後半程度と予想よりも若干低い結果となったが、
+成績別の得点率は、ほぼ直線的な傾斜となっており、期待どおりの得点分布を示している。
+このように、全体として第3問は、受験者の理解度の差により、ほぼ期待どおりの得点の分布を示す結果となった。</p></li>
+</ul>
+</section>
+</section>
+<section id="chatgpt">
+<h2>ChatGPTで解答してみる<a class="headerlink" href="#chatgpt" title="Permalink to this headline">#</a></h2>
+<section id="id7">
+<h3>問2<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<p><img alt="fig-23" src="../../_images/fig-23.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
+今らかpythonでプログラミングします
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Sure, I can help you with Python programming. What do you need assistance with?</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+配列Nameに (&quot;はるこ&quot;, &quot;なつお&quot;, &quot;あきよ&quot;, &quot;ふゆき&quot;) を登録します。
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>以下は、Pythonで配列を作成する方法です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;はるこ&quot;</span><span class="p">,</span> <span class="s2">&quot;なつお&quot;</span><span class="p">,</span> <span class="s2">&quot;あきよ&quot;</span><span class="p">,</span> <span class="s2">&quot;ふゆき&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>このように、角括弧（[]）を使用して、配列の要素をカンマで区切って指定します。上記の例では、Nameという名前の配列に4つの要素が含まれています。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+配列Tokutenに (73, 77, 81, 68) を登録します。NameとTokutenの添字は対応していることを覚えておいてください。
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>以下は、Pythonで2つの配列を作成する方法です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;はるこ&quot;</span><span class="p">,</span> <span class="s2">&quot;なつお&quot;</span><span class="p">,</span> <span class="s2">&quot;あきよ&quot;</span><span class="p">,</span> <span class="s2">&quot;ふゆき&quot;</span><span class="p">]</span>
+<span class="n">Tokuten</span> <span class="o">=</span> <span class="p">[</span><span class="mi">73</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">68</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>このように、それぞれの配列の要素をカンマで区切って指定します。上記の例では、Nameという名前の配列に4つの要素が含まれており、Tokutenという名前の配列にも4つの要素が含まれています。また、NameとTokutenの添字は対応していることが前提となっています。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;はるこ&quot;</span><span class="p">,</span> <span class="s2">&quot;なつお&quot;</span><span class="p">,</span> <span class="s2">&quot;あきよ&quot;</span><span class="p">,</span> <span class="s2">&quot;ふゆき&quot;</span><span class="p">]</span>
+<span class="n">Tokuten</span> <span class="o">=</span> <span class="p">[</span><span class="mi">73</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">68</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;はるこ&#39;, &#39;なつお&#39;, &#39;あきよ&#39;, &#39;ふゆき&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Tokuten</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[73, 77, 81, 68]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(01) Namae[1] ← 「はるこ」，Tokuten[1] ← 73 
+(02) Namae[2] ← 「なつお」，Tokuten[2] ← 77
+(03) Namae[3] ← 「あきよ」，Tokuten[3] ← 81 
+(04) Namae[4] ← 「ふゆき」，Tokuten[4] ← 68
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>        図2 配列の要素を初期化する手続き
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+配列Nameと配列Tokutenのi番目とi+1番目の要素を入れ替えてください。
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>以下は、Pythonで2つの配列の要素を入れ替える方法です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 配列Nameと配列Tokutenのi番目とi+1番目の要素を入れ替える</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Name</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">Name</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">Name</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">Name</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">Name</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">Tokuten</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">Tokuten</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">Tokuten</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">Tokuten</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>このように、forループを使用して、配列の要素を順番に入れ替えます。上記の例では、NameとTokutenのi番目とi+1番目の要素を入れ替えています。注意点として、forループの範囲は、配列の要素数から1を引いた値になっています。これは、i+1番目の要素が存在しない場合に、エラーが発生するのを防ぐためです。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+ある添字iを指定したときに、配列Nameと配列Tokutenのi番目とi+1番目の要素をそれぞれ入れ替える手続きです。
+一時変数を使ってください。
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>以下は、Pythonで指定した添字の要素を一時変数を使って入れ替える方法です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 添字iの要素を一時変数を使って入れ替える</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 例として、i=1とします</span>
+<span class="n">temp_name</span> <span class="o">=</span> <span class="n">Name</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">Name</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Name</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">Name</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp_name</span>
+
+<span class="n">temp_tokuten</span> <span class="o">=</span> <span class="n">Tokuten</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">Tokuten</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Tokuten</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">Tokuten</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp_tokuten</span>
+</pre></div>
+</div>
+<p>このように、一時変数を使用して、指定した添字の要素を入れ替えます。上記の例では、i=1の場合を想定しています。一時変数を使用することで、要素の入れ替えがスムーズに行われます。</p>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(01) n ← Namae[i]
+(02) [エ] ← [オ]
+(03) Namae[i+1] ← n 
+(04) t ← [カ]
+(05) [カ] ← Tokuten[i+1]
+(06) Tokuten[i+1] ← [キ]
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>        図3 配列の要素を入れ替える手続き
+</pre></div>
+</div>
+</section>
+<section id="of2">
+<h3>問2に関する問題作成部会の見解 (1of2)<a class="headerlink" href="#of2" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>問1で説明した「並べ替え」を実際に手順に変換する方法について考える問題である。
+要素を入れ替える手順を問う【エ】~【キ】は予想よりも若干低い7割弱の正答率であった。</p></li>
+<li><p>【カ】・【キ】よりも【エ】・【オ】の方が低い正答率となったのは、
+名前と得点の両方を入れ替える必要があることが理解しづらかったのではないかと考える。</p></li>
+</ul>
+<p><img alt="fig-24" src="../../_images/fig-24.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+配列Tokutenをキーとして降順にソートしてください。
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>以下は、Pythonで配列をキーとして降順にソートする方法です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 配列Tokutenをキーとして降順にソートする</span>
+<span class="n">sorted_data</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">Tokuten</span><span class="p">,</span> <span class="n">Name</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">Tokuten</span><span class="p">,</span> <span class="n">Name</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">sorted_data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>このように、zip関数を使用して、TokutenとNameの要素をペアにして、sorted関数で降順にソートします。そして、zip関数を再度使用して、TokutenとNameを別々の配列に戻します。上記の例では、sorted_dataという変数に、TokutenとNameのペアを降順にソートした結果が格納されます。そして、zip関数とアスタリスク（*）を使用して、sorted_dataをTokutenとNameに分解しています。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+組み込み関数を使わず、バブルソートを実装してください。要素の入れ替えは、これまでに回答のあった手順を使ってください。
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>以下は、Pythonでバブルソートを実装する方法です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># バブルソートで配列Tokutenをキーとして降順にソートする</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Tokuten</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">Tokuten</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">Tokuten</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="c1"># 要素を入れ替える</span>
+            <span class="n">temp_tokuten</span> <span class="o">=</span> <span class="n">Tokuten</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">Tokuten</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">Tokuten</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">Tokuten</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp_tokuten</span>
+            <span class="n">temp_name</span> <span class="o">=</span> <span class="n">Name</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">Name</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">Name</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">Name</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp_name</span>
+</pre></div>
+</div>
+<p>このように、2重のforループを使用して、バブルソートを実装します。外側のforループは、配列の要素数分繰り返します。内側のforループは、配列の要素を比較して、必要に応じて入れ替えます。上記の例では、Tokutenをキーとして降順にソートしています。</p>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(01) ~ (04) (図2 配列の要素を初期化する手続き) 
+(05)        jを4-1から1まで1ずつ減らしながら，
+(06)        ｜ iを1から[ク]まで1ずつ増やしながら，
+(07)        ｜ ｜ もしTokuten[i] &lt; [ケ] ならば
+(08) ~ (13) ｜ ｜ ｜ (図3 配列の要素を入れ替える手続き) 
+(14)        ｜ ｜ を実行する
+(15)        ｜ を繰り返す
+(16)        を繰り返す
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>        図4 並べ替えの手続き
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;はるこ&quot;</span><span class="p">,</span> <span class="s2">&quot;なつお&quot;</span><span class="p">,</span> <span class="s2">&quot;あきよ&quot;</span><span class="p">,</span> <span class="s2">&quot;ふゆき&quot;</span><span class="p">]</span>
+<span class="n">Tokuten</span> <span class="o">=</span> <span class="p">[</span><span class="mi">73</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">68</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Tokuten</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">Tokuten</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">Tokuten</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="c1"># j番目とj+1番目の要素を入れ替える</span>
+            <span class="n">temp_tokuten</span> <span class="o">=</span> <span class="n">Tokuten</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">Tokuten</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">Tokuten</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">Tokuten</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp_tokuten</span>
+            <span class="n">temp_name</span> <span class="o">=</span> <span class="n">Name</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">Name</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">Name</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">Name</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp_name</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ふゆき&#39;, &#39;はるこ&#39;, &#39;なつお&#39;, &#39;あきよ&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Tokuten</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[68, 73, 77, 81]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id8">
+<h3>問2に関する問題作成部会の見解 (2of2)<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>問1で説明した「並べ替え」を実際に手順に変換する方法について考える問題である。
+要素を入れ替える手順を問う【エ】~【キ】は予想よりも若干低い7割弱の正答率であった。</p></li>
+<li><p>【ク】の二重ループの内側のループの終了条件を問う問題は、5割程度の正答率を予想していたにもかかわらず、
+3割弱しか正解しなかった。二重ループで、表全体を走査するような使い方では、外側と内側の両方が固定回数になるが、
+今回の設問のようにすべての組合せを試すような場合には、内側のループの終了条件は外側のループ変数を用いたものとなる。
+このような形式のループ構造に受験者が慣れていなかったことがうかがえる。</p></li>
+</ul>
+</section>
+<section id="id9">
+<h3>問3<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<p><img alt="fig-25" src="../../_images/fig-25.png" /></p>
+<p><img alt="fig-26" src="../../_images/fig-26.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+最後に要素の入れ替えが行われた位置以降は順番が確定しているので、
+その添字を記憶することで配列Tokutenの比較の回数を減らすことはできますか？
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>はい、可能です。以下は、Pythonで最後に要素の入れ替えが行われた位置以降は順番が確定していることを利用して、配列Tokutenの比較の回数を減らす方法です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 最後に要素の入れ替えが行われた位置以降は順番が確定しているので、その添字を記憶する</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Tokuten</span><span class="p">)</span>
+<span class="n">last_swap_index</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">is_sorted</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">last_swap_index</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">Tokuten</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">Tokuten</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="c1"># 要素を入れ替える</span>
+            <span class="n">temp_tokuten</span> <span class="o">=</span> <span class="n">Tokuten</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">Tokuten</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">Tokuten</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">Tokuten</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp_tokuten</span>
+            <span class="n">temp_name</span> <span class="o">=</span> <span class="n">Name</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">Name</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">Name</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">Name</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp_name</span>
+            <span class="n">is_sorted</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">last_swap_index</span> <span class="o">=</span> <span class="n">j</span>
+    <span class="k">if</span> <span class="n">is_sorted</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+<p>このように、last_swap_indexという変数を使用して、最後に要素の入れ替えが行われた位置以降は順番が確定していることを記憶します。内側のforループでは、last_swap_indexまでの要素を比較して、必要に応じて入れ替えます。そして、is_sortedという変数を使用して、配列がソート済みかどうかを判定します。is_sortedがTrueの場合は、配列がソート済みであるため、外側のforループを終了します。このようにすることで、配列Tokutenの比較の回数を減らすことができます。</p>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(01) ~ (04) (図2 配列の要素を初期化する手続き) 
+(05)        j ← [シ] - 1
+(06)        繰り返し，
+(07)        ｜ saigo ← 0
+(08)        ｜ iを1から[ク]まで1ずつ増やしながら，
+(09)        ｜ ｜ もしTokuten[i] &lt; [ケ] ならば
+(10) ~ (15) ｜ ｜ ｜ (図3 配列の要素を入れ替える手続き) 
+(16)        ｜ ｜ ｜ saigo ← [ス]
+(17)        ｜ ｜ を実行する
+(18)        ｜ を繰り返す
+(19)        ｜ j ← saigo - 1
+(20)        を，saigo ≤ 1になるまで実行する
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>        図6 比較回数を減らした並べ替えの手続き
+</pre></div>
+</div>
+</section>
+<section id="id10">
+<h3>問3に関する問題作成部会の見解<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>並べ替えに必要な比較処理の回数を減らすためのアルゴリズムを示し、
+その理解と、手続きへの変換方法について考える問題である。</p></li>
+<li><p>アルゴリズムの理解を問う【コ】・【サ】は、図から読み取ることも可能であるため、
+5割程度の正答率を予想していたが、実際には4割程度となった。また、アルゴリズムを理解していないと正解を見つけられない</p></li>
+<li><p>【ス】も2割程度しか正解していない。標準的なアルゴリズムをほんの少し変えただけのものであっても、
+受験者にとっては難しい問題になってしまうことが分かる。</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/13"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1360-dncl.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">学校で教わらないけど試験に出る擬似コード (Pseudocode)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="1230-cycloid-Copy1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">サイクロイドのアニメーション作成</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">題材: バブルソート</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">情報処理学 問題作成部会の見解</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">問1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">問2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">問3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chatgpt">ChatGPTで解答してみる</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">問2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#of2">問2に関する問題作成部会の見解 (1of2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">問2に関する問題作成部会の見解 (2of2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">問3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">問3に関する問題作成部会の見解</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Manabu Higashida
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
