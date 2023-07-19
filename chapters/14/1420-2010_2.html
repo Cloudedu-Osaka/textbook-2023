@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Informed consent &#8212; プログラミングで遡る科学史</title>
+    <title>2010年度 情報関係基礎 第３問 問2 &#8212; プログラミングで遡る科学史</title>
   
   
   
@@ -67,12 +67,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/01/intro_add_5';</script>
-    <link rel="canonical" href="https://inferentialthinking.org/chapters/01/intro_add_5.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/14/1420-2010_2';</script>
+    <link rel="canonical" href="https://inferentialthinking.org/chapters/14/1420-2010_2.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Withdrawal of consent" href="intro_add_6.html" />
-    <link rel="prev" title="Experiment explanation" href="intro_add_4.html" />
+    <link rel="next" title="問１の仕様に基づいてChatGPTと応答することで問２を解く (in Python)" href="1430-2010_2.html" />
+    <link rel="prev" title="2010年度 情報関係基礎 第３問 問１" href="1410-2010_1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -150,12 +150,12 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/07/19</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../14/1400-intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../14/1410-2010_1.html">2010#1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../14/1420-2010_2.html">2010#2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../14/1430-2010_2.html">2010#2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../14/1470-2010_3.html">2010#3</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1400-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1410-2010_1.html">2010#1</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2010#2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1430-2010_2.html">2010#2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1470-2010_3.html">2010#3</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/07/14</span></p>
 <ul class="nav bd-sidenav">
@@ -260,15 +260,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../02/04_assignment.html">Assignment</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/12</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_openai.html">Obtaining OpenAI API key</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_chatgpt.html">ChatGPT interaction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_assignment.html">Assignment</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro_add.html">Request for cooperation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="intro_add_4.html">Experiment explanation</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Informed concent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro_add_6.html">Withdrawal of concent</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/01_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/02_openai.html">Obtaining OpenAI API key</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/03_chatgpt.html">ChatGPT interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/04_assignment.html">Assignment</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/intro_add.html">Request for cooperation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_4.html">Experiment explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_5.html">Informed concent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_6.html">Withdrawal of concent</a></li>
 </ul>
 </li>
 </ul>
@@ -314,6 +314,37 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="article-header-buttons">
 
 
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://ecsosaka-jh2310.japaneast.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/Cloudedu-Osaka/textbook-2023&urlpath=lab/tree/textbook-2023/chapters/14/1420-2010_2.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
 <a href="https://github.com/Cloudedu-Osaka/textbook-2023" target="_blank"
    class="btn btn-sm btn-source-repository-button"
    title="Source repository"
@@ -340,7 +371,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/chapters/01/intro_add_5.md" target="_blank"
+      <li><a href="../../_sources/chapters/14/1420-2010_2.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -350,7 +381,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -409,7 +440,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -420,11 +453,23 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Informed consent</h1>
+    <h1>2010年度 情報関係基礎 第３問 問2</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">問２</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chatgpt2-in-python">問１の仕様に基づいてChatGPTと応答することで問２を解く (in Python)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">一万未満の数（正の整数値）を漢数字で表示する手続きの仕様</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -434,20 +479,115 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="informed-consent">
-<h1>Informed consent<a class="headerlink" href="#informed-consent" title="Permalink to this headline">#</a></h1>
-<div align="right">令和 4 年 4 月 19 日</div>
-<div align="center"><font size="5">同意書</font></div>
-<p>私は、｢高大接続に際してプログラミング技能獲得のための能動的な学習支援環境による授業開発｣について、目的・方法・予測される問題等について説明者より説明文書を用いて十分な説明を受け、以下の項目を理解しました。</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>2010年度 情報関係基礎 第３問 問2<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="id2">
+<h2>問２<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>次の文章を読み、
+図中の空欄[オ]〜[コ]に入れるのに最も適当なものを、
+次ページのそれぞれの解答群のうちから一つずつ選べ。</p>
+<p>図１のように、
+配列<code class="docutils literal notranslate"><span class="pre">Suji</span></code>と配列<code class="docutils literal notranslate"><span class="pre">KuraiMoji</span></code>に、漢数字を格納しておく。
+なお<code class="docutils literal notranslate"><span class="pre">Suji[1]</span></code>と<code class="docutils literal notranslate"><span class="pre">KuraiMoji[1]</span></code>には、空文字を格納しておく。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Suji</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;二&quot;</span><span class="p">,</span> <span class="s2">&quot;三&quot;</span><span class="p">,</span> <span class="s2">&quot;四&quot;</span><span class="p">,</span> <span class="s2">&quot;五&quot;</span><span class="p">,</span> <span class="s2">&quot;六&quot;</span><span class="p">,</span> <span class="s2">&quot;七&quot;</span><span class="p">,</span> <span class="s2">&quot;八&quot;</span><span class="p">,</span> <span class="s2">&quot;九&quot;</span><span class="p">)</span>
+<span class="n">KuraiMoji</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;十&quot;</span><span class="p">,</span> <span class="s2">&quot;百&quot;</span><span class="p">,</span> <span class="s2">&quot;千&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>図１ 文字の配列を初期化する手続き</p>
+<p>一万未満の数<code class="docutils literal notranslate"><span class="pre">n</span></code>を漢数字で表示する手続きを図２に示す。
+ただし、二つの整数<code class="docutils literal notranslate"><span class="pre">a&gt;=0</span></code>、<code class="docutils literal notranslate"><span class="pre">b&gt;0</span></code>に対し、
+<code class="docutils literal notranslate"><span class="pre">a//b</span></code>は<code class="docutils literal notranslate"><span class="pre">a</span></code>を<code class="docutils literal notranslate"><span class="pre">b</span></code>で割った商の整数部分を、
+<code class="docutils literal notranslate"><span class="pre">a%b</span></code>は<code class="docutils literal notranslate"><span class="pre">a</span></code>を<code class="docutils literal notranslate"><span class="pre">b</span></code>で割った余りを、それぞれ計算する。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>kurai = 1000
+for keta in range(4, 0, -1):
+    d = n // kurai
+    if d != 0:
+        if 【オ】:
+            print(【カ】, end=&quot;&quot;)
+        else:
+            print(【キ】, end=&quot;&quot;)
+            print(【ク】, end=&quot;&quot;)
+        # end if
+    # end if
+    n = 【ケ】 % 【コ】
+    kurai = kurai // 10
+# end for
+</pre></div>
+</div>
+<p>図２ 一万未満の数<code class="docutils literal notranslate"><span class="pre">n</span></code>を漢数字表示する手続き</p>
+<p>[オ]の解答群:</p>
+<ol class="arabic simple" start="0">
+<li><p><code class="docutils literal notranslate"><span class="pre">keta</span> <span class="pre">!=</span> <span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">keta</span> <span class="pre">==</span> <span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">==</span> <span class="pre">1</span> <span class="pre">and</span> <span class="pre">keta</span> <span class="pre">!=</span> <span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">==</span> <span class="pre">1</span> <span class="pre">and</span> <span class="pre">keta</span> <span class="pre">==</span> <span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">&gt;=</span> <span class="pre">2</span> <span class="pre">and</span> <span class="pre">keta</span> <span class="pre">!=</span> <span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">&gt;=</span> <span class="pre">2</span> <span class="pre">and</span> <span class="pre">keta</span> <span class="pre">==</span> <span class="pre">1</span></code></p></li>
+</ol>
+<p>[カ]〜[ク]の解答群:</p>
+<ol class="arabic simple" start="0">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;一&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Suji[d]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KuraiMoji[d]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;十&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Suji[keta]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KuraiMoji[keta]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;百&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Suji[n]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KuraiMoji[n]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;千&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Suji[kurai]</span></code> (註: マークシートは “a”)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KuraiMoji[kurai]</span></code> (註: マークシートは “b”)</p></li>
+</ol>
+<p>[ケ]・[コ]の解答群:</p>
+<ol class="arabic simple" start="0">
+<li><p><code class="docutils literal notranslate"><span class="pre">d</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">keta</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1000</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kurai</span></code></p></li>
+</ol>
+</section>
+<section id="chatgpt2-in-python">
+<h2>問１の仕様に基づいてChatGPTと応答することで問２を解く (in Python)<a class="headerlink" href="#chatgpt2-in-python" title="Permalink to this headline">#</a></h2>
+<section id="id3">
+<h3>一万未満の数（正の整数値）を漢数字で表示する手続きの仕様<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>研究の目的、方法そしてそれに伴う危険性とそれに対する対応について</p></li>
-<li><p>私は自らの自由意志でいつでも実験を中止することができること</p></li>
-<li><p>私に生じる不利益に対する配慮は、学問的、社会的な利益よりも優先されること</p></li>
-<li><p>私は、万一不利益を被った場合に大阪大学サイバーメディアセンターに対して申し立てを行うことができること。</p></li>
+<li><p>正の整数値を漢数字で表示する手順を考えよう。</p></li>
+<li><p>まず、一万未満の数を表示することを考えよう。
+与えられた数の千の位、百の位、十の位、一の位の順に、一桁ずつ処理をする。</p></li>
+<li><p>5023の百の位のように、数字が0の桁では、何も表示しない。</p></li>
+<li><p>1211のように1が含まれる場合、数字が1の桁では、一の位ならば、「一」を表示する。
+それ以外の位ならば、その桁の位を表す文字のみを漢字で表示する。</p></li>
+<li><p>2345の各桁のように、数字が2以上の場合、一の位ならば、その桁の数字のみを漢字で表示する。
+それ以外の位ならば、その桁の数字と位を表す文字を漢字で表示する。</p></li>
 </ul>
-<p>そこで自らの自由意志により、｢高大接続に際してプログラミング技能獲得のための能動的な学習支援環境による授業開発」の被調査者になることを同意します。</p>
-<div align="right">住所 〒_______________________</div>
-<div align="right">氏名 _________________________</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
+今からpythonでプログラミングする。
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+正の整数値を漢数字で表示する手順を考えよう。
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -463,7 +603,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapters/01"
+            path: "./chapters/14"
         },
         predefinedOutput: true
     }
@@ -482,20 +622,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro_add_4.html"
+       href="1410-2010_1.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Experiment explanation</p>
+        <p class="prev-next-title">2010年度 情報関係基礎 第３問 問１</p>
       </div>
     </a>
     <a class="right-next"
-       href="intro_add_6.html"
+       href="1430-2010_2.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Withdrawal of consent</p>
+        <p class="prev-next-title">問１の仕様に基づいてChatGPTと応答することで問２を解く (in Python)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -508,6 +648,24 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">問２</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chatgpt2-in-python">問１の仕様に基づいてChatGPTと応答することで問２を解く (in Python)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">一万未満の数（正の整数値）を漢数字で表示する手続きの仕様</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
