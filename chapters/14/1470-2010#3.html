@@ -1,0 +1,781 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>2010年度 情報関係基礎 第３問 問3 &#8212; プログラミングで遡る科学史</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-148221575-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-148221575-1');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/14/1470-2010#3';</script>
+    <link rel="canonical" href="https://inferentialthinking.org/chapters/14/1470-2010#3.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="学校で教わらないけど試験に出る擬似コード (Pseudocode)" href="../13/1360-dncl.html" />
+    <link rel="prev" title="問１の仕様に基づいてChatGPTと応答することで問２を解く (in Python)" href="1430-2010%232.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">プログラミングで遡る科学史</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/07/19</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1400-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1410-2010%231.html">2010#1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1420-2010%232.html">2010#2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1430-2010%232.html">2010#2</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2010#3</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/07/14</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../13/1360-dncl.html">Pseudocode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../13/1370-2008.html">DNC 2008</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../13/1220-kepler_2-Copy1.html">ケプラーの第二法則</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../13/1230-cycloid-Copy1.html">Newton's Cycloid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../13/1290-assignment-Copy1.html">Past assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/07/05</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../12/1190_assignment.html">Past Assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12/1200-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12/1210-kepler_1.html">Kepler's 1st Law</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12/1220-kepler_2.html">ケプラーの第二法則</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../12/1230-cycloid.html">Newton's Cycloid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12/1290-assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/06/28</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../11/1091_assignment.html">Past Assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../11/1190_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/06/21</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../10/1090_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/06/14</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../09/810_intro-Copy1.html">Thin by programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09/830_assignment-Copy1.html">Elementary geometry without auxiliary lines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09/902.html">Thales's 2nd theorem</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/06/07</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../08/720_assignment-Copy1.html">Past assignment (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/721_assignment.html">Past assignment (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/800_assignment.html">Past assignment (3)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/801_ybc7289.html">YBC 7289 (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/802_ybc7289.html">YBC 7289 (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/810_intro.html">Think by programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/830_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/31</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07/662_combination-Copy1.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/701_plimpton322.html">Decoding Plimpton 322 (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/702_plimpton322.html">Decoding Plimpton 322 (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/710_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/720_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/24</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../06/590_assignment-Copy1.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06/620_timbre.html">波形を生成し音色を聞き比べる</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../06/650_optimization.html">Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06/660_combination.html">Combination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06/661_combination.html">Combination (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06/662_combination.html">Combination (2) as a assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/17</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../05/490_assignment.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/500_arche.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/510_octave.html">Octave</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/520_timbre.html">Timbre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/530_temperament.html">Temperament</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/590_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/10</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04/10_intro.html">Past assignment and Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/20_pythagoras.html">Pythagorean numbers and theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/22_dict-Copy1.html">Data format (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/23_dict-Copy1.html">Pythonの配列と辞書と表</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../04/40_egyptian_numerals.html">Egyptian numerals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/50_babylonian_numerals.html">Babylonian numerals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/90_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/26</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03/10_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/20_assignment.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/21_similarities.html">Code similarities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/22_dict.html">Data format (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/23_dict.html">Data format (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/40_positional.html">Positional notation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/50_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/19</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02/01_orientation.html">Orientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/02_assignment.html">Assignment (Last week)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/03_examination.html">Examination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/04_assignment.html">Assignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/04/12</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/01_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/02_openai.html">Obtaining OpenAI API key</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/03_chatgpt.html">ChatGPT interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/04_assignment.html">Assignment</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/intro_add.html">Request for cooperation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_4.html">Experiment explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_5.html">Informed concent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/intro_add_6.html">Withdrawal of concent</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://ecsosaka-jh2310.japaneast.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/Cloudedu-Osaka/textbook-2023&urlpath=lab/tree/textbook-2023/chapters/14/1470-2010%233.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/Cloudedu-Osaka/textbook-2023" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/14/1470-2010#3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>2010年度 情報関係基礎 第３問 問3</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chatgpt3">課題) ChatGPTとの対話で問３が解答可能か挑戦する</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">問３</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">参考</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">情報処理学会の問題作成部会の見解</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chatgpt">ChatGPTとの応答例</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>2010年度 情報関係基礎 第３問 問3<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="chatgpt3">
+<h2>課題) ChatGPTとの対話で問３が解答可能か挑戦する<a class="headerlink" href="#chatgpt3" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id2">
+<h2>問３<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>次の文章を読み、
+図中の空欄【サ】〜【セ】および文中の空欄【ソ】に入れるのに最も適当なものを、
+次ページのそれぞれの解答群のうちから一つずつ選べ。</p>
+<p>変数<code class="docutils literal notranslate"><span class="pre">x</span></code>に格納された数を漢数字表示する手続きを図３に示す。
+例えば、123456789を１億２３４５万６７８９とみると、
+4桁ごとに区切られて、「億」、「万」という大きな位を表す文字が挿入されることがわかる。</p>
+<p>なお、変数に格納できる整数の範囲が<span class="math notranslate nohighlight">\(2^{31}\)</span>未満であると仮定すると、
+「万」「億」『兆」のような大きな位を表す文字は、「億」まで用意しておけば十分である。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>(01)〜(05) # (図1 文字の配列を初期化する手続き)
+(06)〜(08) OkinaKuraiMoji = (&quot;&quot;, &quot;&quot;, &quot;万&quot;, &quot;億&quot;)
+(09)       okinaKurai = 【サ】
+(10)       for kugiri in range(3, 0, -1):
+(11)         【シ】
+(12)          if n != 0:
+(13)〜(26)        # (図2 一万未満の数nを漢数字表示する手続き)
+(27)              print(n, OkinaKuraiMoji[kugiri])
+(28)          # end if
+(29)         【ス】
+(30)         【セ】
+(31)       # end for
+</pre></div>
+</div>
+<p>図３ 数<code class="docutils literal notranslate"><span class="pre">x</span></code>を漢数字表示する手続き</p>
+<p>図３の手続きは、10000000を「千万」と表示する。
+これを「一千万」と表示するには、
+図４の手続きを図３の[ソ]の直後に挿入すれば良い。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1000</span> <span class="o">&amp;</span> <span class="n">kugiri</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;一&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="c1"># end if</span>
+</pre></div>
+</div>
+<p>図４ 「一千万」の「一」を表示するために挿入される手続き</p>
+<p>【サ】の解答群:</p>
+<ol class="arabic simple" start="0">
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10_000_000</span></code> (一千万)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">100</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">100_000_000</span></code> (一億)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1_000</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10_000</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1_000_000_000_000</span></code> (一兆)</p></li>
+</ol>
+<p>【シ】〜【セ】の解答群:</p>
+<ol class="arabic simple" start="0">
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">%</span> <span class="pre">okinaKurai</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">//</span> <span class="pre">10</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">//</span> <span class="pre">okinaKurai</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">//</span> <span class="pre">10_000</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">okinaKurai</span> <span class="pre">=</span> <span class="pre">okinaKurai</span> <span class="pre">-</span> <span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">//</span> <span class="pre">10_000</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">okinaKurai</span> <span class="pre">=</span> <span class="pre">okinaKurai</span> <span class="pre">+</span> <span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">%</span> <span class="pre">10</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">okinaKurai</span> <span class="pre">=</span> <span class="pre">okinaKurai</span> <span class="pre">//</span> <span class="pre">10</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">%</span> <span class="pre">10_000</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">okinaKurai</span> <span class="pre">=</span> <span class="pre">okinaKurai</span> <span class="pre">//</span> <span class="pre">10_000</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">%</span> <span class="pre">10_000</span></code></p></li>
+</ol>
+<p>【ソ】の解答群:</p>
+<ol class="arabic simple" start="0">
+<li><p>(12)行目</p></li>
+<li><p>(26)行目</p></li>
+<li><p>(28)行目</p></li>
+<li><p>(30)行目</p></li>
+</ol>
+</section>
+<section id="id3">
+<h2>参考<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<section id="id4">
+<h3>情報処理学会の問題作成部会の見解<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>問３
+１万以上の場合も含めた漢数字表示を行う手続きを題材に、手続きを読み取り構成する
+能力を問う問題である。提示された手続きの一部として前問の手続きがそのまま使われており、本問の手続きを見通しよく読み取るには、この部分を一つのモジュールとして理解することが望ましい。
+前問の１桁ずつ取り出す手続きは常套手段であるとの意見もいただいているが、本問では応用的に数を４桁ずつ取り出す手続きを構成させる設問となっている。
+なお、<span class="math notranslate nohighlight">\(2^{31}\)</span>と「億」についての説明は、手続きを設計する際に留意すべき点であることから、述べたものである。
+また、この第３問のような手続きを構成する問題では、他の試験問題と異なり、試験後に実際に動作させて試してみる受験者がいる可能性もある。現在最も普及している計算機における整数の扱いに合わせて、約20億までの値でしか正しく動作しないことを何らかの形で伝えておく必要もあるものと考えられる。</p>
+<p>試験結果の統計情報を見ると、okinaKurai の初期値や整数除算によって上位桁を取り出す部分については、全体で約３～４割、ほぼ予想したとおりの正答率となった。
+しかし、<code class="docutils literal notranslate"><span class="pre">okinaKurai</span></code>と<code class="docutils literal notranslate"><span class="pre">ｘ</span></code>を更新する[ス]・[セ]については、全体で約２割と予想よりも低い正答率であった。誤答の中では、10 との除算を選択した者も多く、４桁ごとに区切らねばならないことを理解していないようにも思われる。
+また、問３の設問はいずれも１割以上がノーマークであり、解答に至らなかった者が若干多かったようである。その理由としては、問２の手続きの理解に時間がかかったのではないかとも思われる。</p>
+</section>
+<section id="chatgpt">
+<h3>ChatGPTとの応答例<a class="headerlink" href="#chatgpt" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
+pythonで、4桁の十進整数を漢数字に変換する
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>以下は、Pythonで4桁の十進整数を漢数字に変換するコード例です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">to_kanji</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="c1"># 桁ごとの漢数字を定義</span>
+    <span class="n">kanji_digits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;千&quot;</span><span class="p">,</span> <span class="s2">&quot;百&quot;</span><span class="p">,</span> <span class="s2">&quot;十&quot;</span><span class="p">]</span>
+    <span class="n">kanji_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;一&quot;</span><span class="p">,</span> <span class="s2">&quot;二&quot;</span><span class="p">,</span> <span class="s2">&quot;三&quot;</span><span class="p">,</span> <span class="s2">&quot;四&quot;</span><span class="p">,</span> <span class="s2">&quot;五&quot;</span><span class="p">,</span> <span class="s2">&quot;六&quot;</span><span class="p">,</span> <span class="s2">&quot;七&quot;</span><span class="p">,</span> <span class="s2">&quot;八&quot;</span><span class="p">,</span> <span class="s2">&quot;九&quot;</span><span class="p">]</span>
+    
+    <span class="c1"># 整数を文字列に変換して、桁数を取得</span>
+    <span class="n">num_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="n">num_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">num_str</span><span class="p">)</span>
+    
+    <span class="c1"># 桁ごとに漢数字に変換</span>
+    <span class="n">kanji_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_len</span><span class="p">):</span>
+        <span class="n">digit</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_str</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">digit</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">kanji_str</span> <span class="o">+=</span> <span class="n">kanji_numbers</span><span class="p">[</span><span class="n">digit</span><span class="p">]</span> <span class="o">+</span> <span class="n">kanji_digits</span><span class="p">[</span><span class="n">num_len</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">kanji_str</span>
+</pre></div>
+</div>
+<p>この関数を使って、例えば「1234」を漢数字に変換する場合は、以下のように呼び出します。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">to_kanji</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>  <span class="c1"># &quot;千二百三十四&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
+さらに4桁ごとを括って、万、億、兆の桁を表示する
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>以下は、Pythonで4桁ごとを括って、万、億、兆の桁を表示するコード例です。先程のコードに、桁数を判定して万、億、兆の桁を追加する処理を追加しています。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">to_kanji</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="c1"># 桁ごとの漢数字を定義</span>
+    <span class="n">kanji_digits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;千&quot;</span><span class="p">,</span> <span class="s2">&quot;百&quot;</span><span class="p">,</span> <span class="s2">&quot;十&quot;</span><span class="p">]</span>
+    <span class="n">kanji_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;一&quot;</span><span class="p">,</span> <span class="s2">&quot;二&quot;</span><span class="p">,</span> <span class="s2">&quot;三&quot;</span><span class="p">,</span> <span class="s2">&quot;四&quot;</span><span class="p">,</span> <span class="s2">&quot;五&quot;</span><span class="p">,</span> <span class="s2">&quot;六&quot;</span><span class="p">,</span> <span class="s2">&quot;七&quot;</span><span class="p">,</span> <span class="s2">&quot;八&quot;</span><span class="p">,</span> <span class="s2">&quot;九&quot;</span><span class="p">]</span>
+    <span class="n">kanji_units</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;万&quot;</span><span class="p">,</span> <span class="s2">&quot;億&quot;</span><span class="p">,</span> <span class="s2">&quot;兆&quot;</span><span class="p">]</span>
+    
+    <span class="c1"># 整数を文字列に変換して、桁数を取得</span>
+    <span class="n">num_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="n">num_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">num_str</span><span class="p">)</span>
+    
+    <span class="c1"># 桁ごとに漢数字に変換</span>
+    <span class="n">kanji_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_len</span><span class="p">):</span>
+        <span class="n">digit</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_str</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">digit</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">kanji_str</span> <span class="o">+=</span> <span class="n">kanji_numbers</span><span class="p">[</span><span class="n">digit</span><span class="p">]</span> <span class="o">+</span> <span class="n">kanji_digits</span><span class="p">[</span><span class="n">num_len</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="c1"># 4桁ごとに区切って、万、億、兆の桁を追加</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num_len</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">num_len</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">unit</span> <span class="o">=</span> <span class="n">kanji_units</span><span class="p">[(</span><span class="n">num_len</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">4</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">kanji_str</span><span class="p">[</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">unit</span><span class="p">):]</span> <span class="o">!=</span> <span class="n">unit</span><span class="p">:</span>
+                <span class="n">kanji_str</span> <span class="o">+=</span> <span class="n">unit</span>
+    
+    <span class="k">return</span> <span class="n">kanji_str</span>
+</pre></div>
+</div>
+<p>この関数を使って、例えば「1234567890123456」を漢数字に変換する場合は、以下のように呼び出します。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">to_kanji</span><span class="p">(</span><span class="mi">1234567890123456</span><span class="p">)</span>  <span class="c1"># &quot;千二百三十四兆五千六百七十八億九千百一十二万三千四百五十六&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/14"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1430-2010%232.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">問１の仕様に基づいてChatGPTと応答することで問２を解く (in Python)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../13/1360-dncl.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">学校で教わらないけど試験に出る擬似コード (Pseudocode)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chatgpt3">課題) ChatGPTとの対話で問３が解答可能か挑戦する</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">問３</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">参考</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">情報処理学会の問題作成部会の見解</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chatgpt">ChatGPTとの応答例</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Manabu Higashida
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
