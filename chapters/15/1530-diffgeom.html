@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>“Big ideas simply explained” &#8212; プログラミングで遡る科学史</title>
+    <title>微分と幾何学 &#8212; プログラミングで遡る科学史</title>
   
   
   
@@ -67,12 +67,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/07/710_intro';</script>
-    <link rel="canonical" href="https://inferentialthinking.org/chapters/07/710_intro.html" />
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/15/1530-diffgeom';</script>
+    <link rel="canonical" href="https://inferentialthinking.org/chapters/15/1530-diffgeom.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="課題: 相加平均と相乗平均の関係を表す不等式" href="720_assignment.html" />
-    <link rel="prev" title="Plimpton 322 の解読 (2)" href="702_plimpton322.html" />
+    <link rel="next" title="曲率と曲率半径" href="1540-curvature.html" />
+    <link rel="prev" title="Leibniz vs. Newton" href="1520-newton.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -150,14 +152,15 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/07/26</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../15/1510-intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../15/1520-newton.html">Leibniz vs. Newton</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../15/1530-diffgeom.html">Differential geometry</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../15/1540-curvature.html">Radius of curvature</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../15/1550-metric.html">Metric space</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../15/1560-field_equation.html">Einstein field equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../15/1570-geodesic.html">Geodesic</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1510-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1520-newton.html">Leibniz vs. Newton</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Differential geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1540-curvature.html">Radius of curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1550-metric.html">Metric space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1560-field_equation.html">Einstein field equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1570-geodesic.html">Einstein field equation</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/07/19</span></p>
 <ul class="nav bd-sidenav">
@@ -214,12 +217,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../08/830_assignment.html">Assignment</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/31</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="662_combination-Copy1.html">Past assignment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="701_plimpton322.html">Decoding Plimpton 322 (1)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="702_plimpton322.html">Decoding Plimpton 322 (2)</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="720_assignment.html">Assignment</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07/662_combination-Copy1.html">Past assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/701_plimpton322.html">Decoding Plimpton 322 (1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/702_plimpton322.html">Decoding Plimpton 322 (2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/710_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/720_assignment.html">Assignment</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2023/05/24</span></p>
 <ul class="nav bd-sidenav">
@@ -335,7 +338,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://ecsosaka-jh2310.japaneast.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/Cloudedu-Osaka/textbook-2023&urlpath=lab/tree/textbook-2023/chapters/07/710_intro.ipynb&branch=main" target="_blank"
+      <li><a href="https://ecsosaka-jh2310.japaneast.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/Cloudedu-Osaka/textbook-2023&urlpath=lab/tree/textbook-2023/chapters/15/1530-diffgeom.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onJupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -381,7 +384,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/chapters/07/710_intro.ipynb" target="_blank"
+      <li><a href="../../_sources/chapters/15/1530-diffgeom.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -463,7 +466,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>“Big ideas simply explained”</h1>
+    <h1>微分と幾何学</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -473,11 +476,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#epochs-in-the-science-book">Epochs in “the Science Book”</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#epochs-in-the-math-book">Epochs in “the Math Book”</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ancient-and-classical-periods-6-000-bce-500-ce">Ancient and Classical Periods (6,000 BCE – 500 CE)</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">陽関数・陰関数と曲率</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">媒介変数表示の場合</a></li>
 </ul>
             </nav>
         </div>
@@ -489,182 +489,234 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="big-ideas-simply-explained">
-<h1>“Big ideas simply explained”<a class="headerlink" href="#big-ideas-simply-explained" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>微分と幾何学<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.dk.com/us/book/9781465481221-the-science-book/">The Science Book | DK US</a></p></li>
-</ul>
-<p><img alt="image.png" src="chapters/07/attachment:image.png" /></p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.dk.com/us/book/9781465480248-the-math-book/">The Math Book | DK US</a></p></li>
-</ul>
-<p><img alt="image.png" src="chapters/07/attachment:image.png" /></p>
-<p><img alt="image.png" src="chapters/07/attachment:image.png" /></p>
-<section id="epochs-in-the-science-book">
-<h2>Epochs in “the Science Book”<a class="headerlink" href="#epochs-in-the-science-book" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>The Beginning of Science (600 BCE – 1,400 CE)</p></li>
-<li><p>Scientific Revolution (1,400 – 1,700)</p></li>
-<li><p>Expanding Horizons (1,700 – 1,800)</p></li>
-<li><p>A Century of Progress (1,800 – 1,900)</p></li>
-<li><p>A Paradigm Shift (1,900 – 1,945)</p></li>
-<li><p>Fundamental Building Blocks (1,945 – Present)</p></li>
-</ul>
-</section>
-<section id="epochs-in-the-math-book">
-<h2>Epochs in “the Math Book”<a class="headerlink" href="#epochs-in-the-math-book" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Ancient and Classical Periods (6,000 BCE – 500 CE)</p></li>
-<li><p>The Middle Ages (500 CE – 1,500)</p></li>
-<li><p>The Renaissance (1,500 – 1,680)</p></li>
-<li><p>The Enlightenment (1,680 – 1,800)</p></li>
-<li><p>The 19th Century (1,800 – 1,900)</p></li>
-<li><p>Modern Mathematics (1,900 – Present)</p></li>
-</ul>
-<p><img alt="image.png" src="chapters/07/attachment:image.png" /></p>
-<section id="ancient-and-classical-periods-6-000-bce-500-ce">
-<h3>Ancient and Classical Periods (6,000 BCE – 500 CE)<a class="headerlink" href="#ancient-and-classical-periods-6-000-bce-500-ce" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.dk.com/us/book/9781465480248-the-math-book/">The Math Book | DK US</a></p>
-<ul>
-<li><p>p.20</p></li>
-</ul>
-</li>
-</ul>
-<p><img alt="image.png" src="chapters/07/attachment:image.png" /></p>
-<ul class="simple">
-<li><p>c.6000BCE</p>
-<ul>
-<li><p>“Different quantities are denoted on Sumerian clay tablets, prefiguring a numerical system.”</p>
-<ul>
-<li><p>シュメールの粘土板に様々な数量が表記され、数的体系を予見させる。</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Sumer">Sumer - Wikipedia</a></p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>c.4000BCE</p>
-<ul>
-<li><p>“The Babylonians introduce a base-60 numerical system, in which a small cone denotes 1 and a large cone denotes 60.”</p>
-<ul>
-<li><p>バビロニアで60進法が導入され、小さな楔が1を、大きな楔が60を表した。</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Sexagesimal">Sexagesimal - Wikipedia</a></p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>c.1650BCE</p>
-<ul>
-<li><p>“The ancient Egyptians describe methods of working out areas and volumes and record them on the Rhind papyrus.”</p>
-<ul>
-<li><p>古代エジプトでは、面積や体積を計算する方法がまとめられて、リンド数学パピルスに記録された。</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Rhind_Mathematical_Papyrus">Rhind Mathematical Papyrus - Wikipedia</a></p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>c.530BCE</p>
-<ul>
-<li><p>“Pythagoras founds a school where he teaches his metaphysical beliefs and mathematical discoveries, including Pythagoras’s theorem.”</p>
-<ul>
-<li><p>ピタゴラスが学校を設立し、ピタゴラスの定理を含む彼の形而上学的信念と数学的発見を教える。</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Pythagoras">Pythagoras - Wikipedia</a> (c.570–c.495 BC)</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>c.430BCE</p>
-<ul>
-<li><p>“Hippasus of Metapontum discovers irrational numbers, which cannot be expressed in fractions.”</p>
-<ul>
-<li><p>メタポンティオンのヒッパソスは、分数で表せない無理数を発見した。</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Hippasus">Hippasus - Wikipedia</a> (c.530–c.450 BC)</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>c.387BCE</p>
-<ul>
-<li><p>“Plato founds his Academy in Thenes - the sign over the entrance reads “Let no one ignorant of geometry enter here.”</p>
-<ul>
-<li><p>プラトンがテネスに学校を開設した際に、「幾何学を知らないものは入れない」と門に記した。</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Plato">Plato - Wikipedia</a> (c.427–c.347 BC)</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>c.300BCE</p>
-<ul>
-<li><p>“One of the most infuluential textbooks ever written, Ecuclid’s Elements, contains mathematical advances including proof of the infinity of prime numbers.”</p>
-<ul>
-<li><p>最も影響力のある教科書の一つであるユークリッドの『原論』には、素数の無限性の証明など数学的な進歩が含まれている。</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Euclid%27s_Elements">Euclid’s Elements - Wikipedia</a></p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Circa">Circa - Wikipedia</a></p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Common_Era">Common Era - Wikipedia</a></p></li>
+<li><p><a class="reference external" href="https://docs.sympy.org/latest/modules/diffgeom.html">Differential Geometry - SymPy 1.12 documentation</a></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_ask</span>
-素数は無限にあるのですか？
+微分が接線であることを証明する
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<p>はい、素数は無限に存在します。これは、エウクレイドの原理と呼ばれる数学的原理によって証明されています。</p>
+<p>ある関数$f(x)$において、点$(a,f(a))$における接線の傾きを求めるために微分を用いることができます。微分とは、ある点における関数の傾きを表す値であり、$f(x)$の微分を$f’(x)$と表します。点$(a,f(a))$における接線の傾きは$f’(a)$となります。</p>
+<p>このことを証明するために、点$(a,f(a))$における接線の方程式を求めてみましょう。点$(a,f(a))$を通り、傾きが$f’(a)$である直線の方程式は以下のようになります。</p>
+<p>$y - f(a) = f’(a)(x - a)$</p>
+<p>この式を展開すると、</p>
+<p>$y = f’(a)x - af’(a) + f(a)$</p>
+<p>となります。この式は、点$(a,f(a))$における接線の方程式を表しています。</p>
+<p>一方で、$f(x)$の微分$f’(x)$は、$x=a$における接線の傾きを表しています。つまり、$f’(a)$は点$(a,f(a))$における接線の傾きを表していることになります。</p>
+<p>以上より、微分$f’(a)$は点$(a,f(a))$における接線の傾きであることが証明されました。</p>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
-エウクレイドの原理について詳しく
+曲率との関係は？
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<p>エウクレイドの原理とは、古代ギリシャの数学者エウクレイドが提唱した、素数が無限に存在することを証明するための原理です。</p>
-<p>この原理は、以下のように述べられます。「ある有限個の素数があるとき、それらの素数の積に1を加えた数は、必ず別の素数で割り切れる。」</p>
-<p>この原理により、素数が有限個しか存在しないと仮定すると、その有限個の素数の積に1を加えた数は、必ず別の素数で割り切れることになります。つまり、仮定した有限個の素数には含まれていない新しい素数が存在することになり、素数が無限に存在することが証明されます。</p>
-<p>この原理は、数学の基礎的な原理の一つであり、素数に関する多くの定理や問題の解決に役立っています。</p>
+<p>微分が接線の傾きを表すことがわかったところで、曲率との関係を考えてみましょう。</p>
+<p>曲率は、ある点における曲線の曲がり具合を表す値であり、半径$r$の円弧に対する曲率$k$は以下のように定義されます。</p>
+<p>$k = \frac{1}{r}$</p>
+<p>つまり、曲率が大きいほど曲線は急な曲がりをしており、曲率が小さいほど曲線は緩やかな曲がりをしていることになります。</p>
+<p>ここで、微分$f’(x)$を2回微分したものを$f’’(x)$とします。この$f’’(x)$は、ある点における曲線の曲がり具合を表す値であり、曲率$k$と以下のような関係があります。</p>
+<p>$k = \frac{|f’’(x)|}{(1 + f’(x)^2)^{\frac{3}{2}}}$</p>
+<p>つまり、曲率$k$は$f’’(x)$の絶対値と$f’(x)$の2乗によって決まります。この式からもわかるように、微分を用いることで曲率を求めることができます。</p>
+<p>以上より、微分と曲率には密接な関係があり、微分を用いることで曲率を求めることができることがわかりました。</p>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai_continue</span>
-その原理は原論に記されていますか？
+円の曲率を求めたいのですが、陰関数の曲率を示してください。
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<p>はい、エウクレイドの原理は、エウクレイドの著書『原論』の中で記されています。『原論』は、古代ギリシャの数学者エウクレイドが著した、数学の基礎的な原理や定理をまとめた書物で、現代の数学においても重要な教科書として扱われています。エウクレイドの原理は、『原論』の第九巻命題20に記されています。</p>
+<p>陰関数の曲率を求めるには、以下の手順を行います。</p>
+<ol class="arabic simple">
+<li><p>陰関数を微分して、傾きを求めます。</p></li>
+<li><p>傾きを2回微分して、曲率を求めます。</p></li>
+</ol>
+<p>例として、半径$r$の円の陰関数を考えてみましょう。円の方程式は$x^2 + y^2 = r^2$であり、これを微分すると以下のようになります。</p>
+<p>$\frac{dy}{dx} = -\frac{x}{y}$</p>
+<p>この式から、ある点$(x,y)$における傾き$m$は以下のように求めることができます。</p>
+<p>$m = \frac{dy}{dx} = -\frac{x}{y}$</p>
+<p>次に、傾き$m$を2回微分して、曲率$k$を求めます。傾き$m$を$x$で微分すると、以下のようになります。</p>
+<p>$\frac{dm}{dx} = -\frac{y + x\frac{d}{dx}(y)}{y^2}$</p>
+<p>ここで、$\frac{d}{dx}(y)$は$y$を$x$で微分したものであり、$-\frac{x}{y}$となります。これを代入すると、</p>
+<p>$\frac{dm}{dx} = -\frac{y - x\frac{x}{y}}{y^2} = -\frac{r^2}{y^3}$</p>
+<p>となります。この式から、ある点$(x,y)$における曲率$k$は以下のように求めることができます。</p>
+<p>$k = \frac{|m’’|}{(1 + m’^2)^{\frac{3}{2}}} = \frac{\frac{d}{dx}(\frac{r^2}{y^3})}{(1 + (\frac{x}{y})^2)^{\frac{3}{2}}} = \frac{3r^2}{(x^2 + y^2)^{\frac{3}{2}}}$</p>
+<p>以上より、半径$r$の円の陰関数における曲率$k$は、$k = \frac{3r^2}{(x^2 + y^2)^{\frac{3}{2}}}$となります。</p>
 </div>
 </div>
+<section id="id2">
+<h2>陽関数・陰関数と曲率<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="http://aleph0.clarku.edu/~djoyce/elements/bookIX/propIX20.html">Euclid’s Elements, Book IX, Proposition 20</a></p>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Graph_of_a_function">Graph of a function - Wikipedia</a></p>
 <ul>
-<li><p>“Prime numbers are more than any assigned multitude of prime numbers.”</p></li>
+<li><p><span class="math notranslate nohighlight">\(y = f(x)\)</span></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="http://aleph0.clarku.edu/~djoyce/elements/bookVII/propVII31.html">Euclid’s Elements, Book VII, Proposition 31</a></p>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Implicit_function">Implicit function - Wikipedia</a></p>
 <ul>
-<li><p>“Any composite number is measured by some prime number.”</p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="http://aleph0.clarku.edu/~djoyce/elements/bookI/cn.html">Euclid’s Elements, Common Notions</a></p>
-<ul>
-<li><p>“If equals are subtracted from equals, then the remainders are equal.”</p></li>
+<li><p><span class="math notranslate nohighlight">\(F(x, y) = 0\)</span></p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p><a class="reference external" href="https://writings.stephenwolfram.com/2020/09/the-empirical-metamathematics-of-euclid-and-beyond/">The Empirical Metamathematics of Euclid and Beyond—Stephen Wolfram Writings</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Curvature#Plane_curves">Curvature § Plane curves - Wikipedia</a></p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[\kappa = \frac{\left| {F_{y}}^2 F_{x x} - 2 F_{x} F_{y} F_{x y} + {F_{x}}^2 F_{y y} \right|}{\left({F_{x}}^2+{F_{y}}^2\right)^{3/2}}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">f</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">F</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">F</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - r^{2} + x^{2} + y^{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diff</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">diff</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">diff</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">diff</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">diff</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">diff</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">diff</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 8 x^{2} + 8 y^{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">x</span> <span class="p">)</span><span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">diff</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left(4 x^{2} + 4 y^{2}\right)^{1.5}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">__</span> <span class="o">/</span> <span class="n">_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{8 x^{2} + 8 y^{2}}{\left(4 x^{2} + 4 y^{2}\right)^{1.5}}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simplify</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{1}{\sqrt{x^{2} + y^{2}}}\]</div>
+</div>
+</div>
 </section>
+<section id="id3">
+<h2>媒介変数表示の場合<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">r</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(r*cos(t), r*sin(t))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle r^{2} \sin^{2}{\left(t \right)} + r^{2} \cos^{2}{\left(t \right)}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simplify</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle r^{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left(r^{2} \sin^{2}{\left(t \right)} + r^{2} \cos^{2}{\left(t \right)}\right)^{1.5}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simplify</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle r^{3.0}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">r</span><span class="o">**</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{1}{r}\]</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -681,7 +733,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapters/07"
+            path: "./chapters/15"
         },
         predefinedOutput: true
     }
@@ -700,20 +752,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="702_plimpton322.html"
+       href="1520-newton.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Plimpton 322 の解読 (2)</p>
+        <p class="prev-next-title">Leibniz vs. Newton</p>
       </div>
     </a>
     <a class="right-next"
-       href="720_assignment.html"
+       href="1540-curvature.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">課題: 相加平均と相乗平均の関係を表す不等式</p>
+        <p class="prev-next-title">曲率と曲率半径</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -735,11 +787,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#epochs-in-the-science-book">Epochs in “the Science Book”</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#epochs-in-the-math-book">Epochs in “the Math Book”</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ancient-and-classical-periods-6-000-bce-500-ce">Ancient and Classical Periods (6,000 BCE – 500 CE)</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">陽関数・陰関数と曲率</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">媒介変数表示の場合</a></li>
 </ul>
   </nav></div>
 
